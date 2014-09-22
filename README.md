@@ -21,7 +21,7 @@ Different displaying of images works the same way.
  
 ### There's also a fourth way to display images, and that's using a gallery (or collage)
 THat is done in the following manner:
-```markdown
+```html
 <p class="gallery">
     ![Vandring på Skåneleden](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0440.jpg)
     ![Skylt mot Romelestigen](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0744.jpg)
