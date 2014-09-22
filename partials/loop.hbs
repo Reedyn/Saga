@@ -1,0 +1,20 @@
+{{#foreach posts ~}}
+<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeInUp {{post_class}}">
+    <header class="post-meta">
+        <h2 itemprop="name headline"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
+        <span class="post-data"><time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time> <span class="tags">{{tags prefix="i " separator=", "}}</span></span>
+        <span class="side-meta">
+            <span class="date"><strong>Publicerat</strong>
+            <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time></span>
+            <span class="tags">
+                <strong>Etiketter</strong>
+                <span itemprop="keywords">
+                {{tags prefix="" separator=""}}</span>
+            </span>
+        </span>
+    </header>
+    <section class="post-content" itemprop="articleBody text">
+        {{excerpt}}
+    </section>
+</article>
+{{~/foreach}}

@@ -1,0 +1,230 @@
+h1, h2, h3, h4 {
+    margin: {
+        top: 30px;
+        bottom: 20px;
+    }
+    font-family: $font-heading;
+    line-height: 1.2;
+    a {
+        border: 0;
+    }
+}
+
+h1, .blog-title {
+    @include font-size(35);
+    //font-weight: 300;
+    letter-spacing: -2px;
+}
+h2 {
+    @include font-size(35);
+}
+
+h3 {
+    @include font-size(25);
+}
+h4 {
+    @include font-size(15);
+    font-weight: 700;
+}
+
+a {
+    border-bottom: 1px solid rgba(0,0,0,0); 
+    @include transition(all 0.2s);
+    color: $black;
+    text-decoration: none;
+    &:hover {
+        color: $black;
+        border-color: $black;
+    }
+}
+
+p {
+    margin: {
+        top: 30px;
+        bottom: 10px;
+    }
+}
+
+.note {
+    padding: 10px;
+    background: darken($white, 10%);
+}
+
+blockquote {
+    border-left: 2px solid $grey;
+    padding-left: 20px;
+    font-size: 125%;
+    font-weight: 300;
+}
+
+ul, ol {
+    margin: {
+        top: 30px;
+        bottom: 10px;
+        left: 10px;
+    }
+    li {
+        margin: 5px 0;
+    }
+}
+
+ul {
+    list-style: square inside;
+}
+
+ol {
+    list-style: decimal inside;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.gallery {
+    width: 100%;
+    //width: calc(100% + 40px);
+    margin-left: -5px;
+    //margin-left: calc(0% - 25px);
+    padding: 5px;
+    img {
+        width:auto;
+        height: auto;
+        margin: auto;
+    }
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    max-width: calc(100% + 40px);
+    margin-left: auto;
+    margin-left: calc(0% - 20px); 
+    &.small {
+        max-width: 100%;
+        width: auto;
+        margin: {
+            left: auto;
+            right: auto;
+        }
+    }
+    &:not(.full-loaded){
+        @include transition(all 0.2s);
+    }
+    &.full-loaded {
+        width: 100%!important;
+        max-width: 100%!important;
+        margin: 0!important;
+        position: absolute!important;
+        left: 0!important;
+    }
+}
+
+code {
+    font-family: $font-monospace;
+    background: #F1F1F1;
+    padding: 6px 10px;
+}
+
+pre {
+    padding: 20px;
+    background: #F1F1F1;
+    overflow-x: scroll;
+    code {
+        padding: 0;
+        background: none;
+        font-family: $font-monospace;
+        @include font-size(16);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.fluid-width-video-wrapper {
+    margin: {
+        top: 30px;
+        bottom: 10px;
+    }
+}
+
+@import "formatting-forms";
+
+@media screen and (min-width: $mobile-width) {
+    h1, .blog-title {
+        @include font-size(40);
+    }
+}
+@media screen and (min-width: $tablet-width) {
+    h1, .blog-title {
+        @include font-size(50);
+    }
+    img {
+        max-width: 100%;
+        max-width: calc(100% + 40px);
+        margin-left: auto;
+        margin-left: calc(0% - 20px);
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+@media screen and (min-width: $site-width) {
+    h1, .blog-title {
+        @include font-size(60);
+    }
+    img {
+        max-width: 120%;
+        width: 120%;
+        margin-left: -10%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .full-image-container {
+        margin: 80px 0;
+    }
+    .wide {
+        max-width: 120%;
+        width: 120%;
+        margin-left: -10%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .gallery, pre {
+        max-width: 120%;
+        width: 120%;
+        margin-left: calc(-10% - 5px);
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: $desktop-width) {
+    img {
+        max-width: 200%;
+        width: 200%;
+        margin-left: -50%;
+        margin-top: 40px;
+        margin-bottom: 80px;
+    }
+    .wide {
+        max-width: 200%;
+        width: 200%;
+        margin-left: -50%;
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+    .gallery {
+        max-width: 200%;
+        width: 200%;
+        margin-left: calc(-50% - 5px);
+        margin-top: 40px;
+        margin-bottom: 40px;
+    }
+}
+
+
+@import "github";

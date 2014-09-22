@@ -1,0 +1,340 @@
+body {
+    height: 100%;
+    min-height: 100%;
+    font-family: $font;
+    @include font-size(14);
+    line-height: 1.8;
+    color: $grey;
+}
+#header {
+    height: 400px;
+    background-color: #333;
+    background-size: cover;
+    background-position: center;
+    background-position: center;
+    .header-background {
+        @include flexbox();
+        background: rgba(0,0,0,0.7);
+        width: 100%;
+        height: 100%;
+    }
+    
+    .header-content {
+        width: $wrapper-width;
+        margin: auto;
+        padding: 30px 30px 60px 30px;
+        color: $white;
+        h1 {
+            margin: {
+                bottom: 20px;
+                left: 0;
+                right: 0;
+            };
+            cursor: default;
+        }
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+        
+        .post-data {
+            -webkit-animation-delay: .75s;
+            animation-delay: .75s;
+            color: $grey;
+            a {
+                color: #8d8d8d;
+                border: 0;
+                &:hover {
+                    color: $white;
+                }
+            }
+            cursor: default;
+        }
+    }
+    .blog-content {
+        .blog-title {
+            line-height: 60px;
+            float: left;
+            color: $white;
+            border: 0;
+        }
+        .blog-description {
+            color: $grey;
+            display: block;
+            cursor: default;
+        }
+        nav.links {
+            float: right;
+            line-height: 50px;
+            cursor: default;
+            ul {
+                margin: 0;
+                list-style: none;
+                cursor: default;
+                li {
+                    cursor: default;
+                    display: inline-block;
+                    a {
+                        color: $white;
+                        border: 0;
+                    }
+                }
+            }
+        }   
+    }
+}
+
+.home-template, .author-template {
+    #header {
+        .blog-content {
+            width: 100%;
+            max-width: $wrapper-width;
+            margin: auto;
+            padding: 30px 30px 60px 30px;
+            color: $white;
+            .blog-title {
+                display: block;
+                float: none;
+                margin-top: 30px;
+                margin-bottom: 20px;
+                line-height: 1;
+                color: $white;
+                border: 0;
+            }
+            .blog-description {
+                -webkit-animation-delay: .75s;
+                animation-delay: .75s;
+            }
+            nav.links {
+                -webkit-animation-delay: .75s;
+                animation-delay: .75s;
+                @include font-size(18);
+                margin-top: 30px;
+                float: none;
+                line-height: 1;
+                cursor: default;
+                ul {
+                    cursor: default;
+                    li {
+                        cursor: default;
+                        display: inline-block;
+                        a {
+                            color: $white;
+                            border: 0;
+                        }
+                    }
+                }
+            }   
+        }
+    }
+    #main {
+        article {
+            position: relative;
+        }
+    }
+}
+.tag-template, .author-template {
+    #main {
+        article {
+            position: relative;
+        }
+    }
+}
+
+.post-template, .tag-template {
+    #header {
+        position: relative;
+        .blog-content {
+            position: absolute;
+            width: 100%;
+            @include box-sizing(border-box);
+            padding: 0 30px;
+            .blog-title {
+                @include font-size(14);
+                letter-spacing: 0;
+                margin: 0;
+            }
+            .blog-description {
+                display: none;
+            }
+        }
+    }
+}
+
+.post-template {
+    #main {
+        .post, .page {
+            .post-meta {
+                display: none;
+            }
+        }
+    }
+}
+
+#main {
+    @include box-sizing(border-box);
+    padding: 20px 20px;
+    article {
+        max-width: $wrapper-width;
+        margin: 60px auto;
+        &:first-child {
+            margin-top: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        .post-meta {
+            h2 {
+                margin-top: 10px;
+            }
+        }
+        .post-content {
+            > p:first-child {
+                margin-top: 10px;
+            }
+        }
+    }
+    &.index {
+        .post, .page {
+            .post-meta {
+                .side-meta {
+                    display: none;
+                    position: absolute;
+                    min-width: 150px;
+                    right: 105%;
+                    top: 30px;
+                    font-size: 12px;
+                    text-align: right;
+                    .author {
+                        display: inline-block;
+                        img {
+                            display: inline-block;
+                            width: 60px;
+                            border-radius: 50%;
+                        }
+                    }
+                    > span {
+                        display: block;
+                        > strong {
+                            display: block;
+                            margin-top: 10px;
+                        }
+                    }
+                    a {
+                        border: 0;
+                        display: block;
+                    }
+                }
+            }
+            .post-content {
+                margin-top: 20px;
+            }
+        }
+    }
+}
+
+#footer {
+    @include font-size(12);
+    background: #333;
+    color: darken($white, 40%);
+    .colophon {
+        padding: 50px 20px;
+        max-width: 600px;
+        margin: 0 auto;
+        section {
+            margin: 10px 0;
+            &:first-child {
+                margin-top: 0;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    a {
+        color: $white;
+        &:hover {
+            border-color: $white;
+        }
+    }
+}
+
+@media screen and (min-width: $mobile-width) {
+    body {
+        @include font-size(18);
+    }
+    #header {
+        height: 500px;
+        .header-content {
+        }
+    }
+    .single {
+        #header {
+            .blog-content {
+                .blog-title {
+                    @include font-size(18);
+                    letter-spacing: 0;
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: $tablet-width) {
+    .home, .author {
+        #header {
+            height: 100%;
+            max-height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    #header {
+        height: 600px;
+        .header-content {
+            h1 {
+                @include font-size(55);
+            }
+        }
+    }
+    #main {
+        padding: 40px 20px;
+    }
+}
+@media screen and (min-width: $laptop-width){
+    #main {
+        @include box-sizing(border-box);
+        &.index {
+            .post, .page {
+                .post-meta {
+                    .post-data {
+                        display: none;
+                    }
+                    .side-meta {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width: $desktop-width) {
+    .home, .author {
+        #header {
+            height: 100%;
+            max-height: 100%;
+            background-size: cover;
+            background-position: center;
+        }
+    }
+    #header {
+        height: 700px;
+        .header-content {
+            h1 {
+                //text-transform: uppercase;
+                @include font-size(55);
+                //font-weight: 700;
+                //letter-spacing: -0.3rem;
+            }
+        }
+    }
+}

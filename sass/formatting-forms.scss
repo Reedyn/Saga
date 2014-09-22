@@ -1,0 +1,15 @@
+select, input, button {   
+    width: 100%;
+    border: 0;
+    padding: 10px;
+    @include box-sizing(border-box);
+    background: #F1F1F1;
+    outline: 0;
+    @include transition(background ease 0.2s);
+}
+
+button {
+    &:hover {
+        background: darken($white, 20%);
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "Saga",
+  "description": "Automation for development using Sass",
+  "version": "0.1.0",
+  "main": "Gruntfile.js",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
