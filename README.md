@@ -1,7 +1,5 @@
 Saga[![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com/reedyn/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Project Status](http://stillmaintained.com/Reedyn/Saga.png)](http://stillmaintained.com/Reedyn/Saga)
 ====
-[![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com/reedyn/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Project Status](http://stillmaintained.com/Reedyn/Draugur.png)](http://stillmaintained.com/Reedyn/Draugur)
-### [Screenshot](https://github.com/Reedyn/Saga#screenshot) / [Download](https://github.com/reedyn/Saga/releases/latest) / [Discussion](https://ghost.org/forum/themes/5427-draugur-minimalistic-theme)
 
 ## Useful information
 
