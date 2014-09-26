@@ -1,5 +1,5 @@
 {{!< default}}
-<header id="header" class="animated fadeIn">
+<header id="header" class="animated fadeIn"{{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a itemprop="name url" class="blog-title" href="/">{{@blog.title}}</a>

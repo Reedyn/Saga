@@ -70,10 +70,18 @@ ul, ol {
 
 ul {
     list-style: square inside;
+    ul, ol {
+        margin-top: 10px;
+        margin-left: 20px
+    }
 }
 
 ol {
     list-style: decimal inside;
+    ul, ol {
+        margin-top: 10px;
+        margin-left: 20px
+    }
 }
 
 em {
@@ -102,14 +110,18 @@ img {
     max-width: 100%;
     max-width: calc(100% + 40px);
     margin-left: auto;
-    margin-left: calc(0% - 20px); 
-    &.small {
+    margin-left: calc(0% - 20px);
+    &[src$="#small"] {
         max-width: 100%;
         width: auto;
         margin: {
             left: auto;
             right: auto;
         }
+    }
+    &[src$="#large"] {
+        max-width: calc(100% + 40px);
+        margin-left: calc(0% - 20px);
     }
     &:not(.full-loaded){
         @include transition(all 0.2s);
@@ -177,11 +189,18 @@ pre {
         @include font-size(60);
     }
     img {
-        max-width: 120%;
-        width: 120%;
-        margin-left: -10%;
+        max-width: 110%;
+        width: 110%;
+        margin-left: -5%;
         margin-top: 40px;
         margin-bottom: 40px;
+        &[src$="#large"] {
+            max-width: 120%;
+            width: 120%;
+            margin-left: -10%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
     }
     .full-image-container {
         margin: 80px 0;
@@ -204,11 +223,18 @@ pre {
 
 @media screen and (min-width: $desktop-width) {
     img {
-        max-width: 200%;
-        width: 200%;
-        margin-left: -50%;
+        max-width: 150%;
+        width: 150%;
+        margin-left: -25%;
         margin-top: 40px;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        &[src$="#large"]{
+            max-width: 200%;
+            width: 200%;
+            margin-left: -50%;
+            margin-top: 40px;
+            margin-bottom: 80px;
+        }
     }
     .wide {
         max-width: 200%;
