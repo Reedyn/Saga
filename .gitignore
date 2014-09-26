@@ -29,3 +29,6 @@ Thumbs.db
 .recognizer
 *.html
 *.zip
+
+# Sass
+.sass-cache

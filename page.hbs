@@ -1,42 +1,27 @@
 {{!< default}}
 {{#post ~}}
-{{#contentFor "meta"}}
-<meta property="og:type" content="article" />
-<meta property="og:title" content="{{{title}}}" />
-<meta property="og:description" content="{{excerpt}}" />
-<meta property="og:url" content="{{url}}" />
-<meta property="og:site_name" content="{{@blog.title}}" />
-<meta property="article:published_time" content="{{date format='X'}}" />
-
-<meta name="twitter:card" value="summary_large_image"/>
-<meta name="twitter:site" value="{{@blog.title}}" />
-<meta name="twitter:creator" value="{{author.name}}" />
-<meta name="twitter:url" value="{{url absolute='true'}}"/>
-<meta name="twitter:title" value="{{{title}}}"/>
-<meta name="twitter:description" value="{{excerpt}}"/>
-{{/contentFor}}
 <header id="header" class="animated fadeIn">
-            <div class="header-background">
-            <section class="blog-content">
-                <a itemprop="name url" class="blog-title" href="/">{{@blog.title}}</a>
-                <span itemprop="description" class="blog-description">{{@blog.description}}</span>
-                {{> links}}
-            </section>
-            <section class="header-content">
-                <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
-            </section>
-            </div>
+    <div class="header-background">
+    <section class="blog-content">
+        <a itemprop="name url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <span itemprop="description" class="blog-description">{{@blog.description}}</span>
+        {{> links}}
+    </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
+    </section>
+    </div>
+</header>
+<main id="main">
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
+        <header class="post-meta">
+            <span itemprop="name headline">{{{title}}}</span>
+            <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time>
+            <span itemprop="keywords" class="tags">{{tags prefix="on " separator=", "}}</span>
         </header>
-        <main id="main">
-            <article itemprop="blogPost"itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
-                <header class="post-meta">
-                    <span itemprop="name headline">{{{title}}}</span>
-                    <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time>
-                    <span itemprop="keywords" class="tags">{{tags prefix="i " separator=", "}}</span>
-                </header>
-                <section class="post-content" itemprop="articleBody text">
-                    {{content}}
-                </section>
-            </article>
-        </main>
+        <section class="post-content" itemprop="articleBody text">
+            {{content}}
+        </section>
+    </article>
+</main>
 {{~/post}}
