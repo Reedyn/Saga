@@ -234,9 +234,10 @@ body {
 }
 
 #footer {
-    @include font-size(12);
-    background: #333;
+    background: #252525;
     color: darken($white, 40%);
+    @include font-size(12);
+    text-transform: uppercase;
     .colophon {
         padding: 50px 20px;
         max-width: 600px;
@@ -249,6 +250,24 @@ body {
             &:last-child {
                 margin-bottom: 0;
             }
+        }
+    }
+    .bottom {
+        padding: 20px 20px;
+        background: rgb(26, 25, 25);
+        .attribution {
+            max-width: 600px;
+            margin: 0 auto;
+            a {
+                color: darken($white, 40%);
+                &:hover {
+                    color: $white;
+                }
+                i.fa.fa-heart {
+                    color: rgb(216, 81, 81);
+                }
+            }
+            
         }
     }
     a {
