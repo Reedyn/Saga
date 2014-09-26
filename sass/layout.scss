@@ -84,7 +84,7 @@ body {
     }
 }
 
-.home-template, .author-template {
+.home-template, .author-template, .archive-template {
     #header {
         .blog-content {
             width: 100%;
@@ -229,6 +229,21 @@ body {
             .post-content {
                 margin-top: 20px;
             }
+        }
+    }
+    .pagination {
+        @include font-size(13);
+        text-align: center;
+        margin: 0 auto;
+        max-width: 600px;
+        position: relative;
+        .newer-posts {
+            position: absolute;
+            left: 0;
+        }
+        .older-posts {
+            position: absolute;
+            right: 0;
         }
     }
 }
