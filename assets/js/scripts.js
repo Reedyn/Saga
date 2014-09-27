@@ -22,8 +22,9 @@ $.getScript("/assets/js/helper/jquery.fitvids.js", function() {
  * GALLERY  *
  ************/
 
-if($(".gallery").length != 0){ // If there is a gallery present.
+if($('p img:not(:only-child)').closest('p').length != 0){ // If there is a gallery present.
     $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+        $('p img:not(:only-child)').closest('p').addClass('gallery');
         $(".gallery").imagesLoaded(gallery);
         $(window).resize(gallery);
     });
@@ -54,7 +55,7 @@ function gallery(){
     
 $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
     function fullImage(){
-        $('img[src$="#full"]').each(function() {
+        $('img[src$="#full"]:only-child').each(function() {
             $(this).addClass("full-loaded");
             $(this).closest("p").css("min-height",$(this).height());
             $(this).closest("p").addClass("full-image-container");
