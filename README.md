@@ -25,13 +25,11 @@ There are currently 4 different sizes an image can be displayed at:
 ```
  
 ### There's also a fourth way to display images, and that's using a gallery (or collage)
-THat is done in the following manner:
+That is done in the following manner:
 ```html
-<p class="gallery">
-    ![Vandring på Skåneleden](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0440.jpg)
-    ![Skylt mot Romelestigen](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0744.jpg)
-    ![Intressant träd](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0438.jpg)
-    ![Korvgrillning](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0001-73.jpg)
-    ![Mys vid utsikten](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0001-49-1.jpg)
-</p>
+![Gallery 1](//url/to/image.jpeg)
+![Gallery 2](//url/to/image.jpeg)
+![Gallery 3](//url/to/image.jpeg)
+![Gallery 4](//url/to/image.jpeg)
+![Gallery 5](//url/to/image.jpeg)
 ```
