@@ -22,7 +22,7 @@ body {
     .header-content {
         width: $wrapper-width;
         margin: auto;
-        padding: 30px 30px 60px 30px;
+        padding: 60px 30px 30px 30px;
         color: $white;
         h1 {
             margin: {
@@ -41,6 +41,7 @@ body {
             -webkit-animation-delay: .75s;
             animation-delay: .75s;
             color: $grey;
+            @include font-size(14);
             a {
                 color: #8d8d8d;
                 border: 0;
@@ -50,6 +51,11 @@ body {
             }
             > span {
                 display: block;
+            }
+            .tags {
+                i {
+                    font-size: 85%;
+                }
             }
             cursor: default;
         }
