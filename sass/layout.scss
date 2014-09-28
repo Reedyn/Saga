@@ -161,8 +161,9 @@ body {
     }
 }
 
-.post-template {
+.post-template, .page-template {
     #main {
+        background: $white;
         .post, .page {
             .post-meta {
                 display: none;
