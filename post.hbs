@@ -1,6 +1,6 @@
 {{!< default}}
 {{#post ~}}
-<header id="header" class="animated fadeIn">
+<header id="header" class="animated fadeIn"{{#if image}} style="background-image: url({{image}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a itemprop="name url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
@@ -9,16 +9,20 @@
     </section>
     <section class="header-content">
         <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
-        <span class="post-data animated fadeInUp"><time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time> <span class="tags">{{tags prefix="i " separator=", "}}</span></span>
+        
+        <span class="post-data animated fadeIn"><span class="date"><i class="fa fa-clock-o"></i> <time class="date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
+            {{#if tags}}<span itemprop="keywords" class="tags"><i class="fa fa-tags"></i> {{tags prefix="" separator=", "}}</span>{{/if}}
+            {{#author}}<span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><i class="fa fa-user"></i> <a itemprop="name" href="{{url}}">{{name}}</a></span>{{/author}}</span>
     </section>
     </div>
 </header>
-<main id="main">
+<main id="main" class="content">
     <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
         <header class="post-meta">
             <span itemprop="name headline">{{{title}}}</span>
-            <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='DD MMMM YYYY'}}</time>
-            <span itemprop="keywords" class="tags">{{tags prefix="on " separator=", "}}</span>
+            <span class="date"><i class="fa fa-clock-o"></i> <time class="date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
+            <span itemprop="keywords" class="tags"><i class="fa fa-tags"></i> {{tags prefix="" separator=", "}}</span>
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><i class="fa fa-user"></i> <a itemprop="name" href="{{url}}">{{name}}</a></span>
         </header>
         <section class="post-content" itemprop="articleBody text">
             {{content}}

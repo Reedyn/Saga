@@ -3,28 +3,33 @@ Saga [![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com
 
 ## Useful information
 
-This theme uses a small javascript for showing the custom cover image for a post. To select an image for cover you simply give it the id `featured`. Meaning you need to use HTML for embedding the image.
 
-###*Example below*
+### Image sizes
+There are currently 4 different sizes an image can be displayed at:
+
+ 1. Small *(add the fragment `#small`)*
+ 2. Normal *(No need to add anything)*
+ 2. Large *(add the fragment `#large`)*
+ 3. Full *(you add the fragment `#full`)*
+
+#### Example
+
 ```html
-<img id="featured" src="/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0001-65-1.jpg">
+![Small image](//url/to/image.jpeg#small)
+
+![Normal image](//url/to/image.jpeg)
+
+![Large image](//url/to/image.jpeg#large)
+
+![Full image](//url/to/image.jpeg#full)
 ```
-
-Different displaying of images works the same way.
-
-### There are currently 3 different sizes an image can be displayed at:
- 1. Small (you add the class `small`)
- 2. Large (you don't need to add anything)
- 3. Full (you add the class `full`)
  
 ### There's also a fourth way to display images, and that's using a gallery (or collage)
-THat is done in the following manner:
+That is done in the following manner:
 ```html
-<p class="gallery">
-    ![Vandring på Skåneleden](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0440.jpg)
-    ![Skylt mot Romelestigen](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0744.jpg)
-    ![Intressant träd](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0438.jpg)
-    ![Korvgrillning](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0001-73.jpg)
-    ![Mys vid utsikten](/content/images/2014/Sep/Gustav-Lindqvist_2014-09-20_0001-49-1.jpg)
-</p>
+![Gallery 1](//url/to/image.jpeg)
+![Gallery 2](//url/to/image.jpeg)
+![Gallery 3](//url/to/image.jpeg)
+![Gallery 4](//url/to/image.jpeg)
+![Gallery 5](//url/to/image.jpeg)
 ```

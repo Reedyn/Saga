@@ -1,49 +1,171 @@
 /* global hljs, $, console */
 /* jshint browser: true */
-hljs.initHighlightingOnLoad();
 
-$("#main").fitVids();
-
-function featuredImage() {
-    if($('#featured').length){
-        $('#header').css('background-image','url('+$('#featured').attr('src')+')');
-    }
-}
-
-
-function fullImage(){
-    $(".full").each(function() {
-        $(this).addClass("full-loaded");
-        $(this).closest("p").css("min-height",$(this).height());
-        $(this).closest("p").addClass("full-image-container");
+/*******************
+ * HIGHLIGHT CODE  *
+ *******************/
+if($("code").length != 0){
+    $.getScript("/assets/js/helper/highlight.min.js", function() { 
+        hljs.initHighlightingOnLoad();
     });
 }
 
-$(".gallery").imagesLoaded(gallery);
-$(window).resize(gallery);
+/**********************
+ * RESPONSIVE VIDEOS  *
+ **********************/
 
+$.getScript("/assets/js/helper/jquery.fitvids.js", function() { 
+    $("#main").fitVids();
+});
 
-function gallery(){
-    var size = 0;
-    if ($(window).height() > $(window).width()){
-        size = $(window).height();
-    } else {
-        size = $(window).width();
-    }
-    if (size < 210 ){
-        size = 210;
-    }
-    $('.gallery').removeWhitespace().collagePlus(
-        {
-            'targetHeight':size/5
-        }
-    );
+/************
+ * GALLERY  *
+ ************/
+
+if($('p img:not(:only-child)').closest('p').length != 0){ // If there is a gallery present.
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+        $('p img:not(:only-child)').closest('p').addClass('gallery');
+        $(".gallery").imagesLoaded(gallery);
+        $(window).resize(gallery);
+    });
 }
 
-var timesince=function(t){var n={prefix:"",future:"",suffix:" sedan",seconds:"Några sekunder",minute:"En minut",minutes:"%d minuter",hour:"Mindre än en timme",hours:"%d timmar",day:"En dag",days:"%d dagar",month:"En månad",months:"%d månader",year:"Ungefär ett år",years:"%d år"};var r=function(e,t){return n[e]&&n[e].replace(/%d/i,Math.abs(Math.round(t)))};var i=function(e){if(!e)return;e=parseInt(e)*1e3;e=new Date(e);var t=new Date;var i=(t.getTime()-e)*.001>>0;var s=i/60;var o=s/60;var u=o/24;var a=u/365;return n.prefix+(i<0&&r("future")||i<45&&r("seconds",i)||i<90&&r("minute",1)||s<45&&r("minutes",s)||s<90&&r("hour",1)||o<24&&r("hours",o)||o<42&&r("day",1)||u<30&&r("days",u)||u<45&&r("month",1)||u<365&&r("months",u/30)||a<1.5&&r("year",1)||r("years",a))+(i<0&&""||n.suffix)};var s=document.getElementsByClassName("timesince");for(var o in s){var u=s[o];if(typeof u==="object"){u.innerHTML=i(u.dataset.timesince||u.dataset.timesince)}}setTimeout(timesince,6e4)}
+function gallery(){
+    $.getScript("/assets/js/helper/gallery.min.js", function() { // Load in script for gallery
+        var size = 0;
+        if ($(window).height() > $(window).width()){
+            size = $(window).height();
+        } else {
+            size = $(window).width();
+        }
+        if (size < 210 ){
+            size = 210;
+        }
+        $('.gallery').removeWhitespace().collagePlus(
+            {
+                'targetHeight':size/5
+            }
+        );
+    });
+}
 
+/**********************
+ * FULL WIDTH IMAGES  *
+ **********************/
+if($("#main").hasClass("content")){
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+        function fullImage(){
+            $('img[src$="#full"]:only-child').each(function() {
+                $(this).addClass("full-loaded");
+                $(this).closest("p").css("min-height",$(this).height());
+                $(this).closest("p").addClass("full-image-container");
+            });
+        }
+        $("#main").imagesLoaded(fullImage);
+        $(window).resize(fullImage);
+    });
+}
 
-$(window).load(timesince);
-$("#main").imagesLoaded(fullImage);
-$("#main").imagesLoaded(featuredImage);
-$(window).resize(fullImage);
+/******************
+ * STICKY FOOTER  *
+ ******************/
+
+$(window).load(function(){
+    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+});
+$(window).resize(function(){
+    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+});
+
+/*********
+ * FEED  *
+ *********/
+var $masonry;
+if($("#main").hasClass("archive")){
+    $.getScript("/assets/js/helper/masonry.pkgd.min.js", function() {
+        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+            $("#main").imagesLoaded(function(){
+                $masonry = $('.feed').masonry({
+                    columnWidth: '.post:not(.featured)',
+                    itemSelector: '.post',
+                    gutter: 30
+                });
+                $('.post').each(function(){
+                    $(this).css("opacity", "1.0");
+                });
+                $('#loadmore').each(function(){
+                    $(this).css("opacity", "1.0");
+                });
+            });
+        });
+    });
+}
+
+/*******************
+ * LOAD MORE POSTS *
+ *******************/
+
+$(document).ready(function($) {
+
+	// The number of the next page to load (/page/x/).
+    var pageNum = $(".page-number").text();
+    pageNum = parseInt(pageNum.charAt(pageNum.length - 6));
+	// The maximum number of pages the current query can return.
+	var max = $(".page-number").text();
+    max = parseInt(max.substr(max.length - 1));
+	// The link of the next page of posts.
+	var nextLink = $(".older-posts").attr('href');
+	/**
+	 * Replace the traditional navigation with our own,
+	 * but only if there is at least one page of new posts to load.
+	 */
+	if(pageNum <= max) {
+		// Insert the "More Posts" link.
+		$('#feed').append('<div id="loadmore" style="opacity: 0;" class="fadeIn animated"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
+			
+		// Remove the traditional navigation.
+		$('.pagination').remove();
+	}
+	
+	
+	/**
+	 * Load new posts when the link is clicked.
+	 */
+	$('#loadmore a').click(function() {
+		// Are there more posts to load?
+		if(pageNum < max) {
+		
+			// Show that we're working.
+			$(this).html('<i class="fa fa-spinner fa-spin"></i>');
+            
+            // Grab data from next page
+            $.get(nextLink, function(data){ 
+                // Append all posts to #content
+                var posts = $(data).find(".post");
+                $.each(posts,function(){
+                    $(this).css("opacity", 0);
+                });
+                $masonry.append(posts);
+                // Change nextLink to next page
+                $("#feed").imagesLoaded(function(){
+                    pageNum++;
+                    nextLink = nextLink.substring(0, nextLink.indexOf('page/'));
+                    nextLink += "page/"+(pageNum+1);
+
+                    // Remove button if last page else move the button to end of #content
+                    if(pageNum < max) {
+                        $('#loadmore').insertAfter($('#feed .post:last'));
+                        $('#loadmore a').html('Load more <i class="fa fa-plus-circle"></i>');
+                    } else {
+                        $('#loadmore').remove();
+                    }
+                    $masonry.masonry('appended', posts);
+                });
+            });
+		} else {
+            $('#loadmore').remove();
+		}	
+		
+		return false;
+	});
+});

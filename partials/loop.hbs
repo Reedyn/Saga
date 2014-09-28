@@ -1,21 +1,25 @@
-{{#foreach posts ~}}
-<article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeInUp {{post_class}}">
-    <header class="post-meta">
-        <h2 itemprop="name headline"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
-        <span class="post-data"><time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMMM YYYY'}}</time> <span class="tags">{{tags prefix="in " separator=", "}}</span></span>
-        <span class="side-meta">
-            <span class="date"><strong>Published</strong>
-            <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time></span>
-            <span class="tags">
-                <strong>Tags</strong>
+<section id="feed" class="feed">
+    {{#foreach posts}}
+    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="{{post_class}}" style="opacity: 0;">
+        {{#if image}}
+        <a href="{{url}}" itemprop="url" class="post-image">
+            <img src="{{image}}" alt="">
+            <h2 class="post-title" itemprop="name headline">{{{title}}}</h2>
+        </a>{{else}}
+        <h2 class="post-title" itemprop="name headline"><a href="{{url}}" itemprop="url">{{{title}}}</a></h2>
+        {{/if}}
+        <section class="post-content" itemprop="articleBody text">
+            {{excerpt words=25}}…
+        </section>
+        <section class="post-meta">
+            <span class="date"><i class="fa fa-clock-o"></i> <a href="{{url}}"><time class="timesince" data-timesince="{{date format='X'}}" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}">{{date published_at timeago='true'}}</time></a></span>
+            {{#author}}<span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><i class="fa fa-user"></i> <a itemprop="name" href="{{url}}">{{name}}</a></span>{{/author}}
+            {{#if tags}}<span class="tags"><i class="fa fa-tags"></i>
                 <span itemprop="keywords">
-                {{tags prefix="" separator=""}}</span>
-            </span>
-        </span>
-    </header>
-    <section class="post-content" itemprop="articleBody text">
-        {{excerpt}}
-    </section>
-</article>
-{{~/foreach}}
+                {{tags prefix="" separator=", "}}</span>
+            </span>{{/if}}
+        </section>
+    </article>
+    {{~/foreach}}
+</section>
 {{pagination}}

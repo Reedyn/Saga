@@ -1,6 +1,6 @@
 {{!< default}}
 {{#post ~}}
-<header id="header" class="animated fadeIn">
+<header id="header" class="animated fadeIn"{{#if image}} style="background-image: url({{image}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a itemprop="name url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
@@ -12,11 +12,11 @@
     </section>
     </div>
 </header>
-<main id="main">
+<main id="main" class="content">
     <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
         <header class="post-meta">
             <span itemprop="name headline">{{{title}}}</span>
-            <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}" data-timesince="{{date format='X'}}">{{date format='D MMM YYYY'}}</time>
+            <time class="date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}">{{date published_at timeago='true'}}</time>
             <span itemprop="keywords" class="tags">{{tags prefix="on " separator=", "}}</span>
         </header>
         <section class="post-content" itemprop="articleBody text">

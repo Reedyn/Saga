@@ -70,10 +70,18 @@ ul, ol {
 
 ul {
     list-style: square inside;
+    ul, ol {
+        margin-top: 10px;
+        margin-left: 20px
+    }
 }
 
 ol {
     list-style: decimal inside;
+    ul, ol {
+        margin-top: 10px;
+        margin-left: 20px
+    }
 }
 
 em {
@@ -99,17 +107,23 @@ strong {
 
 img {
     display: block;
+    width: 100%;
+    width: calc(100% + 40px);
     max-width: 100%;
     max-width: calc(100% + 40px);
     margin-left: auto;
-    margin-left: calc(0% - 20px); 
-    &.small {
+    margin-left: calc(0% - 20px);
+    &[src$="#small"] {
         max-width: 100%;
         width: auto;
         margin: {
             left: auto;
             right: auto;
         }
+    }
+    &[src$="#large"] {
+        max-width: calc(100% + 40px);
+        margin-left: calc(0% - 20px);
     }
     &:not(.full-loaded){
         @include transition(all 0.2s);
@@ -137,9 +151,15 @@ pre {
         padding: 0;
         background: none;
         font-family: $font-monospace;
-        @include font-size(16);
+        @include font-size(15);
     }
 }
+hr {
+    height: 1px;
+    border: 0;
+    background: darken($white, 25%);
+}
+
 
 .hidden {
     display: none;
@@ -177,14 +197,21 @@ pre {
         @include font-size(60);
     }
     img {
-        max-width: 120%;
-        width: 120%;
-        margin-left: -10%;
+        max-width: 110%;
+        width: 110%;
+        margin-left: -5%;
         margin-top: 40px;
         margin-bottom: 40px;
+        &[src$="#large"], [src$="#full"] {
+            max-width: 120%;
+            width: 120%;
+            margin-left: -10%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
     }
     .full-image-container {
-        margin: 80px 0;
+        margin: 40px 0;
     }
     .wide {
         max-width: 120%;
@@ -193,7 +220,7 @@ pre {
         margin-top: 40px;
         margin-bottom: 40px;
     }
-    .gallery, pre {
+    .gallery {
         max-width: 120%;
         width: 120%;
         margin-left: calc(-10% - 5px);
@@ -204,25 +231,35 @@ pre {
 
 @media screen and (min-width: $desktop-width) {
     img {
-        max-width: 200%;
-        width: 200%;
-        margin-left: -50%;
+        max-width: 150%;
+        width: 150%;
+        margin-left: -25%;
         margin-top: 40px;
-        margin-bottom: 80px;
+        margin-bottom: 40px;
+        &[src$="#large"], [src$="#full"]{
+            max-width: 200%;
+            width: 200%;
+            margin-left: -50%;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+    }
+    .full-image-container {
+        margin: 60px 0;
     }
     .wide {
         max-width: 200%;
         width: 200%;
         margin-left: -50%;
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
     }
     .gallery {
         max-width: 200%;
         width: 200%;
         margin-left: calc(-50% - 5px);
-        margin-top: 40px;
-        margin-bottom: 40px;
+        margin-top: 60px;
+        margin-bottom: 60px;
     }
 }
 
