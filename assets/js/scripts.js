@@ -1,27 +1,6 @@
 /* global hljs, $, console */
 /* jshint browser: true */
 
-/*********
- * FEED  *
- *********/
-
-if($("#main").hasClass("archive")){
-    $.getScript("/assets/js/helper/masonry.pkgd.min.js", function() {
-        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
-            $("#main").imagesLoaded(function(){
-                $('.feed').masonry({
-                    columnWidth: '.post:not(.featured)',
-                    itemSelector: '.post',
-                    gutter: 30
-                });
-                $('.post').each(function(){
-                    $(this).css("opacity", "1.0");
-                });
-            });
-        });
-    });
-}
-
 /*******************
  * HIGHLIGHT CODE  *
  *******************/
@@ -96,4 +75,97 @@ $(window).load(function(){
 });
 $(window).resize(function(){
     $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+});
+
+/*********
+ * FEED  *
+ *********/
+var $masonry;
+if($("#main").hasClass("archive")){
+    $.getScript("/assets/js/helper/masonry.pkgd.min.js", function() {
+        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+            $("#main").imagesLoaded(function(){
+                $masonry = $('.feed').masonry({
+                    columnWidth: '.post:not(.featured)',
+                    itemSelector: '.post',
+                    gutter: 30
+                });
+                $('.post').each(function(){
+                    $(this).css("opacity", "1.0");
+                });
+                $('#loadmore').each(function(){
+                    $(this).css("opacity", "1.0");
+                });
+            });
+        });
+    });
+}
+
+/*******************
+ * LOAD MORE POSTS *
+ *******************/
+
+$(document).ready(function($) {
+
+	// The number of the next page to load (/page/x/).
+    var pageNum = $(".page-number").text();
+    pageNum = parseInt(pageNum.charAt(pageNum.length - 6));
+	// The maximum number of pages the current query can return.
+	var max = $(".page-number").text();
+    max = parseInt(max.substr(max.length - 1));
+	// The link of the next page of posts.
+	var nextLink = $(".older-posts").attr('href');
+	/**
+	 * Replace the traditional navigation with our own,
+	 * but only if there is at least one page of new posts to load.
+	 */
+	if(pageNum <= max) {
+		// Insert the "More Posts" link.
+		$('#feed').append('<div id="loadmore" style="opacity: 0;" class="fadeIn animated"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
+			
+		// Remove the traditional navigation.
+		$('.pagination').remove();
+	}
+	
+	
+	/**
+	 * Load new posts when the link is clicked.
+	 */
+	$('#loadmore a').click(function() {
+		// Are there more posts to load?
+		if(pageNum < max) {
+		
+			// Show that we're working.
+			$(this).html('<i class="fa fa-spinner fa-spin"></i>');
+            
+            // Grab data from next page
+            $.get(nextLink, function(data){ 
+                // Append all posts to #content
+                var posts = $(data).find(".post");
+                $.each(posts,function(){
+                    $(this).css("opacity", 0);
+                });
+                $masonry.append(posts);
+                // Change nextLink to next page
+                $("#feed").imagesLoaded(function(){
+                    pageNum++;
+                    nextLink = nextLink.substring(0, nextLink.indexOf('page/'));
+                    nextLink += "page/"+(pageNum+1);
+
+                    // Remove button if last page else move the button to end of #content
+                    if(pageNum < max) {
+                        $('#loadmore').insertAfter($('#feed .post:last'));
+                        $('#loadmore a').html('Load more <i class="fa fa-plus-circle"></i>');
+                    } else {
+                        $('#loadmore').remove();
+                    }
+                    $masonry.masonry('appended', posts);
+                });
+            });
+		} else {
+            $('#loadmore').remove();
+		}	
+		
+		return false;
+	});
 });
