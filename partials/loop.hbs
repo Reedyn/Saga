@@ -12,7 +12,7 @@
             {{excerpt words=25}}…
         </section>
         <section class="post-meta">
-            <span class="date"><i class="fa fa-clock-o"></i> <a href="{{url}}"><time datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}">{{date published_at timeago='true'}}</time></a></span>
+            <span class="date"><i class="fa fa-clock-o"></i> <a href="{{url}}"><time class="timesince" data-timesince="{{date format='X'}}" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}">{{date published_at timeago='true'}}</time></a></span>
             {{#author}}<span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><i class="fa fa-user"></i> <a itemprop="name" href="{{url}}">{{name}}</a></span>{{/author}}
             {{#if tags}}<span class="tags"><i class="fa fa-tags"></i>
                 <span itemprop="keywords">

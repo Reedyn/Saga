@@ -48,6 +48,9 @@ body {
                     color: $white;
                 }
             }
+            > span {
+                display: block;
+            }
             cursor: default;
         }
     }
