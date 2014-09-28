@@ -22,8 +22,9 @@ $.getScript("/assets/js/helper/jquery.fitvids.js", function() {
  * GALLERY  *
  ************/
 
-if($('p img:not(:only-child)').closest('p').length != 0){ // If there is a gallery present.
-    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+if($('p img:not(:only-child)' || 'p a:not(:only-child) img').closest('p').length != 0){ // If there is a gallery present.
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+        $('p a:not(:only-child) img').closest('p').addClass('gallery');
         $('p img:not(:only-child)').closest('p').addClass('gallery');
         $(".gallery").imagesLoaded(gallery);
         $(window).resize(gallery);
@@ -108,11 +109,10 @@ if($("#main").hasClass("archive")){
 $(document).ready(function($) {
 
 	// The number of the next page to load (/page/x/).
-    var pageNum = $(".page-number").text();
-    pageNum = parseInt(pageNum.charAt(pageNum.length - 6));
+    var numbers = $(".page-number").text().match(/[-+]?[0-9]*\.?[0-9]+/g);
+    var pageNum = parseInt(numbers[0]);
 	// The maximum number of pages the current query can return.
-	var max = $(".page-number").text();
-    max = parseInt(max.substr(max.length - 1));
+	var max = parseInt(numbers[1]);
 	// The link of the next page of posts.
 	var nextLink = $(".older-posts").attr('href');
 	/**
