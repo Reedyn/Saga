@@ -22,7 +22,7 @@ $.getScript("/assets/js/helper/jquery.fitvids.js", function() {
  * GALLERY  *
  ************/
 
-if($('p img:not(:only-child)' || 'p a:not(:only-child) img').closest('p').length != 0){ // If there is a gallery present.
+if($('p a:not(:only-child) img').closest('p').length != 0 || $('p img:not(:only-child)').closest('p').length != 0){ // If there is a gallery present.
     $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
         $('p a:not(:only-child) img').closest('p').addClass('gallery');
         $('p img:not(:only-child)').closest('p').addClass('gallery');
