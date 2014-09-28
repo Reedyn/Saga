@@ -1,4 +1,6 @@
 {
-  "name": "Saga",
-  "version": "0.1.1"
+    "name": "Saga",
+    "version": "0.1.1",
+    "description": "Tell your story! A Ghost theme designed for photoblogging",
+    "author": "Gustav Lindqvist"
 }

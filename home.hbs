@@ -1,13 +1,10 @@
 {{!< default}}
-<header id="header" class="animated fadeIn"{{#if @blog.cover}} style="background-image: url({{@blog.cover}})"{{/if}}>
+<header id="header" class="home">
     <div class="header-background">
     <section class="blog-content">
         <a itemprop="name url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
         <span itemprop="description" class="blog-description">{{@blog.description}}</span>
         {{> links}}
-    </section>
-    <section class="header-content">
-        <h1 class="post-title animated fadeInUp">{{tag.name}}</h1>
     </section>
     </div>
 </header>

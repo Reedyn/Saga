@@ -1,6 +1,27 @@
 /* global hljs, $, console */
 /* jshint browser: true */
 
+/*********
+ * FEED  *
+ *********/
+
+if($("#main").hasClass("archive")){
+    $.getScript("/assets/js/helper/masonry.pkgd.min.js", function() {
+        $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() {
+            $("#main").imagesLoaded(function(){
+                $('.feed').masonry({
+                    columnWidth: '.post:not(.featured)',
+                    itemSelector: '.post',
+                    gutter: 20
+                });
+                $('.post').each(function(){
+                    $(this).css("opacity", "1.0");
+                });
+            });
+        });
+    });
+}
+
 /*******************
  * HIGHLIGHT CODE  *
  *******************/
@@ -52,15 +73,27 @@ function gallery(){
 /**********************
  * FULL WIDTH IMAGES  *
  **********************/
-    
-$.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
-    function fullImage(){
-        $('img[src$="#full"]:only-child').each(function() {
-            $(this).addClass("full-loaded");
-            $(this).closest("p").css("min-height",$(this).height());
-            $(this).closest("p").addClass("full-image-container");
-        });
-    }
-    $("#main").imagesLoaded(fullImage);
-    $(window).resize(fullImage);
+if($("#main").hasClass("content")){
+    $.getScript("/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
+        function fullImage(){
+            $('img[src$="#full"]:only-child').each(function() {
+                $(this).addClass("full-loaded");
+                $(this).closest("p").css("min-height",$(this).height());
+                $(this).closest("p").addClass("full-image-container");
+            });
+        }
+        $("#main").imagesLoaded(fullImage);
+        $(window).resize(fullImage);
+    });
+}
+
+/******************
+ * STICKY FOOTER  *
+ ******************/
+
+$(window).load(function(){
+    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+});
+$(window).resize(function(){
+    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
 });
