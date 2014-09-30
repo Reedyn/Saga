@@ -119,9 +119,9 @@ $(document).ready(function($) {
 	 * Replace the traditional navigation with our own,
 	 * but only if there is at least one page of new posts to load.
 	 */
-	if(pageNum <= max) {
+	if(pageNum < max) {
 		// Insert the "More Posts" link.
-		$('#feed').append('<div id="loadmore" style="opacity: 0;" class="fadeIn animated"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
+		$('#feed').append('<div id="loadmore" style="opacity: 0;"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
 			
 		// Remove the traditional navigation.
 		$('.pagination').remove();
