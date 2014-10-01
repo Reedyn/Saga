@@ -241,25 +241,27 @@ body {
                 background: black;
                 color: $white;
                 border: 0;
+                overflow: hidden;
                 img {
                     max-width: 100%;
                     width: 100%;
                     margin: 0;
                     opacity: 0.5;
-                    @include transition(opacity 1s);
+                    @include transition(all ease 0.5s);
                 }
                 .post-title {
                     position: absolute;
                     bottom: 0px;
                     left: 0px;
-                    @include transition(opacity 1s);
+                    @include transition(transform ease 0.5s);
                 }
                 &:hover {
                     img {
                         opacity: 1;
+                        @include transform(scale(1.1));
                     }
                     .post-title {
-                        opacity: 0;
+                        @include transform(translateY(110%));
                     }
                 }               
             }
