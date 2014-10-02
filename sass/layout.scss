@@ -416,7 +416,7 @@ body {
         padding: 30px;
         &.archive {
             .post {
-                width: unquote("calc( 50% - ("+$gutter+" / 2) )");
+                width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");
                 &.featured {
                     width: 100%;
                 }

@@ -10,7 +10,7 @@
     <section class="header-content">
         <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
         
-        <span class="post-data animated fadeIn"><span class="date"><i class="fa fa-clock-o"></i> <time class="date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
+        <span class="post-data animated fadeIn"><span class="date"><i class="fa fa-clock-o"></i> <time class="timesince date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" data-timesince="{{date format='X'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
             {{#if tags}}<span itemprop="keywords" class="tags"><i class="fa fa-tags"></i> {{tags prefix="" separator=", "}}</span>{{/if}}
             {{#author}}<span itemprop="author" itemscope itemtype="http://schema.org/Person" class="author"><i class="fa fa-user"></i> <a itemprop="name" href="{{url}}">{{name}}</a></span>{{/author}}</span>
     </section>
