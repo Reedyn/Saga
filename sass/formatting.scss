@@ -141,13 +141,19 @@ img {
 code {
     font-family: $font-monospace;
     background: #F1F1F1;
-    padding: 6px 10px;
+    padding: 3px 6px;
+    @include font-size(15);
+    color: $black;
 }
 
 pre {
-    padding: 20px;
-    background: #F1F1F1;
-    overflow-x: scroll;
+    margin: {
+        top: 30px;
+        bottom: 10px;
+        left: 20px;
+        right: 20px;
+    }
+    word-wrap: break-word;
     code {
         padding: 0;
         background: none;

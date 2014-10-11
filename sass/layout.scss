@@ -11,7 +11,7 @@ body {
 #header {
     background-color: #333;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
     .header-background {
         @include flexbox();
         background: rgba(0,0,0,0.7);
@@ -25,6 +25,8 @@ body {
         padding: 60px 30px 30px 30px;
         color: $white;
         h1 {
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
             margin: {
                 bottom: 20px;
                 left: 0;
@@ -38,8 +40,6 @@ body {
         }
         
         .post-data {
-            -webkit-animation-delay: .75s;
-            animation-delay: .75s;
             color: $grey;
             @include font-size(14);
             a {
@@ -52,10 +52,20 @@ body {
             > span {
                 display: block;
             }
+            .date {
+                -webkit-animation-delay: .75s;
+                animation-delay: .75s;
+            }
             .tags {
+                -webkit-animation-delay: 1s;
+                animation-delay: 1s;
                 i {
                     font-size: 85%;
                 }
+            }
+            .author {
+                -webkit-animation-delay: 1.25s;
+                animation-delay: 1.25s;
             }
             cursor: default;
         }
@@ -176,22 +186,21 @@ body {
     @include box-sizing(border-box);
     padding: 20px;
     article {
+        -webkit-animation-delay: 1.25s;
+        animation-delay: 1.25s;
         max-width: $wrapper-width;
-        margin: 60px auto;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        margin: 0px auto;
         .post-meta {
             h2 {
                 margin-top: 10px;
             }
         }
         .post-content {
-            > p:first-child {
-                margin-top: 10px;
+            *:first-child {
+                margin-top: 0;
+            }
+            *:last-child {
+                margin-bottom: 0;
             }
         }
     }
