@@ -1,7 +1,7 @@
 h1, h2, h3, h4 {
     margin: {
-        top: 30px;
-        bottom: 20px;
+        top: 40px;
+        bottom: 10px;
     }
     font-family: $font-heading;
     font-weight: bold;
@@ -41,8 +41,7 @@ a {
 
 p, blockquote, figure, canvas, iframe, form {
     margin: {
-        top: 30px;
-        bottom: 10px;
+        bottom: 20px;
     }
 }
 
@@ -67,28 +66,30 @@ q {
 
 ul, ol {
     margin: {
-        top: 30px;
-        bottom: 10px;
+        top: 10px;
+        bottom: 20px;
         left: 10px;
     }
     li {
-        margin: 5px 0;
+        margin: 0;
     }
 }
 
 ul {
     list-style: square inside;
     ul, ol {
-        margin-top: 10px;
-        margin-left: 20px
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 0px;
     }
 }
 
 ol {
     list-style: decimal inside;
     ul, ol {
-        margin-top: 10px;
-        margin-left: 20px
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 0px;
     }
 }
 
@@ -122,6 +123,8 @@ img {
     max-width: calc(100% + 40px);
     margin-left: auto;
     margin-left: calc(0% - 20px);
+    margin-top: 40px;
+    margin-bottom: 40px;
     &[src$="#small"] {
         max-width: 100%;
         width: auto;
