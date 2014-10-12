@@ -5,7 +5,7 @@ body {
     font-family: $font;
     @include font-size(14);
     line-height: 1.8;
-    color: $grey;
+    color: $transparent-grey;
     overflow-y: scroll;
 }
 #header {
@@ -22,7 +22,7 @@ body {
     .header-content {
         width: $wrapper-width;
         margin: auto;
-        padding: 60px 30px 30px 30px;
+        padding: 60px 20px 20px 20px;
         color: $white;
         h1 {
             -webkit-animation-delay: .5s;
@@ -32,6 +32,7 @@ body {
                 left: 0;
                 right: 0;
             };
+            font-weight: 400;
             cursor: default;
         }
         a {
@@ -120,7 +121,7 @@ body {
             position: absolute;
             width: 100%;
             @include box-sizing(border-box);
-            padding: 0 30px;
+            padding: 0 20px;
             color: darken($white, 40%);
             a {
                 color: darken($white, 40%);
@@ -158,7 +159,7 @@ body {
             position: absolute;
             width: 100%;
             @include box-sizing(border-box);
-            padding: 0 30px;
+            padding: 0 20px;
             .blog-title {
                 @include font-size(14);
                 letter-spacing: 0;
@@ -422,7 +423,7 @@ body {
         }
     }
     #main {
-        padding: 30px;
+        padding: 20px;
         &.archive {
             .post {
                 width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");

@@ -4,6 +4,7 @@ h1, h2, h3, h4 {
         bottom: 20px;
     }
     font-family: $font-heading;
+    font-weight: bold;
     line-height: 1.2;
     a {
         border: 0;
@@ -28,7 +29,7 @@ h4 {
 }
 
 a {
-    border-bottom: 1px solid rgba(0,0,0,0); 
+    border-bottom: 1px solid rgba(0,0,0,0.3); 
     @include transition(all 0.2s);
     color: $black;
     text-decoration: none;
@@ -38,7 +39,7 @@ a {
     }
 }
 
-p {
+p, blockquote, figure, canvas, iframe, form {
     margin: {
         top: 30px;
         bottom: 10px;
@@ -51,10 +52,17 @@ p {
 }
 
 blockquote {
+    font-family: "Noto Serif", serif;
     border-left: 2px solid $grey;
     padding-left: 20px;
+}
+
+q {
+    display: block;
+    font-family: "Noto Serif", serif;
+    text-align: center;
     font-size: 125%;
-    font-weight: 300;
+    font-style: italic;
 }
 
 ul, ol {
@@ -190,7 +198,7 @@ hr {
     h1, .blog-title {
         @include font-size(50);
     }
-    img {
+    img, q {
         max-width: 100%;
         max-width: calc(100% + 40px);
         margin-left: auto;
@@ -203,7 +211,7 @@ hr {
     h1, .blog-title {
         @include font-size(60);
     }
-    img {
+    img, q {
         max-width: 110%;
         width: 110%;
         margin-left: -5%;
@@ -237,7 +245,7 @@ hr {
 }
 
 @media screen and (min-width: $desktop-width) {
-    img {
+    img, q {
         max-width: 150%;
         width: 150%;
         margin-left: -25%;

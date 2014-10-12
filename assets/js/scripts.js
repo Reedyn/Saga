@@ -89,7 +89,7 @@ if($("#main").hasClass("archive")){
                 $masonry = $('.feed').masonry({
                     columnWidth: '.post:not(.featured)',
                     itemSelector: '.post',
-                    gutter: 30
+                    gutter: 20
                 });
                 $('.post').each(function(){
                     $(this).css("opacity", "1.0");
