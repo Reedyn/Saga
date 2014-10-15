@@ -9,6 +9,7 @@ body {
     overflow-y: scroll;
 }
 #header {
+    overflow: hidden;
     background-color: #333;
     background-size: cover;
     background-position: center;
@@ -90,7 +91,7 @@ body {
         }
         nav.links {
             float: right;
-            line-height: 50px;
+            line-height: 60px;
             cursor: default;
             ul {
                 margin: 0;

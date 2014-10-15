@@ -54,6 +54,10 @@ blockquote {
     font-family: "Noto Serif", serif;
     border-left: 2px solid $grey;
     padding-left: 20px;
+    img {
+        margin: 20px 0 !important;
+        width: 100% !important;
+    }
 }
 
 q {
