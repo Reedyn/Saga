@@ -5,13 +5,14 @@ body {
     font-family: $font;
     @include font-size(14);
     line-height: 1.8;
-    color: $grey;
+    color: $transparent-grey;
     overflow-y: scroll;
 }
 #header {
+    overflow: hidden;
     background-color: #333;
     background-size: cover;
-    background-position: center bottom;
+    background-position: center;
     .header-background {
         @include flexbox();
         background: rgba(0,0,0,0.7);
@@ -22,14 +23,17 @@ body {
     .header-content {
         width: $wrapper-width;
         margin: auto;
-        padding: 60px 30px 30px 30px;
+        padding: 60px 20px 20px 20px;
         color: $white;
         h1 {
+            -webkit-animation-delay: .5s;
+            animation-delay: .5s;
             margin: {
                 bottom: 20px;
                 left: 0;
                 right: 0;
             };
+            font-weight: 400;
             cursor: default;
         }
         a {
@@ -38,8 +42,6 @@ body {
         }
         
         .post-data {
-            -webkit-animation-delay: .75s;
-            animation-delay: .75s;
             color: $grey;
             @include font-size(14);
             a {
@@ -52,10 +54,20 @@ body {
             > span {
                 display: block;
             }
+            .date {
+                -webkit-animation-delay: .75s;
+                animation-delay: .75s;
+            }
             .tags {
+                -webkit-animation-delay: 1s;
+                animation-delay: 1s;
                 i {
                     font-size: 85%;
                 }
+            }
+            .author {
+                -webkit-animation-delay: 1.25s;
+                animation-delay: 1.25s;
             }
             cursor: default;
         }
@@ -79,7 +91,7 @@ body {
         }
         nav.links {
             float: right;
-            line-height: 50px;
+            line-height: 60px;
             cursor: default;
             ul {
                 margin: 0;
@@ -110,7 +122,7 @@ body {
             position: absolute;
             width: 100%;
             @include box-sizing(border-box);
-            padding: 0 30px;
+            padding: 0 20px;
             color: darken($white, 40%);
             a {
                 color: darken($white, 40%);
@@ -148,7 +160,7 @@ body {
             position: absolute;
             width: 100%;
             @include box-sizing(border-box);
-            padding: 0 30px;
+            padding: 0 20px;
             .blog-title {
                 @include font-size(14);
                 letter-spacing: 0;
@@ -163,6 +175,7 @@ body {
 
 .post-template, .page-template {
     #main {
+        padding: 40px 20px;
         background: $white;
         .post, .page {
             .post-meta {
@@ -176,22 +189,21 @@ body {
     @include box-sizing(border-box);
     padding: 20px;
     article {
+        -webkit-animation-delay: 1.25s;
+        animation-delay: 1.25s;
         max-width: $wrapper-width;
-        margin: 60px auto;
-        &:first-child {
-            margin-top: 0;
-        }
-        &:last-child {
-            margin-bottom: 0;
-        }
+        margin: 0px auto;
         .post-meta {
             h2 {
                 margin-top: 10px;
             }
         }
         .post-content {
-            > p:first-child {
-                margin-top: 10px;
+            > *:first-child {
+                margin-top: 0;
+            }
+            > *:last-child {
+                margin-bottom: 0;
             }
         }
     }
@@ -235,31 +247,40 @@ body {
             background: $white;
             @include box-sizing(border-box);
             @include transition(opacity 1s);
+            a {
+                border-color: rgba(0,0,0,0);
+                &:hover {
+                    border-color: $black;
+                }
+            }
             .post-image {
                 display: block;
                 position: relative;
                 background: black;
                 color: $white;
                 border: 0;
+                overflow: hidden;
                 img {
                     max-width: 100%;
                     width: 100%;
                     margin: 0;
                     opacity: 0.5;
-                    @include transition(opacity 1s);
+                    @include transition(all ease 0.5s);
                 }
                 .post-title {
                     position: absolute;
                     bottom: 0px;
                     left: 0px;
-                    @include transition(opacity 1s);
+                    font-weight: 400;
+                    @include transition(transform ease 0.5s);
                 }
                 &:hover {
                     img {
                         opacity: 1;
+                        @include transform(scale(1.1));
                     }
                     .post-title {
-                        opacity: 0;
+                        @include transform(translateY(110%));
                     }
                 }               
             }
@@ -411,10 +432,10 @@ body {
         }
     }
     #main {
-        padding: 30px;
+        padding: 20px 20px;
         &.archive {
             .post {
-                width: unquote("calc( 50% - ("+$gutter+" / 2) )");
+                width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");
                 &.featured {
                     width: 100%;
                 }

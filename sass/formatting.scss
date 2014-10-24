@@ -1,9 +1,10 @@
 h1, h2, h3, h4 {
     margin: {
         top: 30px;
-        bottom: 20px;
+        bottom: 10px;
     }
     font-family: $font-heading;
+    font-weight: bold;
     line-height: 1.2;
     a {
         border: 0;
@@ -28,7 +29,7 @@ h4 {
 }
 
 a {
-    border-bottom: 1px solid rgba(0,0,0,0); 
+    border-bottom: 1px solid rgba(0,0,0,0.3); 
     @include transition(all 0.2s);
     color: $black;
     text-decoration: none;
@@ -38,10 +39,9 @@ a {
     }
 }
 
-p {
+p, blockquote, figure, canvas, iframe, form {
     margin: {
-        top: 30px;
-        bottom: 10px;
+        bottom: 20px;
     }
 }
 
@@ -51,36 +51,49 @@ p {
 }
 
 blockquote {
+    font-family: "Noto Serif", serif;
     border-left: 2px solid $grey;
     padding-left: 20px;
+    img {
+        margin: 20px 0 !important;
+        width: 100% !important;
+    }
+}
+
+q {
+    display: block;
+    font-family: "Noto Serif", serif;
+    text-align: center;
     font-size: 125%;
-    font-weight: 300;
+    font-style: italic;
 }
 
 ul, ol {
     margin: {
-        top: 30px;
-        bottom: 10px;
+        top: 10px;
+        bottom: 20px;
         left: 10px;
     }
     li {
-        margin: 5px 0;
+        margin: 0;
     }
 }
 
 ul {
     list-style: square inside;
     ul, ol {
-        margin-top: 10px;
-        margin-left: 20px
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 0px;
     }
 }
 
 ol {
     list-style: decimal inside;
     ul, ol {
-        margin-top: 10px;
-        margin-left: 20px
+        margin-top: 0px;
+        margin-left: 20px;
+        margin-bottom: 0px;
     }
 }
 
@@ -109,6 +122,7 @@ img {
     display: block;
     width: 100%;
     width: calc(100% + 40px);
+    height: auto;
     max-width: 100%;
     max-width: calc(100% + 40px);
     margin-left: auto;
@@ -140,13 +154,19 @@ img {
 code {
     font-family: $font-monospace;
     background: #F1F1F1;
-    padding: 6px 10px;
+    padding: 3px 6px;
+    @include font-size(15);
+    color: $black;
 }
 
 pre {
-    padding: 20px;
-    background: #F1F1F1;
-    overflow-x: scroll;
+    margin: {
+        top: 30px;
+        bottom: 10px;
+        left: 20px;
+        right: 20px;
+    }
+    word-wrap: break-word;
     code {
         padding: 0;
         background: none;
@@ -178,12 +198,18 @@ hr {
     h1, .blog-title {
         @include font-size(40);
     }
+    h1, h2, h3, h4 {
+        margin: {
+            top: 40px;
+            bottom: 10px;
+        }
+    }
 }
 @media screen and (min-width: $tablet-width) {
     h1, .blog-title {
         @include font-size(50);
     }
-    img {
+    img, q {
         max-width: 100%;
         max-width: calc(100% + 40px);
         margin-left: auto;
@@ -196,7 +222,7 @@ hr {
     h1, .blog-title {
         @include font-size(60);
     }
-    img {
+    img, q {
         max-width: 110%;
         width: 110%;
         margin-left: -5%;
@@ -230,7 +256,7 @@ hr {
 }
 
 @media screen and (min-width: $desktop-width) {
-    img {
+    img, q {
         max-width: 150%;
         width: 150%;
         margin-left: -25%;
@@ -240,26 +266,17 @@ hr {
             max-width: 200%;
             width: 200%;
             margin-left: -50%;
-            margin-top: 60px;
-            margin-bottom: 60px;
         }
-    }
-    .full-image-container {
-        margin: 60px 0;
     }
     .wide {
         max-width: 200%;
         width: 200%;
         margin-left: -50%;
-        margin-top: 60px;
-        margin-bottom: 60px;
     }
     .gallery {
         max-width: 200%;
         width: 200%;
         margin-left: calc(-50% - 5px);
-        margin-top: 60px;
-        margin-bottom: 60px;
     }
 }
 

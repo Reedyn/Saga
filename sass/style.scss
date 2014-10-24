@@ -18,6 +18,7 @@ $font-heading: $font;
 $font-monospace: "Inconsolata", Consolas, "Droid Sans Mono", "Courier New";
 $black: #000;
 $white: #FFF;
+$transparent-grey: rgba(0,0,0,0.8);
 $dark-grey: lighten($black, 25%);
 $grey: lighten($black, 50%);
 $light-grey: darken($white, 25%);
@@ -26,10 +27,10 @@ $wrapper-width: 600px;
 $laptop-width: 1000px;
 $desktop-width: 1400px;
 $site-width: 800px;
-$tablet-width: 600px;
+$tablet-width: 550px;
 $mobile-width: 400px;
 
-$gutter: 30px;
+$gutter: 20px;
 
 html {
     height: 100%;
