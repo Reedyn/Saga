@@ -72,10 +72,10 @@ if($("#main").hasClass("content")){
  ******************/
 
 $(window).load(function(){
-    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+    $("#main").css("min-height",$(window).height() - $("#header").height() - $("#footer").height() );
 });
 $(window).resize(function(){
-    $("#main").css("min-height",$("body").height() - $("#header").height() - $("#footer").height() );
+    $("#main").css("min-height",$(window).height() - $("#header").height() - $("#footer").height() );
 });
 
 /*********
