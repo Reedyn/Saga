@@ -2,7 +2,7 @@
 <header id="header" class="animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
-        <a itemprop="name url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <a itemprop="name url" id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
         <span itemprop="description" class="blog-description">{{@blog.description}}</span>
         {{> links}}
     </section>
