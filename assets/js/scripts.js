@@ -7,7 +7,7 @@ var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is 
  * HIGHLIGHT CODE  *
  *******************/
 
-if($("code").length != 0){
+if($("code").length !== 0){
     $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
         hljs.initHighlightingOnLoad();
     });
@@ -25,7 +25,7 @@ $.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() {
  * GALLERY  *
  ************/
 
-if($('p a:not(:only-child) img').closest('p').length != 0 || $('p img:not(:only-child)').closest('p').length != 0){ // If there is a gallery present.
+if($('p a:not(:only-child) img').closest('p').length !== 0 || $('p img:not(:only-child)').closest('p').length !== 0){ // If there is a gallery present.
     $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
         $('p a:not(:only-child) img').closest('p').addClass('gallery');
         $('p img:not(:only-child)').closest('p').addClass('gallery');

@@ -323,6 +323,7 @@ body {
         }
     }
     .pagination {
+        display: none;
         @include font-size(13);
         text-align: center;
         margin: 20px auto;
@@ -380,7 +381,7 @@ body {
     }
     a {
         color: $white;
-        border-bolor: rgba(255,255,255,0);
+        border-color: rgba(255,255,255,0);
         &:hover {
             border-color: $white;
         }
@@ -471,10 +472,7 @@ body {
         height: 700px;
         .header-content {
             h1 {
-                //text-transform: uppercase;
                 @include font-size(55);
-                //font-weight: 700;
-                //letter-spacing: -0.3rem;
             }
         }
     }
