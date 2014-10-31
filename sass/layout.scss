@@ -380,6 +380,7 @@ body {
     }
     a {
         color: $white;
+        border-bolor: rgba(255,255,255,0);
         &:hover {
             border-color: $white;
         }
