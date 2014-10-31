@@ -72,7 +72,7 @@ ul, ol {
     margin: {
         top: 10px;
         bottom: 20px;
-        left: 10px;
+        left: 20px;
     }
     li {
         margin: 0;
@@ -80,7 +80,7 @@ ul, ol {
 }
 
 ul {
-    list-style: square inside;
+    list-style: square;
     ul, ol {
         margin-top: 0px;
         margin-left: 20px;
@@ -89,7 +89,8 @@ ul {
 }
 
 ol {
-    list-style: decimal inside;
+    list-style: decimal;
+    margin-left: 25px;
     ul, ol {
         margin-top: 0px;
         margin-left: 20px;

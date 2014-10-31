@@ -32,3 +32,4 @@ Thumbs.db
 
 # Sass
 .sass-cache
+*.psd

@@ -1,8 +1,27 @@
 Saga [![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com/reedyn/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Project Status](http://stillmaintained.com/Reedyn/Saga.png)](http://stillmaintained.com/Reedyn/Saga)
 ====
 
+![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)
+
 ## Useful information
 
+### Quotations
+
+There's two different ways to show quotation.
+
+#### Blockquote
+```
+> Quoted text here
+>
+> ![Images work well inside a quote]()
+>
+> More text
+```
+
+#### Quote
+```
+<q>Your quote here, this will show up centered with a larger font-size and with a serif-font. Great for Quoting someone famous :)</q>
+```
 
 ### Image sizes
 There are currently 4 different sizes an image can be displayed at:

@@ -9,6 +9,7 @@ body {
     overflow-y: scroll;
 }
 #header {
+    max-height: 100vh;
     overflow: hidden;
     background-color: #333;
     background-size: cover;
@@ -209,7 +210,7 @@ body {
     }
     #feed {
         position: relative;
-        padding-bottom: 45px;
+        padding-bottom: 40px;
         #loadmore {
             position: absolute;
             bottom: 5px;
@@ -322,6 +323,7 @@ body {
         }
     }
     .pagination {
+        display: none;
         @include font-size(13);
         text-align: center;
         margin: 20px auto;
@@ -379,6 +381,7 @@ body {
     }
     a {
         color: $white;
+        border-color: rgba(255,255,255,0);
         &:hover {
             border-color: $white;
         }
@@ -469,10 +472,7 @@ body {
         height: 700px;
         .header-content {
             h1 {
-                //text-transform: uppercase;
                 @include font-size(55);
-                //font-weight: 700;
-                //letter-spacing: -0.3rem;
             }
         }
     }
