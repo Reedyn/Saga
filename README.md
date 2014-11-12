@@ -1,4 +1,4 @@
-Saga [![Gittip](http://img.shields.io/gittip/reedyn.svg)](https://www.gittip.com/reedyn/) [![Built with Grunt](http://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/) [![Project Status](http://stillmaintained.com/Reedyn/Saga.png)](http://stillmaintained.com/Reedyn/Saga)
+Saga ![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga.svg) ![Average issue resolution time](http://img.shields.io/badge/Issues%20Closed%20In-about%202%20days-green.svg) [![Project Status](http://stillmaintained.com/Reedyn/Saga.png)](http://stillmaintained.com/Reedyn/Saga) ![](http://img.shields.io/badge/Ghost-Theme-lightgrey.svg)
 ====
 
 ![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)
