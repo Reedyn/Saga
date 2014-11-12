@@ -3,9 +3,9 @@
 
 var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is run under a sub-domain)
 
-/*******************
- * HIGHLIGHT CODE  *
- *******************/
+/******************
+ * HIGHLIGHT CODE *
+ ******************/
 
 if($("code").length !== 0){
     $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
@@ -21,9 +21,9 @@ $.getScript(siteurl+"/assets/js/helper/jquery.fitvids.js", function() {
     $("#main").fitVids();
 });
 
-/************
- * GALLERY  *
- ************/
+/***********
+ * GALLERY *
+ ***********/
 
 if($('p a:not(:only-child) img').closest('p').length !== 0 || $('p img:not(:only-child)').closest('p').length !== 0){ // If there is a gallery present.
     $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
@@ -53,9 +53,9 @@ function gallery(){
     });
 }
 
-/**********************
- * FULL WIDTH IMAGES  *
- **********************/
+/*********************
+ * FULL WIDTH IMAGES *
+ *********************/
 
 if($("#main").hasClass("content")){
     $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
@@ -71,9 +71,27 @@ if($("#main").hasClass("content")){
     });
 }
 
-/******************
- * STICKY FOOTER  *
- ******************/
+/************
+ * LIGHTBOX *
+ ************/
+
+if($("#main").hasClass("content")){
+    $.getScript(siteurl+"/assets/js/helper/jquery.fluidbox.min.js", function() {
+        function lightBox(){
+            $('.content a').fluidbox({
+                closeTrigger: [
+                    { selector: '#fluidbox-overlay', event: 'click'         },
+                    { selector: 'window',            event: 'resize scroll' }
+                ]
+            });
+        }
+        $("#main").imagesLoaded(lightBox);
+    });
+}
+
+/*****************
+ * STICKY FOOTER *
+ *****************/
 
 $(window).load(function(){
     $("#main").css("min-height",$(window).height() - $("#header").height() - $("#footer").height() );
@@ -82,9 +100,9 @@ $(window).resize(function(){
     $("#main").css("min-height",$(window).height() - $("#header").height() - $("#footer").height() );
 });
 
-/*********
- * FEED  *
- *********/
+/********
+ * FEED *
+ ********/
 
 var $masonry;
 if($("#main").hasClass("archive")){
@@ -130,6 +148,8 @@ if($("#main").hasClass("archive")){
             $('#feed').append('<div id="loadmore" style="opacity: 0;"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
 
             // Remove the traditional navigation.
+            $('.pagination').remove();
+        } else {
             $('.pagination').remove();
         }
 

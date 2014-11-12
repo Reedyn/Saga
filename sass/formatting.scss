@@ -210,6 +210,10 @@ hr {
     h1, .blog-title {
         @include font-size(50);
     }
+    q {
+        width: 100%;
+        width: calc(100% + 40px);
+    }
     img, q {
         max-width: 100%;
         max-width: calc(100% + 40px);
