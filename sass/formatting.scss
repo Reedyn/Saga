@@ -112,6 +112,12 @@ strong {
     margin-left: -5px;
     //margin-left: calc(0% - 25px);
     padding: 5px;
+    a {
+        border: 0;
+        &:hover {
+            border-color: none;
+        }
+    }
     img {
         width:auto;
         height: auto;
