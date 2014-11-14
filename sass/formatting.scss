@@ -52,7 +52,7 @@ p, blockquote, figure, canvas, iframe, form {
 
 blockquote {
     font-family: "Noto Serif", serif;
-    border-left: 2px solid $grey;
+    border-left: 4px solid darken($white, 10%);
     padding-left: 20px;
     img {
         margin: 20px 0 !important;
@@ -182,9 +182,9 @@ pre {
     }
 }
 hr {
-    height: 1px;
+    height: 4px;
     border: 0;
-    background: darken($white, 25%);
+    background: darken($white, 10%);
 }
 
 
