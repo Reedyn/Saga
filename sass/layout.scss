@@ -187,6 +187,8 @@ body {
 }
 
 #main {
+    position: relative;
+    z-index: 1;
     @include box-sizing(border-box);
     padding: 20px;
     article {
