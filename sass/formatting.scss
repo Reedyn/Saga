@@ -50,6 +50,17 @@ p, blockquote, figure, canvas, iframe, form {
     background: darken($white, 10%);
 }
 
+mark {
+    background-color: #fdffb6;
+    padding: 2px;
+    @include box-shadow(#fdffb6 0 0 5px);
+}
+
+sup {
+    vertical-align: super;
+    @nclude font-size(13);
+}
+
 blockquote {
     font-family: "Noto Serif", serif;
     border-left: 4px solid darken($white, 10%);
