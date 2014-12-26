@@ -50,9 +50,20 @@ p, blockquote, figure, canvas, iframe, form {
     background: darken($white, 10%);
 }
 
+mark {
+    background-color: #fdffb6;
+    padding: 2px;
+    @include box-shadow(#fdffb6 0 0 5px);
+}
+
+sup {
+    vertical-align: super;
+    @nclude font-size(13);
+}
+
 blockquote {
     font-family: "Noto Serif", serif;
-    border-left: 2px solid $grey;
+    border-left: 4px solid darken($white, 10%);
     padding-left: 20px;
     img {
         margin: 20px 0 !important;
@@ -68,6 +79,17 @@ q {
     font-style: italic;
 }
 
+cite {
+    display: block;
+    color: darken($white, 10%);
+    font-family: $font;
+    font-style: normal;
+    @include font-size(14);
+    text-transform: capitalize;
+    &:before {
+        content: "\2014 \2009";
+    }
+}
 ul, ol {
     margin: {
         top: 10px;
@@ -112,6 +134,12 @@ strong {
     margin-left: -5px;
     //margin-left: calc(0% - 25px);
     padding: 5px;
+    a {
+        border: 0;
+        &:hover {
+            border-color: none;
+        }
+    }
     img {
         width:auto;
         height: auto;
@@ -176,9 +204,9 @@ pre {
     }
 }
 hr {
-    height: 1px;
+    height: 4px;
     border: 0;
-    background: darken($white, 25%);
+    background: darken($white, 10%);
 }
 
 
@@ -221,6 +249,45 @@ hr {
         margin-left: calc(0% - 20px);
         margin-top: 40px;
         margin-bottom: 40px;
+    }
+}
+
+@media screen and (min-width: $laptop-width) {   
+    .alignleft, .alignright {
+        width: 300px;
+        padding-bottom: 0px;
+        margin-bottom: 1em;
+        img {
+            margin: 0px;
+        }
+    }
+    .alignleft {
+        margin-left: -160px;
+        margin-right: 2em;
+        float: left;
+        q, &q {
+            text-align: right;
+            margin: 0px;
+            width: initial;
+        }
+        
+        &blockquote {
+            text-align: right;
+            border-left: 0px;
+            border-left: 4px solid darken($white, 10%);
+            padding-right: 20px;
+            padding-left: 0px;
+        }
+    }
+    .alignright {
+        margin-right: -160px;
+        margin-left: 2em;
+        float: right;
+        q, &q {
+            text-align: left;
+            margin: 0px;
+            width: initial;
+        }
     }
 }
 @media screen and (min-width: $site-width) {

@@ -178,15 +178,12 @@ body {
     #main {
         padding: 40px 20px;
         background: $white;
-        .post, .page {
-            .post-meta {
-                display: none;
-            }
-        }
     }
 }
 
 #main {
+    position: relative;
+    z-index: 1;
     @include box-sizing(border-box);
     padding: 20px;
     article {
