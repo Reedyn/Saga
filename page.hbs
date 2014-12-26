@@ -3,8 +3,8 @@
 <header id="header" class="animated fadeIn"{{#if image}} style="background-image: url({{image}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
-        <a itemprop="name url" id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span itemprop="description" class="blog-description">{{@blog.description}}</span>
+        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+        <span class="blog-description">{{@blog.description}}</span>
         {{> links}}
     </section>
     <section class="header-content">
@@ -13,13 +13,8 @@
     </div>
 </header>
 <main id="main" class="content">
-    <article itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting" class="animated fadeIn content post {{post_class}}">
-        <header class="post-meta">
-            <span itemprop="name headline">{{{title}}}</span>
-            <time class="date" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMM YYYY'}}">{{date published_at timeago='true'}}</time>
-            <span itemprop="keywords" class="tags">{{tags prefix="on " separator=", "}}</span>
-        </header>
-        <section class="post-content" itemprop="articleBody text">
+    <article class="animated fadeIn content post {{post_class}}">
+        <section class="post-content">
             {{content}}
         </section>
     </article>
