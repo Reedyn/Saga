@@ -42,7 +42,7 @@ body {
             color: $white;
         }
         
-        .post-data {
+        .post-data, .tag-data {
             color: $grey;
             @include font-size(14);
             a {
