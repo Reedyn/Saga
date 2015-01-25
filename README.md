@@ -1,7 +1,7 @@
 Saga [![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![](http://img.shields.io/github/issues/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/issues) [![Project Status](http://saga.gustavlindqvist.se/content/images/2015/01/Saga.png)](https://stillmaintained.com/Reedyn/Saga)
 ====
 
-![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)
+[![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)](http://saga.gustavlindqvist.se/2014/09/22/welcome-to-ghost/)
 
 > **Saga** is a theme designed to look beautiful with all your media, be it a collection of images, a video you've embedded or that nice panorama you took yesterday. *To take a look at the various ways you can display your content, check out [this post](http://saga.gustavlindqvist.se/2014/09/22/welcome-to-ghost/)*.
 
