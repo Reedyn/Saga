@@ -4,7 +4,7 @@
 !function(){
     var Saga = {
 
-        /* 
+        /*
          *  Switch this to true if all the dependencies are already loaded,
          *  for example via a bundeld js file.
          */
