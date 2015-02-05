@@ -8,7 +8,11 @@
     </section>
     <section class="header-content">
         <h1 class="post-title animated fadeInUp">{{author.name}}</h1>
-        <span class="post-data animated fadeInUp">{{author.bio}}</span>
+        <span class="author-data">
+            {{#if author.location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i> {{author.location}}</span>{{/if}}
+            {{#if author.website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
+            {{#if author.bio}}<span class="bio animated fadeInUp">{{author.bio}}</span>{{/if}}
+        </span>
     </section>
     </div>
 </header>
