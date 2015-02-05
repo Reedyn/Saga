@@ -113,8 +113,9 @@ if($("#main").hasClass("archive")){
     $.getScript(siteurl+"/assets/js/helper/masonry.pkgd.min.js", function() {
         $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
             $("#main").imagesLoaded(function(){
+                var columnWidth = ".post:not(.featured)" != 0 ? '.post' : '.post:not(.featured)';
                 $masonry = $('.feed').masonry({
-                    columnWidth: '.post:not(.featured)',
+                    columnWidth: columnWidth,
                     itemSelector: '.post',
                     gutter: 20
                 });
