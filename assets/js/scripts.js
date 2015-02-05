@@ -32,19 +32,19 @@
             }
 
             this.getScript('/assets/js/helper/highlight.min.js')
-            .then(function() { 
-                hljs.initHighlightingOnLoad();
-            });
+                .then(function() {
+                    hljs.initHighlightingOnLoad();
+                });
         },
 
         responsiveVideos: function(){
-            this.getScript('/assets/js/helper/jquery.fitvids.js').then($.proxy(function() { 
+            this.getScript('/assets/js/helper/jquery.fitvids.js').then($.proxy(function() {
                 this.$main.fitVids();
             }, this));
         },
 
         gallery: function(){
-            if( $('p a:not(:only-child) img').closest('p').length === 0 
+            if( $('p a:not(:only-child) img').closest('p').length === 0
                 && $('p img:not(:only-child)').closest('p').length !== 0){
                 return;
             }
@@ -59,19 +59,19 @@
 
         onGallery: function(){
             this.getScript('/assets/js/helper/gallery.min.js').then(function() { // Load in script for gallery
-                    var size = 0;
-                    if ($(window).height() > $(window).width()){
-                        size = $(window).height();
-                    } else {
-                        size = $(window).width();
-                    }
-                    if (size < 210){
-                        size = 210;
-                    }
-                    $('.gallery').removeWhitespace().collagePlus({
-                            'targetHeight': size/5
-                    });
+                var size = 0;
+                if ($(window).height() > $(window).width()){
+                    size = $(window).height();
+                } else {
+                    size = $(window).width();
+                }
+                if (size < 210){
+                    size = 210;
+                }
+                $('.gallery').removeWhitespace().collagePlus({
+                    'targetHeight': size/5
                 });
+            });
         },
 
         fullWidthImages: function(){
@@ -80,10 +80,10 @@
             }
 
             this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js')
-            .then($.proxy(function() {
-                this.$main.imagesLoaded($.proxy(this.onFullWidthImages, this));
-                $(window).resize($.proxy(this.onFullWidthImages, this));
-            }, this));
+                .then($.proxy(function() {
+                    this.$main.imagesLoaded($.proxy(this.onFullWidthImages, this));
+                    $(window).resize($.proxy(this.onFullWidthImages, this));
+                }, this));
         },
 
         onFullWidthImages: function(){
@@ -121,7 +121,7 @@
 
         stickyFooter: function(){
             var resize = $.proxy(function(){
-                this.$main.css('min-height', 
+                this.$main.css('min-height',
                     $(window).height() - $('#header').height() - $('#footer').height()
                 );
             }, this);
@@ -195,7 +195,7 @@
 
         loadMorePosts: function(event){
             var $masonry = this.$masonry;
-
+            var that = this;
             event.preventDefault();
 
             // Are there more posts to load?
@@ -205,21 +205,25 @@
                 $(this).html("<i class='fa fa-spinner fa-spin'></i>");
 
                 // Grab data from next page
-                $.get(this.nextLink, function(data){ 
+                $.get(this.nextLink, function(data){
                     // Append all posts to #content
                     var posts = $(data).find('.post');
+
                     $.each(posts,function(){
                         $(this).css('opacity', 0);
                     });
                     $masonry.append(posts);
                     // Change nextLink to next page
                     $('#feed').imagesLoaded(function(){
-                        this.pageNum++;
-                        this.nextLink = this.nextLink.substring(0, this.nextLink.indexOf('page/'));
-                        this.nextLink += 'page/'+(this.pageNum+1);
+                        that.pageNum++;
+                        // Prevent error on "load more" when there is only one extra page
+                        if ('nextLink' in that){
+                            that.nextLink = that.nextLink.substring(0, that.nextLink.indexOf('page/'));
+                            that.nextLink += 'page/'+(that.pageNum+1);
+                        }
 
                         // Remove button if last page else move the button to end of #content
-                        if(this.pageNum < this.max) {
+                        if(that.pageNum < that.max) {
                             $('#loadmore').insertAfter($('#feed .post:last'));
                             $('#loadmore a').html("Load more <i class='fa fa-plus-circle'></i>");
                         } else {
@@ -230,7 +234,7 @@
                 });
             } else {
                 $('#loadmore').remove();
-            }   
+            }
         },
 
         loadedScripts: {},
@@ -245,17 +249,17 @@
                         loader();
                     } else {
                         $.getScript(this.siteurl + path)
-                        .then($.proxy(function(){
-                            this.loadedScripts[path] = true;
-                            loader();
-                        }, this))
-                        .fail(function(err){
-                            if(err){
-                                promise.rejectWith(err);
-                            } else {
-                                promise.reject();
-                            }
-                        });
+                            .then($.proxy(function(){
+                                this.loadedScripts[path] = true;
+                                loader();
+                            }, this))
+                            .fail(function(err){
+                                if(err){
+                                    promise.rejectWith(err);
+                                } else {
+                                    promise.reject();
+                                }
+                            });
                     }
                 } else {
                     promise.resolve();
@@ -267,7 +271,7 @@
             } else {
                 loader();
             }
-            
+
             return promise;
         },
 
