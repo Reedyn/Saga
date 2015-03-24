@@ -5,6 +5,10 @@ Saga [![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga
 
 > **Saga** is a theme designed to look beautiful with all your media, be it a collection of images, a video you've embedded or that nice panorama you took yesterday. *To take a look at the various ways you can display your content, check out [this post](http://saga.gustavlindqvist.se/2014/09/22/welcome-to-ghost/)*.
 
+## What is being worked on?
+
+An [overview of issues can be found over at waffle.io](https://waffle.io/Reedyn/Saga)
+
 ## Useful information
 
 ### Quotations
