@@ -1,442 +1,447 @@
-body {
-    height: 100%;
-    min-height: 100%;
-    background: darken($white, 5%);
-    font-family: $font;
-    @include font-size(14);
-    line-height: 1.8;
-    color: $transparent-grey;
+body{
     overflow-y: scroll;
+    min-height: 100%;
+    height: 100%;
+    background: darken($white, 5%);
+    color: $transparent-grey;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: $font;
+    line-height: 1.8;
 }
-#header {
-    max-height: 100vh;
+#header{
     overflow: hidden;
-    background-color: #333;
-    background-size: cover;
+    max-height: 100vh;
+    background-color: #333333;
     background-position: center;
-    .header-background {
-        @include flexbox();
-        background: rgba(0,0,0,0.7);
+    background-size: cover;
+    .header-background{
+        display: flex;
         width: 100%;
         height: 100%;
+        background: rgba(0,0,0,.7);
     }
-    
-    .header-content {
-        width: $wrapper-width;
+
+    .header-content{
         margin: auto;
         padding: 60px 20px 20px 20px;
+        width: $wrapper-width;
         color: $white;
-        h1 {
-            -webkit-animation-delay: .5s;
-            animation-delay: .5s;
+        h1{
             margin: {
+                right: 0;
                 bottom: 20px;
                 left: 0;
-                right: 0;
             };
             font-weight: 400;
             cursor: default;
+            animation-delay: .5s;
         }
-        a {
-            text-decoration: none;
+        a{
             color: $white;
+            text-decoration: none;
         }
-        
-        .post-data, .tag-data, .author-data {
+
+        .post-data, .tag-data, .author-data{
             color: $grey;
-            @include font-size(14);
-            a {
-                color: #8d8d8d;
+            font-size: 14px;
+            font-size: 1.4rem;
+            cursor: default;
+            a{
                 border: 0;
-                &:hover {
+                color: #8D8D8D;
+                &:hover{
                     color: $white;
                 }
             }
-            > span {
+            > span{
                 display: block;
             }
-            .date, .location {
-                -webkit-animation-delay: .75s;
+            .date, .location{
                 animation-delay: .75s;
             }
-            .tags, .website {
-                -webkit-animation-delay: 1s;
+            .tags, .website{
                 animation-delay: 1s;
-                i {
+                i{
                     font-size: 85%;
                 }
             }
-            .author, .bio {
-                -webkit-animation-delay: 1.25s;
+            .author, .bio{
                 animation-delay: 1.25s;
             }
-            cursor: default;
         }
     }
-    .blog-content {
-        .blog-title {
+    .blog-content{
+        .blog-title{
+            float: left;
+            border: 0;
+            color: $white;
             font-weight: 700;
             line-height: 60px;
-            float: left;
-            color: $white;
-            border: 0;
         }
-        .blog-description {
+        .blog-description{
             display: none;
-            @include font-size(14);
-            cursor: default;
-            color: darken($white, 20%);
-            line-height: 60px;
             float: left;
             margin-left: 10px;
+            color: darken($white, 20%);
+            font-size: 14px;
+            font-size: 1.4rem;
+            line-height: 60px;
+            cursor: default;
         }
-        nav.links {
+        nav.links{
             float: right;
             line-height: 60px;
             cursor: default;
-            ul {
+            ul{
                 margin: 0;
                 list-style: none;
                 cursor: default;
-                li {
-                    cursor: default;
+                li{
                     display: inline-block;
-                    a {
-                        color: $white;
+                    cursor: default;
+                    a{
                         border: 0;
+                        color: $white;
                     }
                 }
             }
-        }   
+        }
     }
 }
 
-.home-template, .archive-template {
-    #header {
-        height: 60px;
+.home-template, .archive-template{
+    #header{
         position: relative;
+        height: 60px;
         background: $white;
-        .header-background {
+        .header-background{
             background: none;
         }
-        .blog-content {
+        .blog-content{
             position: absolute;
-            width: 100%;
-            @include box-sizing(border-box);
+            box-sizing: border-box;
             padding: 0 20px;
+            width: 100%;
             color: darken($white, 40%);
-            a {
+
+            a{
                 color: darken($white, 40%);
-                &:hover {
+                &:hover{
                     color: black;
                 }
             }
-            .blog-title {
-                @include font-size(14);
-                letter-spacing: 0;
+            .blog-title{
                 margin: 0;
-                
+                letter-spacing: 0;
+                font-size: 14px;
+                font-size: 1.4rem;
             }
-            nav.links ul li a {
+            nav.links ul li a{
                 color: darken($white, 40%);
-                &:hover {
+                &:hover{
                     color: black;
                 }
             }
         }
     }
 }
-.tag-template, .author-template {
-    #main {
-        article {
+.tag-template, .author-template{
+    #main{
+        article{
             position: relative;
         }
     }
 }
 
-.post-template, .tag-template, .author-template {
-    #header {
+.post-template, .tag-template, .author-template{
+    #header{
         position: relative;
-        .blog-content {
+        .blog-content{
             position: absolute;
-            width: 100%;
-            @include box-sizing(border-box);
+            box-sizing: border-box;
             padding: 0 20px;
-            .blog-title {
-                @include font-size(14);
-                letter-spacing: 0;
+            width: 100%;
+            .blog-title{
                 margin: 0;
+                letter-spacing: 0;
+                font-size: 14px;
+                font-size: 1.4rem;
             }
-            .blog-description {
+            .blog-description{
                 display: none;
             }
         }
     }
 }
 
-.post-template, .page-template {
-    #main {
+.post-template, .page-template{
+    #main{
         padding: 40px 20px;
         background: $white;
     }
 }
 
-#main {
+#main{
     position: relative;
     z-index: 1;
-    @include box-sizing(border-box);
+    box-sizing: border-box;
     padding: 20px;
-    article {
-        -webkit-animation-delay: 1.25s;
-        animation-delay: 1.25s;
+    article{
+        margin: 0 auto;
         max-width: $wrapper-width;
-        margin: 0px auto;
-        .post-meta {
-            h2 {
+        animation-delay: 1.25s;
+        .post-meta{
+            h2{
                 margin-top: 10px;
             }
         }
-        .post-content {
-            > *:first-child {
+        .post-content{
+            > *:first-child{
                 margin-top: 0;
             }
-            > *:last-child {
+            > *:last-child{
                 margin-bottom: 0;
             }
         }
     }
-    #feed {
+    #feed{
         position: relative;
         padding-bottom: 40px;
-        #loadmore {
+        #loadmore{
             position: absolute;
             bottom: 5px;
             left: 50%;
-            transform: translateX(-50%);;
             text-transform: uppercase;
-            -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
-            animation-delay: 1s;
-            a {
-                cursor: pointer;
+            transform: translateX(-50%);
+            animation-delay: 1s;;
+            a{
                 padding: 10px 20px;
+                border: 0;
                 background: white;
+                text-decoration: none;
                 font-size: 14px;
                 font-size: 1.4rem;
-                text-decoration: none;
-                border: 0;
-                &:hover {
-                    text-decoration: none;
+                cursor: pointer;
+                &:hover{
                     border: 0;
                     background: #D5D5D5;
+                    text-decoration: none;
                 }
             }
         }
     }
-    &.archive {
+    &.archive{
         overflow: hidden;
         background: darken($white, 5%);
-        .post {
-            $post-padding: 20px;
+        .post{
             float: left;
-            max-width: 100%;
-            width: 100%;
+            box-sizing: border-box;
             margin: inherit;
             margin-bottom: $gutter;
+            max-width: 100%;
+            width: 100%;
             background: $white;
-            @include box-sizing(border-box);
-            @include transition(opacity 1s);
-            a {
+            transition: opacity 1s;
+
+            $post-padding: 20px;
+            a{
                 border-color: rgba(0,0,0,0);
-                &:hover {
+                &:hover{
                     border-color: $black;
                 }
             }
-            .post-image {
-                display: block;
+            .post-image{
                 position: relative;
+                display: block;
+                overflow: hidden;
+                border: 0;
                 background: black;
                 color: $white;
-                border: 0;
-                overflow: hidden;
-                img {
+                img{
+                    margin: 0;
                     max-width: 100%;
                     width: 100%;
-                    margin: 0;
-                    opacity: 0.5;
-                    @include transition(all ease 0.5s);
+                    opacity: .5;
+                    transition: all ease .5s;
                 }
-                .post-title {
+                .post-title{
                     position: absolute;
-                    bottom: 0px;
-                    left: 0px;
+                    bottom: 0;
+                    left: 0;
                     font-weight: 400;
-                    @include transition(transform ease 0.5s);
+                    transition: transform ease .5s;
                 }
-                &:hover {
-                    img {
+                &:hover{
+                    img{
                         opacity: 1;
-                        @include transform(scale(1.1));
+                        transform: scale(1.1);
                     }
-                    .post-title {
-                        @include transform(translateY(110%));
+                    .post-title{
+                        transform: translateY(110%);
                     }
-                }               
+                }
             }
-            .post-title {            
+            .post-title{
                 margin: 0 $post-padding $post-padding $post-padding;
                 padding-top: $post-padding;
-                @include font-size(25);
+                font-size: 25px;
+                font-size: 2.5rem;
             }
-            .post-content {
-                @include box-sizing(border-box);
+            .post-content{
+                box-sizing: border-box;
                 margin: $post-padding - 5 $post-padding;
-                @include font-size(14);
-                cursor: default;
                 color: darken($white, 40%);
-            }
-            .post-meta {
-                @include font-size(14);
+                font-size: 14px;
+                font-size: 1.4rem;
                 cursor: default;
-                color: #ccc;
-                width: 100%;
-                background: #FFFFFF;
-                border-top: 1px solid #f7f7f7;
+            }
+            .post-meta{
+                box-sizing: border-box;
                 padding: 15px $post-padding;
-                @include box-sizing(border-box);
-                a {
+                width: 100%;
+                border-top: 1px solid #F7F7F7;
+                background: #FFFFFF;
+                color: #CCCCCC;
+                font-size: 14px;
+                font-size: 1.4rem;
+                cursor: default;
+                a{
                     color: inherit;
-                    &:hover {
+                    &:hover{
                         color: black;
                     }
                 }
-                .date {
+                .date{
                     margin-right: $post-padding / 2;
                 }
-                .author {
+                .author{
                     margin-right: $post-padding / 2;
                 }
             }
-            
         }
     }
-    .pagination {
+    .pagination{
+        position: relative;
         display: none;
-        @include font-size(13);
-        text-align: center;
         margin: 20px auto;
         max-width: 600px;
-        position: relative;
-        .newer-posts {
+        text-align: center;
+        font-size: 13px;
+        font-size: 1.3rem;
+        .newer-posts{
             position: absolute;
             left: 0;
         }
-        .older-posts {
+        .older-posts{
             position: absolute;
             right: 0;
         }
     }
 }
 
-#footer {
+#footer{
     background: #252525;
     color: darken($white, 40%);
-    @include font-size(12);
     text-transform: uppercase;
-    -webkit-animation-delay: 1s; /* Chrome, Safari, Opera */
+    font-size: 12px;
+    font-size: 1.2rem;
     animation-delay: 1s;
-    .colophon {
+    .colophon{
+        margin: 0 auto;
         padding: 50px 20px;
         max-width: 600px;
-        margin: 0 auto;
-        section {
+        section{
             margin: 10px 0;
-            &:first-child {
+            &:first-child{
                 margin-top: 0;
             }
-            &:last-child {
+            &:last-child{
                 margin-bottom: 0;
             }
         }
     }
-    .bottom {
+    .bottom{
         padding: 20px 20px;
         background: rgb(26, 25, 25);
-        .attribution {
-            max-width: 600px;
+        .attribution{
             margin: 0 auto;
-            a {
+            max-width: 600px;
+            a{
                 color: darken($white, 40%);
-                &:hover {
+                &:hover{
                     color: $white;
                 }
-                i.fa.fa-heart {
+                i.fa.fa-heart{
                     color: rgb(216, 81, 81);
                 }
             }
-            
         }
     }
-    a {
-        color: $white;
+    a{
         border-color: rgba(255,255,255,0);
-        &:hover {
+        color: $white;
+        &:hover{
             border-color: $white;
         }
     }
 }
 
-@media screen and (min-width: $mobile-width) {
-    body {
-        @include font-size(18);
+@media screen and (min-width: $mobile-width){
+    body{
+        font-size: 18px;
+        font-size: 1.8rem;
     }
-    #header {
+    #header{
         height: 500px;
-        .header-content {
+        .header-content{
         }
     }
-    .single {
-        #header {
-            .blog-content {
-                .blog-title {
-                    @include font-size(18);
+    .single{
+        #header{
+            .blog-content{
+                .blog-title{
                     letter-spacing: 0;
+                    font-size: 18px;
+                    font-size: 1.8rem;
                 }
             }
         }
     }
 }
-@media screen and (min-width: $tablet-width) {
-    .home, .author {
-        #header {
-            height: 100%;
+@media screen and (min-width: $tablet-width){
+    .home, .author{
+        #header{
             max-height: 100%;
-            background-size: cover;
+            height: 100%;
             background-position: center;
+            background-size: cover;
         }
     }
-    .home-template, .archive-template {
-        #header {
-            .blog-content {
-                .blog-description {
+    .home-template, .archive-template{
+        #header{
+            .blog-content{
+                .blog-description{
                     display: block;
                 }
             }
         }
     }
-    #header {
+    #header{
         height: 600px;
-        .header-content {
-            h1 {
-                @include font-size(55);
+        .header-content{
+            h1{
+                font-size: 55px;
+                font-size: 5.5rem;
             }
         }
     }
-    #main {
+    #main{
         padding: 20px 20px;
-        &.archive {
-            .post {
+        &.archive{
+            .post{
                 width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");
-                &.featured {
+                &.featured{
                     width: 100%;
                 }
             }
@@ -444,40 +449,41 @@ body {
     }
 }
 @media screen and (min-width: $laptop-width){
-    #main {
-        @include box-sizing(border-box);
-        &.archive {
-            .post {
+    #main{
+        box-sizing: border-box;
+        &.archive{
+            .post{
                 width: unquote("calc( ( 100% - ("+$gutter+"* 2) ) / 3 )");
-                &.featured {
+                &.featured{
                     width: unquote("calc( ( 100% - ("+$gutter+" * 2) ) * ( 2 / 3 ) + "+$gutter+")");
                 }
             }
         }
     }
 }
-@media screen and (min-width: $desktop-width) {
-    .home, .author {
-        #header {
-            height: 100%;
+@media screen and (min-width: $desktop-width){
+    .home, .author{
+        #header{
             max-height: 100%;
-            background-size: cover;
+            height: 100%;
             background-position: center;
+            background-size: cover;
         }
     }
-    #header {
+    #header{
         height: 700px;
-        .header-content {
-            h1 {
-                @include font-size(55);
+        .header-content{
+            h1{
+                font-size: 55px;
+                font-size: 5.5rem;
             }
         }
     }
-    #main {
-        &.archive {
-            .post {
+    #main{
+        &.archive{
+            .post{
                 width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 4 )");
-                &.featured {
+                &.featured{
                     width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 2 + "+$gutter+")");
                 }
             }

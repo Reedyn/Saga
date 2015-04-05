@@ -1,221 +1,230 @@
-h1, h2, h3, h4 {
+h1, h2, h3, h4{
     margin: {
         top: 30px;
         bottom: 10px;
     }
-    font-family: $font-heading;
     font-weight: bold;
+    font-family: $font-heading;
     line-height: 1.2;
-    a {
+    a{
         border: 0;
     }
 }
 
-h1, .blog-title {
-    @include font-size(35);
+h1, .blog-title{
     letter-spacing: -2px;
+    font-size: 35px;
+    font-size: 3.5rem;
 }
-h2 {
-    @include font-size(35);
+h2{
+    font-size: 35px;
+    font-size: 3.5rem;
 }
 
-h3 {
-    @include font-size(25);
+h3{
+    font-size: 25px;
+    font-size: 2.5rem;
 }
-h4 {
-    @include font-size(15);
+h4{
     font-weight: 700;
+    font-size: 15px;
+    font-size: 1.5rem;
 }
 
-a {
-    border-bottom: 1px solid rgba(0,0,0,0.3); 
-    @include transition(all 0.2s);
+a{
+    border-bottom: 1px solid rgba(0,0,0,.3);
     color: $black;
     text-decoration: none;
-    &:hover {
-        color: $black;
+
+    @include transition(all .2s);
+    &:hover{
         border-color: $black;
+        color: $black;
     }
 }
 
-p, blockquote, figure, canvas, iframe, form {
+p, blockquote, figure, canvas, iframe, form{
     margin: {
         bottom: 20px;
     }
 }
 
-.note {
+.note{
     padding: 10px;
     background: darken($white, 10%);
 }
 
-mark {
-    background-color: #fdffb6;
+mark{
     padding: 2px;
-    @include box-shadow(#fdffb6 0 0 5px);
+    background-color: #FDFFB6;
+    box-shadow: #FDFFB6 0 0 5px;
 }
 
-sup {
+sup{
     vertical-align: super;
-    @nclude font-size(13);
+    font-size: 13px;
+    font-size: 1.3rem;
 }
 
-blockquote {
-    font-family: "Noto Serif", serif;
-    border-left: 4px solid darken($white, 10%);
+blockquote{
     padding-left: 20px;
-    img {
+    border-left: 4px solid darken($white, 10%);
+    font-family: "Noto Serif", serif;
+    img{
         margin: 20px 0 !important;
         width: 100% !important;
     }
 }
 
-q {
+q{
     display: block;
-    font-family: "Noto Serif", serif;
     text-align: center;
-    font-size: 125%;
     font-style: italic;
+    font-size: 125%;
+    font-family: "Noto Serif", serif;
 }
 
-cite {
+cite{
     display: block;
     color: darken($white, 20%);
-    font-family: $font;
-    font-style: normal;
-    @include font-size(14);
     text-transform: capitalize;
-    a {
-        color: inherit;
+    font-style: normal;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: $font;
+    a{
         border: none;
+        color: inherit;
     }
-    &:before {
+    &:before{
         content: "\2014 \2009";
     }
 }
-ul, ol {
+ul, ol{
     margin: {
         top: 10px;
         bottom: 20px;
         left: 20px;
     }
-    li {
+    li{
         margin: 0;
     }
 }
 
-ul {
+ul{
     list-style: square;
-    ul, ol {
-        margin-top: 0px;
+    ul, ol{
+        margin-top: 0;
+        margin-bottom: 0;
         margin-left: 20px;
-        margin-bottom: 0px;
     }
 }
 
-ol {
-    list-style: decimal;
+ol{
     margin-left: 25px;
-    ul, ol {
-        margin-top: 0px;
+    list-style: decimal;
+    ul, ol{
+        margin-top: 0;
+        margin-bottom: 0;
         margin-left: 20px;
-        margin-bottom: 0px;
     }
 }
 
-em {
+em{
     font-style: italic;
 }
 
-strong {
+strong{
     font-weight: bold;
 }
 
-.gallery {
-    width: 100%;
+.gallery{
     margin-left: -5px;
     padding: 5px;
-    a {
+    width: 100%;
+    a{
         border: 0;
-        &:hover {
+        &:hover{
             border-color: none;
         }
     }
-    img {
-        width:auto;
-        height: auto;
+    img{
         margin: auto;
+        width: auto;
+        height: auto;
     }
 }
 
-img {
+img{
     display: block;
+    margin-left: auto;
+    margin-left: calc(0% - 20px);
+    max-width: 100%;
+    max-width: calc(100% + 40px);
     width: 100%;
     width: calc(100% + 40px);
     height: auto;
-    max-width: 100%;
-    max-width: calc(100% + 40px);
-    margin-left: auto;
-    margin-left: calc(0% - 20px);
-    &[src$="#small"] {
+    &[src$="#small"]{
+        margin: {
+            right: auto;
+            left: auto;
+        }
         max-width: 100%;
         width: auto;
-        margin: {
-            left: auto;
-            right: auto;
-        }
     }
-    &[src$="#large"] {
-        max-width: calc(100% + 40px);
+    &[src$="#large"]{
         margin-left: calc(0% - 20px);
+        max-width: calc(100% + 40px);
     }
     &:not(.full-loaded){
-        @include transition(all 0.2s);
+        @include transition(all .2s);
     }
-    &.full-loaded {
-        width: 100%!important;
-        max-width: 100%!important;
-        margin: 0!important;
+    &.full-loaded{
         position: absolute!important;
         left: 0!important;
+        margin: 0!important;
+        max-width: 100%!important;
+        width: 100%!important;
     }
 }
 
-code {
-    font-family: $font-monospace;
-    background: #F1F1F1;
+code{
     padding: 3px 6px;
-    @include font-size(15);
+    background: #F1F1F1;
     color: $black;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: $font-monospace;
 }
 
-pre {
+pre{
     margin: {
         top: 30px;
+        right: 20px;
         bottom: 10px;
         left: 20px;
-        right: 20px;
     }
     word-wrap: break-word;
-    code {
+    code{
         padding: 0;
         background: none;
+        font-size: 15px;
+        font-size: 1.5rem;
         font-family: $font-monospace;
-        @include font-size(15);
     }
 }
-hr {
+hr{
     height: 4px;
     border: 0;
     background: darken($white, 10%);
 }
 
 
-.hidden {
+.hidden{
     display: none;
 }
 
-.fluid-width-video-wrapper {
+.fluid-width-video-wrapper{
     margin: {
         top: 30px;
         bottom: 10px;
@@ -224,142 +233,145 @@ hr {
 
 @import "formatting-forms";
 
-@media screen and (min-width: $mobile-width) {
-    h1, .blog-title {
-        @include font-size(40);
+@media screen and (min-width: $mobile-width){
+    h1, .blog-title{
+        font-size: 40px;
+        font-size: 4rem;
     }
-    h1, h2, h3, h4 {
+    h1, h2, h3, h4{
         margin: {
             top: 40px;
             bottom: 10px;
         }
     }
 }
-@media screen and (min-width: $tablet-width) {
-    h1, .blog-title {
-        @include font-size(50);
+@media screen and (min-width: $tablet-width){
+    h1, .blog-title{
+        font-size: 50px;
+        font-size: 5rem;
     }
-    q {
+    q{
         width: 100%;
         width: calc(100% + 40px);
     }
-    img, q {
-        max-width: 100%;
-        max-width: calc(100% + 40px);
-        margin-left: auto;
-        margin-left: calc(0% - 20px);
+    img, q{
         margin-top: 40px;
         margin-bottom: 40px;
+        margin-left: auto;
+        margin-left: calc(0% - 20px);
+        max-width: 100%;
+        max-width: calc(100% + 40px);
     }
 }
 
-@media screen and (min-width: $laptop-width) {   
-    .alignleft, .alignright {
-        width: 300px;
-        padding-bottom: 0px;
+@media screen and (min-width: $laptop-width){
+    .alignleft, .alignright{
         margin-bottom: 1em;
-        img {
-            margin: 0px;
+        padding-bottom: 0;
+        width: 300px;
+        img{
+            margin: 0;
         }
     }
-    .alignleft {
-        margin-left: -160px;
-        margin-right: 2em;
+    .alignleft{
         float: left;
-        q {
-            text-align: right;
-            margin: 0px;
+        margin-right: 2em;
+        margin-left: -160px;
+        q{
+            margin: 0;
             width: initial;
+            text-align: right;
         }
-    }
-    
-    blockquote.alignleft {
-        text-align: right;
-        border-left: 0px;
-        border-right: 4px solid darken($white, 10%);
-        padding-right: 20px;
-        padding-left: 0px;
-    }
-    
-    q.alignleft {
-        text-align: right;
-        margin-top: 0;
     }
 
-    .alignright {
+    blockquote.alignleft{
+        padding-right: 20px;
+        padding-left: 0;
+        border-right: 4px solid darken($white, 10%);
+        border-left: 0;
+        text-align: right;
+    }
+
+    q.alignleft{
+        margin-top: 0;
+        text-align: right;
+    }
+
+    .alignright{
+        float: right;
         margin-right: -160px;
         margin-left: 2em;
-        float: right;
-        q, &q {
-            text-align: left;
-            margin: 0px;
+        q, &q{
+            margin: 0;
             width: initial;
+            text-align: left;
         }
     }
     q.alignright{
+        margin: 0;
         text-align: left;
-        margin: 0px;
     }
 }
-@media screen and (min-width: $site-width) {
-    h1, .blog-title {
-        @include font-size(60);
+@media screen and (min-width: $site-width){
+    h1, .blog-title{
+        font-size: 60px;
+        font-size: 6rem;
     }
-    img, q {
+    img, q{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: -5%;
         max-width: 110%;
         width: 110%;
-        margin-left: -5%;
-        margin-top: 40px;
-        margin-bottom: 40px;
-        &[src$="#large"], [src$="#full"] {
-            max-width: 120%;
-            width: 120%;
-            margin-left: -10%;
+        &[src$="#large"], [src$="#full"]{
             margin-top: 40px;
             margin-bottom: 40px;
+            margin-left: -10%;
+            max-width: 120%;
+            width: 120%;
         }
     }
-    .full-image-container {
+    .full-image-container{
         margin: 40px 0;
     }
-    .wide {
-        max-width: 120%;
-        width: 120%;
+    .wide{
+        margin-top: 40px;
+        margin-bottom: 40px;
         margin-left: -10%;
-        margin-top: 40px;
-        margin-bottom: 40px;
-    }
-    .gallery {
         max-width: 120%;
         width: 120%;
-        margin-left: calc(-10% - 5px);
+    }
+    .gallery{
         margin-top: 40px;
         margin-bottom: 40px;
+        margin-left: calc(-10% - 5px);
+        max-width: 120%;
+        width: 120%;
     }
 }
 
-@media screen and (min-width: $desktop-width) {
-    img, q {
-        max-width: 150%;
-        width: 150%;
-        margin-left: -25%;
+@media screen and (min-width: $desktop-width){
+    img, q{
         margin-top: 40px;
         margin-bottom: 40px;
+        margin-left: -25%;
+        max-width: 150%;
+        width: 150%;
         &[src$="#large"], [src$="#full"]{
+            margin-left: -50%;
             max-width: 200%;
             width: 200%;
-            margin-left: -50%;
         }
     }
-    .wide {
-        max-width: 200%;
-        width: 200%;
+    .wide{
         margin-left: -50%;
-    }
-    .gallery {
         max-width: 200%;
         width: 200%;
+    }
+    .gallery{
         margin-left: calc(-50% - 5px);
+        max-width: 200%;
+        width: 200%;
     }
 }
 
