@@ -1,60 +1,56 @@
-.fluidbox {
+.fluidbox{
     outline: none;
 }
 
-.hidden {
+.hidden{
     display: none;
 }
 
-.fluidbox-overlay {
-    background-color: rgba(255, 255, 255, 0.9);
-    cursor: pointer;
-    cursor: -webkit-zoom-out;
-    cursor: -moz-zoom-out;
-    opacity: 0;
+.fluidbox-overlay{
     position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
     right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .9);
+    opacity: 0;
+    cursor: pointer;
+    cursor: -webkit-zoom-out;
+    cursor:    -moz-zoom-out;
     transition: all .25s ease-in-out;
 }
 
-.fluidbox-wrap {
+.fluidbox-wrap{
+    position: relative;
+    margin: 0 auto;
     background-position: center center;
     background-size: cover;
-    margin: 0 auto;
-    position: relative;
     transition: all .25s ease-in-out;
 }
 
-.fluidbox-ghost {
-    background-size: 100% 100%;
-    background-position: center center;
+.fluidbox-ghost{
     position: absolute;
+    background-position: center center;
+    background-size: 100% 100%;
+    cursor: -webkit-zoom-in;
+    cursor:    -moz-zoom-in;
     transition: all .25s ease-in-out;
-            cursor: -webkit-zoom-in;
-        cursor: -moz-zoom-in;
 }
 
-.fluidbox-closed {
-    .fluidbox-ghost {
-        -webkit-transition-property: top, left, opacity, -webkit-transform;
-        -moz-transition-property: top, left, opacity, -moz-transform;
-        -o-transition-property: top, left, opacity, -o-transform;
-        transition-property: top, left, opacity, transform;
+.fluidbox-closed{
+    .fluidbox-ghost{
         transition-delay: 0, 0, .25s, 0;
-
+        transition-property: top, left, opacity, transform;
     }
-    .fluidbox-wrap img {
-        transition-property: opacity;
+    .fluidbox-wrap img{
         transition-delay: .25s;
         transition-duration: 0s;
+        transition-property: opacity;
     }
 }
-.fluidbox-opened {
-    .fluidbox-ghost {
+.fluidbox-opened{
+    .fluidbox-ghost{
         cursor: -webkit-zoom-out;
-        cursor: -moz-zoom-out;
+        cursor:    -moz-zoom-out;
     }
 }
