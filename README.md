@@ -1,4 +1,4 @@
-Saga [![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![](http://img.shields.io/github/issues/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/issues) [![Project Status](http://saga.gustavlindqvist.se/content/images/2015/01/Saga.png)](https://stillmaintained.com/Reedyn/Saga)
+Saga [![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![](http://img.shields.io/github/issues/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/issues) [![Project Status](http://saga.gustavlindqvist.se/content/images/2015/01/Saga.png)](https://stillmaintained.com/Reedyn/Saga) [![Gitter Support Chat](https://img.shields.io/badge/Gitter-Support_chat-green.svg?style=flat-square)](//gitter.im/Reedyn/Saga)
 ====
 
 ![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)
@@ -8,6 +8,10 @@ Saga [![Latest Github release](https://img.shields.io/github/release/Reedyn/Saga
 ## What is being worked on?
 
 An [overview of issues can be found over at waffle.io](https://waffle.io/Reedyn/Saga)
+
+## Need support or just want to say something?
+
+Hop in to [our chatroom](//gitter.im/Reedyn/Saga) and ask the developers directly.
 
 ## Useful information
 
