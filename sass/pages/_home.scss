@@ -1,0 +1,25 @@
+.home-template .header:not(.cover-image){
+    position: relative;
+    height: 60px;
+    background: #FFFFFF;
+    color: $grey;
+    .header-background{
+        background: rgba(0,0,0,0);
+    }
+    .blog-content{
+        position: absolute;
+        box-sizing: border-box;
+        padding: 0 20px;
+        width: 100%;
+        .blog-title{
+            margin: 0;
+            letter-spacing: 0;
+            font-size: 14px;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.blog-data{
+    @extend %data;
+}

@@ -1,0 +1,201 @@
+h1, h2, h3, h4{
+    margin: {
+        top: 30px;
+        bottom: 10px;
+    }
+    font-weight: bold;
+    font-family: $font-heading;
+    line-height: 1.2;
+
+    @include respond-to(tiny){
+        margin: {
+            top: 40px;
+            bottom: 10px;
+        }
+    }
+    a{
+        border: 0;
+    }
+}
+
+h1{
+    letter-spacing: -2px;
+    font-size: 35px;
+    font-size: 3.5rem;
+
+    @include respond-to(tiny){
+        font-size: 40px;
+        font-size: 4rem;
+    }
+    @include respond-to(small){
+        font-size: 50px;
+        font-size: 5rem;
+    }
+    @include respond-to(medium){
+        font-size: 60px;
+        font-size: 6rem;
+    }
+}
+h2{
+    font-size: 35px;
+    font-size: 3.5rem;
+}
+
+h3{
+    font-size: 25px;
+    font-size: 2.5rem;
+}
+h4{
+    font-weight: 700;
+    font-size: 15px;
+    font-size: 1.5rem;
+}
+
+a{
+    border-bottom: 1px solid rgba(0,0,0,.3);
+    color: $black;
+    text-decoration: none;
+    transition: all .2s;
+    &:hover{
+        border-color: $black;
+        color: $black;
+    }
+}
+
+p, blockquote, figure, canvas, iframe, form{
+    margin: {
+        bottom: 20px;
+    }
+}
+
+.note{
+    padding: 10px;
+    background: darken($white, 10%);
+}
+
+mark{
+    padding: 2px;
+    background-color: #FDFFB6;
+    box-shadow: #FDFFB6 0 0 5px;
+}
+
+sup{
+    vertical-align: super;
+    font-size: 13px;
+    font-size: 1.3rem;
+}
+
+blockquote{
+    padding-left: 20px;
+    border-left: 4px solid darken($white, 10%);
+    font-family: "Noto Serif", serif;
+    img{
+        margin: 20px 0 !important;
+        width: 100% !important;
+    }
+}
+
+q{
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: 125%;
+    font-family: "Noto Serif", serif;
+
+    @include respond-to(small){
+        margin-top: 40px;
+        margin-bottom: 40px;
+        margin-left: auto;
+        margin-left: calc(0% - 20px);
+        max-width: 100%;
+        max-width: calc(100% + 40px);
+        width: 100%;
+        width: calc(100% + 40px);
+    }
+}
+
+cite{
+    display: block;
+    color: darken($white, 20%);
+    text-transform: capitalize;
+    font-style: normal;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: $font;
+    a{
+        border: none;
+        color: inherit;
+    }
+    &:before{
+        content: "\2014 \2009";
+    }
+}
+ul, ol{
+    margin: {
+        top: 10px;
+        bottom: 20px;
+        left: 20px;
+    }
+    li{
+        margin: 0;
+    }
+}
+
+ul{
+    list-style: square;
+    ul, ol{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
+}
+
+ol{
+    margin-left: 25px;
+    list-style: decimal;
+    ul, ol{
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: 20px;
+    }
+}
+
+em{
+    font-style: italic;
+}
+
+strong{
+    font-weight: bold;
+}
+
+code{
+    padding: 3px 6px;
+    background: #F1F1F1;
+    color: $black;
+    font-size: 15px;
+    font-size: 1.5rem;
+    font-family: $font-monospace;
+}
+
+pre{
+    margin: {
+        top: 30px;
+        right: 20px;
+        bottom: 10px;
+        left: 20px;
+    }
+    word-wrap: break-word;
+    code{
+        padding: 0;
+        background: none;
+        font-size: 15px;
+        font-size: 1.5rem;
+        font-family: $font-monospace;
+    }
+}
+
+hr{
+    height: 4px;
+    border: 0;
+    background: darken($white, 10%);
+}
