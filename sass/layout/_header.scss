@@ -1,134 +1,150 @@
-.header{
-    overflow: hidden;
-    max-height: 100vh;
-    background-color: #333333;
-    background-position: center;
-    background-size: cover;
-    .header-background{
+.header {
+    background: black;
+    color: rgba(white, .7);
+    a {
+        color: white;
+    }
+    &.home {
+        background: white;
+        color: rgba(black, .7);
+        a {
+            color: black;
+        }
+    }
+    &.cover-image {
+        position: relative;
+        background: black;
+        background-position: center;
+        background-size: cover;
+        color: rgba(white, .7);
+        color: white;
+        a {
+            color: white;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(black, .7);
+        }
+    }
+
+    .header--top {
+        position: relative;
+        z-index: 10;
         display: flex;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.7);
-    }
-    a{
-        border: 0;
-        color: $grey;
-        &:hover{
-            color: $black;
-        }
-    }
+        flex-direction: row;
+        overflow: hidden;
+        max-height: 60px;
+        font-size: 14px;
+        font-size: 1.4rem;
+        line-height: 60px;
 
-    .header-content{
-        margin: auto;
-        padding: 60px 20px 20px 20px;
-        width: $wrapper-width;
-        color: $white;
-        h1{
-            margin: {
-                right: 0;
-                bottom: 20px;
-                left: 0;
-            };
-            font-weight: 400;
-            cursor: default;
-            animation-delay: .5s;
-        }
-    }
-    .blog-content{
-        .blog-title{
+        justify-content: space-between;
+        a.blog-title {
             float: left;
-            margin: 0;
-            border: 0;
-            color: $white;
-            color: $grey;
-            letter-spacing: 0;
-            font-weight: 700;
-            font-size: 14px;
-            font-size: 1.4rem;
-            line-height: 60px;
-            &:hover{
-                color: $black;
+            padding-left: 20px;
+            height: 60px;
+            font-weight: 600;
+            img.blog-logo {
+                margin: 15px 0;
+                padding: 0;
+                width: auto;
+                height: 30px;
             }
         }
-        .blog-description{
+
+        .blog-description {
             display: none;
-            float: left;
-            margin-left: 10px;
-            color: darken($white, 20%);
-            font-size: 14px;
-            font-size: 1.4rem;
-            line-height: 60px;
-            cursor: default;
+            margin-left: 5px;
 
-            @include respond-to(small){
-                display: block;
+            @include respond-to(small) {
+                display: inline;
             }
         }
-        nav.links{
+
+        nav.blog-navigation {
             float: right;
-            line-height: 60px;
-            cursor: default;
-            ul{
+            ul.nav {
                 margin: 0;
-                list-style: none;
-                cursor: default;
-                li{
+                li {
                     display: inline-block;
-                    cursor: default;
                 }
             }
         }
     }
-}
 
-.header.cover-image{
-    position: relative;
-
-    @include respond-to(tiny){
+    .hero {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 60px);
         height: 500px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(small){
-        height: 600px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(huge){
-        height: 700px;
-        background-position: center;
-        background-size: cover;
-    }
-    .blog-content{
-        position: absolute;
-        box-sizing: border-box;
-        padding: 0 20px;
-        width: 100%;
-        .blog-title{
-            margin: 0;
-            color: $white;
-            color: white;
-            letter-spacing: 0;
-            font-size: 14px;
-            font-size: 1.4rem;
-            &:hover{
-                color: white;
+
+        @include respond-to(small) {
+            height: 600px;
+        }
+        @include respond-to(medium) {
+            height: 700px;
+        }
+        @include respond-to(large) {
+            height: 700px;
+        }
+
+        .hero-content {
+            margin: auto;
+            max-width: $wrapper-width;
+            width: calc(100% - 40px);
+            color: rgba(white,.7);
+            p {
+                margin-top: 1rem;
+                margin-bottom: 1rem;
             }
-        }
-        .links a{
-            color: white;
-            &:hover{
+            h1 {
+                margin-top: 0;
                 color: white;
+                img {
+                    max-width: 400px;
+                    width: 100%;
+                }
             }
-        }
-        .blog-description{
-            display: none;
-        }
-    }
-    a{
-        color: $grey;
-        &:hover{
-            color: white;
+            a {
+                color: rgba(white,.7);
+                text-decoration: dotted;
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .post--tags {
+                display: block;
+                overflow: auto;
+                margin-top: 2rem;
+                width: 100%;
+                font-size: 12px;
+                font-size: 1.2rem;
+                a {
+                    display: inline-block;
+                    float: left;
+                    margin-right: 3px;
+                    margin-bottom: 3px;
+                    padding: 6px;
+                    border: 1px solid rgba(255,255,255,.6);
+                    background: transparent;
+                    color: rgba(255,255,255,.6);
+                    text-transform: uppercase;
+                    line-height: 1;
+                    &:hover {
+                        background: white;
+                        color: black !important;
+                    }
+                }
+            }
         }
     }
 }

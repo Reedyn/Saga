@@ -1,44 +1,62 @@
-/* jshint node: true */
-var gulp = require('gulp'),
-    browsersync = require('browser-sync'),
-    reload = browsersync.reload;
+/* eslint-env: node */
+
+let gulp = require('gulp'),
+    browsersync = require('browser-sync').create(),
+    reload = browsersync.reload,
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-clean-css'),
+    rename = require('gulp-rename'),
+    zip = require('gulp-zip'),
+    sassGlob = require('gulp-sass-glob'),
     csscomb = require('gulp-csscomb'),
-    minifycss = require('gulp-clean-css');
-    rename = require('gulp-rename');
+    plumber = require('gulp-plumber');
 
-gulp.task('styles', function() {
+gulp.task('styles', function () {
+    //noinspection JSCheckFunctionSignatures
     gulp.src(['sass/main.scss'])
-    .pipe(sourcemaps.init())
-    .pipe(rename({
-        basename: 'style'
-    }))
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(minifycss())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets/css/'))
-    .pipe(reload({stream: true}));
+        .pipe(plumber())
+        .pipe(sourcemaps.init({largeFile: true}))
+        .pipe(rename({
+            basename: 'style'
+        }))
+        .pipe(sassGlob())
+        .pipe(sass())
+        .pipe(autoprefixer({ grid: true }))
+        .pipe(csscomb())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(minifycss())
+        .pipe(sourcemaps.write())
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(reload({stream: true}));
 });
 
-gulp.task('serve', ['styles'], function() {  
-    browsersync({
+gulp.task('serve', ['styles'], function () {
+    browsersync.init({
         logPrefix: "Saga for Ghost",
         port: 3000
     });
-    
+
+    //noinspection JSCheckFunctionSignatures
     gulp.watch('sass/**/*.scss', ['styles']);
-    gulp.watch('**/*/*.hbs').on('change', reload);
+    //noinspection JSCheckFunctionSignatures
+    gulp.watch(['./*.hbs', './partials/*.hbs']).on('change', reload);
+    //noinspection JSCheckFunctionSignatures
     gulp.watch('assets/**/*.js').on('change', reload);
-    
 });
 
-gulp.task('tidy', function() {
-    gulp.src(['sass/*.scss'])
-        .pipe(csscomb());
-    
+gulp.task('create-package', ['styles'], function () {
+    let pjson = require('./package.json'),
+        version = pjson.version;
+    gulp.src(['assets', '*.hbs', 'partials/*.hbs', 'package.json', 'LICENSE'])
+        .pipe(zip('Saga-v' + version + '.zip'))
+        .pipe(gulp.dest('./')
+        );
 });
-          
+
 gulp.task('default', ['serve']);
