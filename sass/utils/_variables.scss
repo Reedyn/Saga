@@ -1,0 +1,23 @@
+/* VARIABLES
+---------------
+Setting up the variables. Default fonts, colors, widths and breakpoints.
+--------------- */
+
+$font: "Noto Sans", Helvetica, "Helvetica Neue", Arial, sans-serif;
+$font-heading: $font;
+$font-monospace: "Inconsolata", Consolas, "Droid Sans Mono", "Courier New";
+$black: #000000;
+$white: #FFFFFF;
+$transparent-grey: rgba(0,0,0,.8);
+$dark-grey: lighten($black, 25%);
+$grey: lighten($black, 50%);
+$light-grey: darken($white, 25%);
+$breakpoints: (
+    "huge": (min-width: 1400px),
+    "large": (min-width: 1000px),
+    "medium": (min-width: 800px),
+    "small": (min-width: 550px),
+    "tiny": (min-width: 400px),
+);
+$wrapper-width: 600px;
+$gutter: 20px;

@@ -57,7 +57,7 @@ function gallery(){
  * FULL WIDTH IMAGES *
  *********************/
 
-if($("#main").hasClass("content")){
+if($("#main article").hasClass("post", "page")){
     $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() { 
         function fullImage(){
             $('img[src$="#full"]:only-child').each(function() {
@@ -75,19 +75,20 @@ if($("#main").hasClass("content")){
  * LIGHTBOX *
  ************/
 
-if($("#main").hasClass("content")){
+function lightBox(){
+    $('.content a').filter(function() {
+        return $(this).attr('href').match(/\.(jpeg|jpg|png|gif)/i);
+    }).fluidbox({
+            closeTrigger: [
+                { selector: '#fluidbox-overlay', event: 'click'         },
+                { selector: 'window',            event: 'resize scroll' }
+            ]
+    });
+}
+
+if($(".post-template, .page-template")){
     $.getScript(siteurl+"/assets/js/helper/jquery.fluidbox.min.js", function() {
         $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
-            function lightBox(){
-                $('.content a').filter(function() {
-                    return $(this).attr('href').match(/\.(jpeg|jpg|png|gif)/i);
-                }).fluidbox({
-                        closeTrigger: [
-                            { selector: '#fluidbox-overlay', event: 'click'         },
-                            { selector: 'window',            event: 'resize scroll' }
-                        ]
-                });
-            }
             $("#main").imagesLoaded(lightBox);
         });
     });
@@ -109,7 +110,7 @@ $(window).resize(function(){
  ********/
 
 var $masonry;
-if($("#main").hasClass("archive")){
+if($("#feed").length > 0){
     $.getScript(siteurl+"/assets/js/helper/masonry.pkgd.min.js", function() {
         $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
             $("#main").imagesLoaded(function(){
@@ -134,7 +135,7 @@ if($("#main").hasClass("archive")){
  * LOAD MORE POSTS *
  *******************/
 
-if($("#main").hasClass("archive")){
+if($("#feed").length > 0){
     $(document).ready(function($) {
 
         // The number of the next page to load (/page/x/).

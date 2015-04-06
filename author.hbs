@@ -1,9 +1,8 @@
 {{!< default}}
-<header id="header" class="animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
+<header id="header" class="header animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span class="blog-description">{{@blog.description}}</span>
         {{> links}}
     </section>
     <section class="header-content">
@@ -16,6 +15,6 @@
     </section>
     </div>
 </header>
-<main id="main" class="archive">
+<main id="main" class="main">
     {{> loop}}
 </main>
