@@ -11,7 +11,7 @@ An [overview of issues can be found over at waffle.io](https://waffle.io/Reedyn/
 
 ## Need support or just want to say something?
 
-Hop in to [our chatroom](//gitter.im/Reedyn/Saga) and ask the developers directly.
+Hop in to [our chatroom](//gitter.im/Reedyn/Saga) and ask the developers directly or send a message to [@reedyn on the official Ghost Slack](https://ghost.slack.com).
 
 ## Useful information
 
