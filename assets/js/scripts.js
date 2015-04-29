@@ -9,7 +9,7 @@ var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is 
 
 if($("code").length !== 0){
     $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
-        hljs.initHighlightingOnLoad();
+        hljs.initHighlighting();
     });
 }
 
