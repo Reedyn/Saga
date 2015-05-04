@@ -1,0 +1,25 @@
+.post{
+    margin: 0 auto;
+    max-width: $wrapper-width;
+    animation-delay: 1.25s;
+
+    @include respond-to(small){
+    }
+    .post-content{
+        > *:first-child{
+            margin-top: 0;
+        }
+        > *:last-child{
+            margin-bottom: 0;
+        }
+    }
+}
+
+.post-data{
+    @extend %data;
+}
+
+.post-template .main{
+    padding: 40px 20px;
+    background: #FFFFFF;
+}

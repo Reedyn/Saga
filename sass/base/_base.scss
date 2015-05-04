@@ -1,0 +1,22 @@
+html{
+    max-height: 100%;
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body{
+    overflow-y: scroll;
+    min-height: 100%;
+    height: 100%;
+    background: darken($white, 5%);
+    color: $transparent-grey;
+    font-size: 14px;
+    font-size: 1.4rem;
+    font-family: $font;
+    line-height: 1.8;
+
+    @include respond-to(tiny){
+        font-size: 18px;
+        font-size: 1.8rem;
+    }
+}
