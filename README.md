@@ -13,6 +13,10 @@ An [overview of issues can be found over at waffle.io](https://waffle.io/Reedyn/
 
 Hop in to [our chatroom](//gitter.im/Reedyn/Saga) and ask the developers directly or send a message to [@reedyn on the official Ghost Slack](https://ghost.slack.com).
 
+## Supports all major browsers!
+
+This theme is tested in all major browsers and operating systems thanks to the support and sponsoring from [BrowserStack](https://www.browserstack.com) ♥
+
 ## Useful information
 
 ### Quotations
