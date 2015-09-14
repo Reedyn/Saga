@@ -9,7 +9,7 @@ var siteurl = $('#site-url').attr("href"); // Get url for blog (in case site is 
 
 if($("code").length !== 0){
     $.getScript(siteurl+"/assets/js/helper/highlight.min.js", function() { 
-        hljs.initHighlightingOnLoad();
+        hljs.initHighlighting();
     });
 }
 
@@ -113,8 +113,9 @@ if($("#main").hasClass("archive")){
     $.getScript(siteurl+"/assets/js/helper/masonry.pkgd.min.js", function() {
         $.getScript(siteurl+"/assets/js/helper/imagesloaded.pkgd.min.js", function() {
             $("#main").imagesLoaded(function(){
+                var columnWidth = ".post:not(.featured)" != 0 ? '.post' : '.post:not(.featured)';
                 $masonry = $('.feed').masonry({
-                    columnWidth: '.post:not(.featured)',
+                    columnWidth: columnWidth,
                     itemSelector: '.post',
                     gutter: 20
                 });

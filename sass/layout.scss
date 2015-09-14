@@ -42,7 +42,7 @@ body {
             color: $white;
         }
         
-        .post-data, .tag-data {
+        .post-data, .tag-data, .author-data {
             color: $grey;
             @include font-size(14);
             a {
@@ -55,18 +55,18 @@ body {
             > span {
                 display: block;
             }
-            .date {
+            .date, .location {
                 -webkit-animation-delay: .75s;
                 animation-delay: .75s;
             }
-            .tags {
+            .tags, .website {
                 -webkit-animation-delay: 1s;
                 animation-delay: 1s;
                 i {
                     font-size: 85%;
                 }
             }
-            .author {
+            .author, .bio {
                 -webkit-animation-delay: 1.25s;
                 animation-delay: 1.25s;
             }

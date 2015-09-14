@@ -13,7 +13,6 @@ h1, h2, h3, h4 {
 
 h1, .blog-title {
     @include font-size(35);
-    //font-weight: 300;
     letter-spacing: -2px;
 }
 h2 {
@@ -81,11 +80,15 @@ q {
 
 cite {
     display: block;
-    color: darken($white, 10%);
+    color: darken($white, 20%);
     font-family: $font;
     font-style: normal;
     @include font-size(14);
     text-transform: capitalize;
+    a {
+        color: inherit;
+        border: none;
+    }
     &:before {
         content: "\2014 \2009";
     }
@@ -130,9 +133,7 @@ strong {
 
 .gallery {
     width: 100%;
-    //width: calc(100% + 40px);
     margin-left: -5px;
-    //margin-left: calc(0% - 25px);
     padding: 5px;
     a {
         border: 0;
@@ -265,20 +266,26 @@ hr {
         margin-left: -160px;
         margin-right: 2em;
         float: left;
-        q, &q {
+        q {
             text-align: right;
             margin: 0px;
             width: initial;
         }
-        
-        &blockquote {
-            text-align: right;
-            border-left: 0px;
-            border-left: 4px solid darken($white, 10%);
-            padding-right: 20px;
-            padding-left: 0px;
-        }
     }
+    
+    blockquote.alignleft {
+        text-align: right;
+        border-left: 0px;
+        border-right: 4px solid darken($white, 10%);
+        padding-right: 20px;
+        padding-left: 0px;
+    }
+    
+    q.alignleft {
+        text-align: right;
+        margin-top: 0;
+    }
+
     .alignright {
         margin-right: -160px;
         margin-left: 2em;
@@ -288,6 +295,10 @@ hr {
             margin: 0px;
             width: initial;
         }
+    }
+    q.alignright{
+        text-align: left;
+        margin: 0px;
     }
 }
 @media screen and (min-width: $site-width) {
