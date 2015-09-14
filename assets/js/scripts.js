@@ -13,7 +13,7 @@
 
         initialize: function(){
             // Get url for blog (in case site is run under a sub-domain)
-            this.siteurl = $('#site-url').attr("href");
+            this.siteurl = $('#site-url').attr('href');
             this.$main = $('#main');
 
             this.highlightCode();
@@ -27,7 +27,7 @@
         },
 
         highlightCode: function(){
-            if($("code").length === 0){
+            if($('code').length === 0){
                 return;
             }
 
@@ -44,14 +44,15 @@
         },
 
         gallery: function(){
-            if( $('p a:not(:only-child) img').closest('p').length === 0 && $('p img:not(:only-child)').closest('p').length !== 0){
+            if( $('p a:not(:only-child) img').closest('p').length === 0 
+                && $('p img:not(:only-child)').closest('p').length !== 0){
                 return;
             }
 
             this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js').then(function() {
                 $('p a:not(:only-child) img').closest('p').addClass('gallery');
                 $('p img:not(:only-child)').closest('p').addClass('gallery');
-                $(".gallery").imagesLoaded($.proxy(this.onGallery, this));
+                $('.gallery').imagesLoaded($.proxy(this.onGallery, this));
                 $(window).resize($.proxy(this.onGallery, this));
             });
         },
@@ -74,22 +75,23 @@
         },
 
         fullWidthImages: function(){
-            if(!this.$main.hasClass("content")){
+            if(!this.$main.hasClass('content')){
                 return;
             }
 
-            this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js').then($.proxy(function() {
+            this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js')
+            .then($.proxy(function() {
                 this.$main.imagesLoaded($.proxy(this.onFullWidthImages, this));
                 $(window).resize($.proxy(this.onFullWidthImages, this));
             }, this));
         },
 
         onFullWidthImages: function(){
-            $('img[src$="#full"]:only-child').each(function() {
+            $("img[src$='#full']:only-child").each(function() {
                 var $t = $(this);
-                $t.addClass("full-loaded");
-                $t.closest("p").css("min-height", $t.height());
-                $t.closest("p").addClass("full-image-container");
+                $t.addClass('full-loaded');
+                $t.closest('p').css('min-height', $t.height());
+                $t.closest('p').addClass('full-image-container');
             });
         },
 
@@ -119,7 +121,9 @@
 
         stickyFooter: function(){
             var resize = $.proxy(function(){
-                this.$main.css("min-height", $(window).height() - $("#header").height() - $("#footer").height());
+                this.$main.css('min-height', 
+                    $(window).height() - $('#header').height() - $('#footer').height()
+                );
             }, this);
 
             $(window).load(resize);
@@ -147,10 +151,10 @@
             });
 
             $('.post').each(function(){
-                $(this).css("opacity", "1.0");
+                $(this).css('opacity', '1.0');
             });
             $('#loadmore').each(function(){
-                $(this).css("opacity", "1.0");
+                $(this).css('opacity', '1.0');
             });
         },
 
@@ -160,19 +164,25 @@
             }
 
             // The number of the next page to load (/page/x/).
-            this.numbers = $(".page-number").text().match(/[-+]?[0-9]*\.?[0-9]+/g);
+            this.numbers = $('.page-number').text().match(/[-+]?[0-9]*\.?[0-9]+/g);
             this.pageNum = parseInt(this.numbers[0], 10);
             // The maximum number of pages the current query can return.
             this.max = parseInt(this.numbers[1], 10);
             // The link of the next page of posts.
-            this.nextLink = $(".older-posts").attr('href');
+            this.nextLink = $('.older-posts').attr('href');
             /**
              * Replace the traditional navigation with our own,
              * but only if there is at least one page of new posts to load.
              */
             if(this.pageNum < this.max) {
-                // Insert the "More Posts" link.
-                $('#feed').append('<div id="loadmore" style="opacity: 0;"><a class="btn">Load more <i class="fa fa-plus-circle"></i></a></div>');
+                // Insert the 'More Posts' link.
+                var html = [
+                    "<div id='loadmore' style='opacity: 0;'>",
+                    "<a class='btn'>Load more <i class='fa fa-plus-circle'></i></a>",
+                    "</div>"
+                ];
+
+                $('#feed').append(html.join(''));
 
                 // Remove the traditional navigation.
                 $('.pagination').remove();
@@ -192,26 +202,26 @@
             if(this.pageNum < this.max) {
 
                 // Show that we're working.
-                $(this).html('<i class="fa fa-spinner fa-spin"></i>');
+                $(this).html("<i class='fa fa-spinner fa-spin'></i>");
 
                 // Grab data from next page
                 $.get(this.nextLink, function(data){ 
                     // Append all posts to #content
-                    var posts = $(data).find(".post");
+                    var posts = $(data).find('.post');
                     $.each(posts,function(){
-                        $(this).css("opacity", 0);
+                        $(this).css('opacity', 0);
                     });
                     $masonry.append(posts);
                     // Change nextLink to next page
-                    $("#feed").imagesLoaded(function(){
+                    $('#feed').imagesLoaded(function(){
                         this.pageNum++;
                         this.nextLink = this.nextLink.substring(0, this.nextLink.indexOf('page/'));
-                        this.nextLink += "page/"+(this.pageNum+1);
+                        this.nextLink += 'page/'+(this.pageNum+1);
 
                         // Remove button if last page else move the button to end of #content
                         if(this.pageNum < this.max) {
                             $('#loadmore').insertAfter($('#feed .post:last'));
-                            $('#loadmore a').html('Load more <i class="fa fa-plus-circle"></i>');
+                            $('#loadmore a').html("Load more <i class='fa fa-plus-circle'></i>");
                         } else {
                             $('#loadmore').remove();
                         }
