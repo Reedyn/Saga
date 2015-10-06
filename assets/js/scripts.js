@@ -45,7 +45,7 @@
 
         gallery: function(){
             if( $('p a:not(:only-child) img').closest('p').length === 0 
-                && $('p img:not(:only-child)').closest('p').length !== 0){
+                && $('p img:not(:only-child)').closest('p').length === 0){
                 return;
             }
 
