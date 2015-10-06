@@ -49,12 +49,12 @@
                 return;
             }
 
-            this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js').then(function() {
+            this.getScript('/assets/js/helper/imagesloaded.pkgd.min.js').then($.proxy(function() {
                 $('p a:not(:only-child) img').closest('p').addClass('gallery');
                 $('p img:not(:only-child)').closest('p').addClass('gallery');
                 $('.gallery').imagesLoaded($.proxy(this.onGallery, this));
                 $(window).resize($.proxy(this.onGallery, this));
-            });
+            }, this));
         },
 
         onGallery: function(){
