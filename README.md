@@ -7,11 +7,11 @@ Saga [![Project Status](http://saga.gustavlindqvist.se/content/images/2015/01/Sa
 
 ## What is being worked on?
 
-An [overview of issues can be found over at waffle.io](https://waffle.io/Reedyn/Saga)
+An [overview of issues can be seen using Zenhub](https://zenhub.io).
 
 ## Need support or just want to say something?
 
-Hop in to [our chatroom](//gitter.im/Reedyn/Saga) and ask the developers directly or send a message to [@reedyn on the official Ghost Slack](https://ghost.slack.com).
+Hop in to [our chatroom](https://discord.gg/0hxZF1kYaZ4M65fL) and ask the developers directly.
 
 ## Supports all major browsers!
 
