@@ -2,5 +2,15 @@
   "name": "Saga",
   "version": "1.3.0",
   "description": "Tell your story! A Ghost theme designed for photoblogging",
-  "author": "Gustav Lindqvist"
+  "author": "Gustav Lindqvist",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-csscomb": "^3.0.7",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0"
+  }
 }
