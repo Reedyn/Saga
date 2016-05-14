@@ -6,7 +6,7 @@ var gulp = require('gulp'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('gulp-autoprefixer'),
     csscomb = require('gulp-csscomb'),
-    minifycss = require('gulp-minify-css');
+    minifycss = require('gulp-clean-css');
     rename = require('gulp-rename');
 
 gulp.task('styles', function() {
@@ -30,7 +30,7 @@ gulp.task('serve', ['styles'], function() {
     });
     
     gulp.watch('sass/**/*.scss', ['styles']);
-    gulp.watch('*.hbs').on('change', reload);
+    gulp.watch('**/*/*.hbs').on('change', reload);
     gulp.watch('assets/**/*.js').on('change', reload);
     
 });
