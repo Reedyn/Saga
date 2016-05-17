@@ -4,7 +4,7 @@ Import all relevant files
 --------------- */
 
 @import "vendors/_compass-reset";
-@import "vendors/_hljs";
+@import "vendors/_highlightjs";
 @import "vendors/_fluidbox";
 
 @import "utils/_variables";
@@ -12,17 +12,17 @@ Import all relevant files
 @import "utils/_animations";
 @import "utils/_helpers";
 
-@import "components/_buttons";
-@import "components/_cover-image";
+@import "components/_menu";
 @import "components/_feed";
-@import "components/_meta";
+@import "components/_feed--meta";
+@import "components/_content--media";
+@import "components/_content--media--gallery";
+@import "components/_content--media--lightbox";
+@import "components/_content--media--videos";
 
 @import "base/_base";
 @import "base/_typography";
-@import "base/_formatting";
-@import "base/_media";
 
-@import "layout/_navigation";
 @import "layout/_grid";
 @import "layout/_header";
 @import "layout/_footer";
