@@ -13,12 +13,21 @@ $dark-grey: lighten($black, 25%);
 $grey: lighten($black, 50%);
 $light-grey: darken($white, 25%);
 
+
+$huge: 1400px;
+$large: 1000px;
+$medium: 800px;
+$small: 550px;
+$tiny: 400px;
+
 $breakpoints: (
-    "huge": (min-width: 1400px),
-    "large": (min-width: 1000px),
-    "medium": (min-width: 800px),
-    "small": (min-width: 550px),
-    "tiny": (min-width: 400px),
+    "huge": (min-width: $huge),
+    "large": (min-width: $large),
+    "medium": (min-width: $medium),
+    "small": (min-width: $small),
+    "tiny": (min-width: $tiny),
 );
+
+
 $wrapper-width: 600px;
 $gutter: 20px;

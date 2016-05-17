@@ -1,4 +1,4 @@
-.main{
+.main {
     position: relative;
     z-index: 1;
     box-sizing: border-box;
@@ -8,7 +8,7 @@
     }
 }
 
-.tag-template, .archive-template, .home.template{
+.tag-template, .archive-template, .home-template{
     .main{
         overflow: hidden;
         background: #F2F2F2;

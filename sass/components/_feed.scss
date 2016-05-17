@@ -1,14 +1,14 @@
-.feed{
+.feed {
     position: relative;
     padding-bottom: 40px;
-    #loadmore{
+    #loadmore {
         position: absolute;
         bottom: 5px;
         left: 50%;
         text-transform: uppercase;
         transform: translateX(-50%);
         animation-delay: 1s;;
-        a{
+        a {
             padding: 10px 20px;
             border: 0;
             background: white;
@@ -16,14 +16,14 @@
             font-size: 14px;
             font-size: 1.4rem;
             cursor: pointer;
-            &:hover{
+            &:hover {
                 border: 0;
                 background: #D5D5D5;
                 text-decoration: none;
             }
         }
     }
-    .post{
+    .post {
         float: left;
         box-sizing: border-box;
         margin: inherit;
@@ -32,70 +32,68 @@
         width: 100%;
         background: $white;
         transition: opacity 1s;
-
         $post-padding: 20px;
-        @include respond-to(small){
-            width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");
-            &.featured{
-                width: 100%;
-            }
-        }
-        @include respond-to(large){
-            width: unquote("calc( ( 100% - ("+$gutter+"* 2) ) / 3 )");
-            &.featured{
-                width: unquote("calc( ( 100% - ("+$gutter+" * 2) ) * ( 2 / 3 ) + "+$gutter+")");
-            }
-        }
-        @include respond-to(huge){
-            width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 4 )");
-            &.featured{
-                width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 2 + "+$gutter+")");
-            }
-        }
-        a{
+
+        a {
             border-color: rgba(0,0,0,0);
-            &:hover{
+            &:hover {
                 border-color: $black;
             }
         }
-        .post-image{
+        .post-image {
             position: relative;
             display: block;
             overflow: hidden;
             border: 0;
             background: black;
             color: $white;
-            img{
+            img {
                 margin: 0;
                 max-width: 100%;
                 width: 100%;
-                opacity: .5;
+                opacity: 1;
                 transition: all ease .5s;
             }
-            .post-title{
+
+            &:after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 60%,rgba(0,0,0,.75) 100%);
+                content: "";
+                transition: .5s opacity ease;
+            }
+
+            .post-title {
                 position: absolute;
                 bottom: 0;
                 left: 0;
+                z-index: 2;
                 font-weight: 400;
                 transition: transform ease .5s;
             }
-            &:hover{
-                img{
-                    opacity: 1;
+            &:hover {
+                img {
                     transform: scale(1.1);
                 }
-                .post-title{
+                .post-title {
                     transform: translateY(110%);
+                }
+                &:after {
+                    opacity: 0;
                 }
             }
         }
-        .post-title{
+        .post-title {
             margin: 0 $post-padding $post-padding $post-padding;
             padding-top: $post-padding;
             font-size: 25px;
             font-size: 2.5rem;
         }
-        .post-content{
+        .post-content {
             box-sizing: border-box;
             margin: $post-padding - 5 $post-padding;
             color: darken($white, 40%);
@@ -103,7 +101,7 @@
             font-size: 1.4rem;
             cursor: default;
         }
-        .post-meta{
+        .post-meta {
             box-sizing: border-box;
             padding: 15px $post-padding;
             width: 100%;
@@ -113,16 +111,16 @@
             font-size: 14px;
             font-size: 1.4rem;
             cursor: default;
-            a{
+            a {
                 color: inherit;
-                &:hover{
+                &:hover {
                     color: black;
                 }
             }
-            .date{
+            .date {
                 margin-right: $post-padding / 2;
             }
-            .author{
+            .author {
                 margin-right: $post-padding / 2;
             }
         }
