@@ -56,7 +56,7 @@ There are currently 4 different sizes an image can be displayed at:
 
 ![Full image](//url-to-image.jpeg#full)
 ```
- 
+
 ### There's also a fourth way to display images, and that's using a gallery (or collage)
 That is done in the following manner *(grouping together the images without an empty linebreak)*:
 ```html
