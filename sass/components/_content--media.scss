@@ -1,21 +1,21 @@
-.gallery{
+.gallery {
     margin-left: -5px;
     padding: 5px;
     width: 100%;
-    a{
+    a {
         border: 0;
-        &:hover{
+        &:hover {
             border-color: transparent;
         }
     }
-    img{
+    img {
         margin: auto;
         width: auto;
         height: auto;
     }
 }
 
-img{
+img {
     display: block;
     margin-left: auto;
     margin-left: calc(1px - 21px);
@@ -25,7 +25,7 @@ img{
     width: calc(100% + 40px);
     height: auto;
 
-    @include respond-to(small){
+    @include respond-to(small) {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: auto;
@@ -33,13 +33,13 @@ img{
         max-width: 100%;
         max-width: calc(100% + 40px);
     }
-    @include respond-to(medium){
+    @include respond-to(medium) {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: -5%;
         max-width: 110%;
         width: 110%;
-        &[src$="#large"], [src$="#full"]{
+        &[src$="#large"], [src$="#full"] {
             margin-top: 40px;
             margin-bottom: 40px;
             margin-left: -10%;
@@ -47,34 +47,34 @@ img{
             width: 120%;
         }
     }
-    @include respond-to(huge){
+    @include respond-to(huge) {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: -25%;
         max-width: 150%;
         width: 150%;
-        &[src$="#large"], [src$="#full"]{
+        &[src$="#large"], [src$="#full"] {
             margin-left: -50%;
             max-width: 200%;
             width: 200%;
         }
     }
-    &[src$="#small"]{
-        margin: {
+    &[src$="#small"] {
+        margin:  {
             right: auto;
             left: auto;
         }
         max-width: 100%;
         width: auto;
     }
-    &[src$="#large"]{
+    &[src$="#large"] {
         margin-left: calc(0% - 20px);
         max-width: calc(100% + 40px);
     }
-    &:not(.full-loaded){
+    &:not(.full-loaded) {
         transition: all .2s;
     }
-    &.full-loaded{
+    &.full-loaded {
         position: absolute!important;
         left: 0!important;
         margin: 0!important;
@@ -83,43 +83,43 @@ img{
     }
 }
 
-.wide{
-    @include respond-to(medium){
+.wide {
+    @include respond-to(medium) {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: -10%;
         max-width: 120%;
         width: 120%;
     }
-    @include respond-to(huge){
+    @include respond-to(huge) {
         margin-left: -50%;
         max-width: 200%;
         width: 200%;
     }
 }
-.gallery{
-    @include respond-to(medium){
+.gallery {
+    @include respond-to(medium) {
         margin-top: 40px;
         margin-bottom: 40px;
         margin-left: calc(0 - 10% - 5px);
         max-width: 120%;
         width: 120%;
     }
-    @include respond-to(huge){
+    @include respond-to(huge) {
         margin-left: calc(0 - 50% - 5px);
         max-width: 200%;
         width: 200%;
     }
 }
 
-.full-image-container{
-    @include respond-to(medium){
+.full-image-container {
+    @include respond-to(medium) {
         margin: 40px 0;
     }
 }
 
-.fluid-width-video-wrapper{
-    margin: {
+.fluid-width-video-wrapper {
+    margin:  {
         top: 30px;
         bottom: 10px;
     }
