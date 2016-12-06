@@ -11,11 +11,7 @@ An [overview of issues can be seen using Zenhub](https://zenhub.io).
 
 ## Need support or just want to say something?
 
-Hop in to [our chatroom](https://discord.gg/0hxZF1kYaZ4M65fL) and ask the developers directly.
-
-## Supports all major browsers!
-
-This theme is tested in all major browsers and operating systems thanks to the support and sponsoring from [BrowserStack](https://www.browserstack.com) ♥
+Hop in to [our chatroom](https://discord.gg/0hxZF1kYaZ4M65fL) and ask the developer directly.
 
 ## Useful information
 
