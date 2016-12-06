@@ -1,13 +1,17 @@
 {{!< default}}
-<header id="header">
+<header id="header" class="header{{#if @blog.cover}} cover-image" style="background-image: url({{@blog.cover}});{{/if}}">
     <div class="header-background">
     <section class="blog-content animated fadeIn">
         <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
         <span class="blog-description">{{@blog.description}}</span>
         {{> links}}
     </section>
+    <section class="header-content">
+        <h1 class="post-title animated fadeInUp">{{@blog.title}}</h1>
+        <span class="blog-data"><span class="description animated fadeInUp">{{@blog.description}}</span></span>
+    </section>
     </div>
 </header>
-<main id="main" class="archive">
+<main id="main" class="main archive">
     {{>loop}}
 </main>

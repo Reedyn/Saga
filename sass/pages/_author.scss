@@ -1,0 +1,52 @@
+.author-template .header{
+    position: relative;
+    background: $black;
+    color: $grey;
+
+    @include respond-to(tiny){
+        height: 500px;
+        background-position: center;
+        background-size: cover;
+    }
+    @include respond-to(small){
+        height: 600px;
+        background-position: center;
+        background-size: cover;
+    }
+    @include respond-to(huge){
+        height: 700px;
+        background-position: center;
+        background-size: cover;
+    }
+    a{
+        color: $grey;
+        &:hover{
+            color: white;
+        }
+    }
+    .header-background{
+        background: rgba(0,0,0,.7);
+    }
+    .blog-content{
+        position: absolute;
+        box-sizing: border-box;
+        padding: 0 20px;
+        width: 100%;
+        .blog-title{
+            margin: 0;
+            color: $white;
+            letter-spacing: 0;
+            font-size: 14px;
+            font-size: 1.4rem;
+            &:hover{
+                color: white;
+            }
+        }
+        .links a{
+            color: $white;
+            &:hover{
+                color: white;
+            }
+        }
+    }
+}

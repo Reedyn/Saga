@@ -1,0 +1,52 @@
+.hidden{
+    display: none;
+}
+
+@include respond-to(large){
+    .alignleft, .alignright{
+        margin-bottom: 1em;
+        padding-bottom: 0;
+        width: 300px;
+        img{
+            margin: 0;
+        }
+    }
+    .alignleft{
+        float: left;
+        margin-right: 2em;
+        margin-left: -160px;
+        q{
+            margin: 0;
+            width: initial;
+            text-align: right;
+        }
+    }
+
+    blockquote.alignleft{
+        padding-right: 20px;
+        padding-left: 0;
+        border-right: 4px solid darken($white, 10%);
+        border-left: 0;
+        text-align: right;
+    }
+
+    q.alignleft{
+        margin-top: 0;
+        text-align: right;
+    }
+
+    .alignright{
+        float: right;
+        margin-right: -160px;
+        margin-left: 2em;
+        q, &q{
+            margin: 0;
+            width: initial;
+            text-align: left;
+        }
+    }
+    q.alignright{
+        margin: 0;
+        text-align: left;
+    }
+}

@@ -1,17 +1,20 @@
 {{!< default}}
-<header id="header" class="animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
+<header id="header" class="header animated fadeIn"{{#if author.cover}} style="background-image: url({{author.cover}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span class="blog-description">{{@blog.description}}</span>
         {{> links}}
     </section>
     <section class="header-content">
         <h1 class="post-title animated fadeInUp">{{author.name}}</h1>
-        <span class="post-data animated fadeInUp">{{author.bio}}</span>
+        <span class="author-data">
+            {{#if author.location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i> {{author.location}}</span>{{/if}}
+            {{#if author.website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
+            {{#if author.bio}}<span class="bio animated fadeInUp">{{author.bio}}</span>{{/if}}
+        </span>
     </section>
     </div>
 </header>
-<main id="main" class="archive">
+<main id="main" class="main">
     {{> loop}}
 </main>

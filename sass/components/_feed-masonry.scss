@@ -1,0 +1,27 @@
+.main.masonry {
+    margin: 0;
+    max-width: 100%;
+    .feed {
+        .post {
+            @include respond-to(small) {
+                width: unquote("calc( 50% -  ( "+$gutter+"  / 2) )");
+                &.featured {
+                    width: 100%;
+                }
+            }
+            @include respond-to(large) {
+                width: unquote("calc( ( 100% - ("+$gutter+"* 2) ) / 3 )");
+                &.featured {
+                    width: unquote("calc( ( 100% - ("+$gutter+" * 2) ) * ( 2 / 3 ) + "+$gutter+")");
+                }
+            }
+            @include respond-to(huge) {
+                width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 4 )");
+                &.featured {
+                    width: unquote("calc( ( 100% - ("+$gutter+" * 3) ) / 2 + "+$gutter+")");
+                }
+            }
+        }
+    }
+}
+
