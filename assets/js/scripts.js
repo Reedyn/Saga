@@ -205,18 +205,19 @@
                 $(this).html("<i class='fa fa-spinner fa-spin'></i>");
 
                 // Grab data from next page
-                $.get(this.nextLink, function(data){ 
+                var self = this;
+                $.get(self.nextLink, function(data){ 
                     // Append all posts to #content
                     var posts = $(data).find('.post');
                     $.each(posts,function(){
-                        $(this).css('opacity', 0);
+                        $(self).css('opacity', 0);
                     });
                     $masonry.append(posts);
                     // Change nextLink to next page
                     $('#feed').imagesLoaded(function(){
-                        this.pageNum++;
-                        this.nextLink = this.nextLink.substring(0, this.nextLink.indexOf('page/'));
-                        this.nextLink += 'page/'+(this.pageNum+1);
+                        self.pageNum++;
+                        self.nextLink = self.nextLink.substring(0, self.nextLink.indexOf('page/'));
+                        self.nextLink += 'page/'+(self.pageNum+1);
 
                         // Remove button if last page else move the button to end of #content
                         if(this.pageNum < this.max) {
