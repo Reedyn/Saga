@@ -1,4 +1,4 @@
-Saga [![Project Status](http://saga.gustavlindqvist.se/content/images/2015/01/Saga.png)](https://stillmaintained.com/Reedyn/Saga) [![](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![Total downloads](https://img.shields.io/github/downloads/Reedyn/Saga/total.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![](https://gustavlindqvist.ghost.io/content/images/2016/02/Zenhub.svg)](https://www.zenhub.io/) [![Discord Support Chat](http://gustavlindqvist.se/content/images/2016/02/Discord-Button-2.svg)](https://discord.gg/0hxZF1kYaZ4M65fL)
+Saga [![](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![Total downloads](https://img.shields.io/github/downloads/Reedyn/Saga/total.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest)
 ====
 
 [![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)](http://saga.gustavlindqvist.se/2014/09/22/welcome-to-ghost/)
