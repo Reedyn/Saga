@@ -52,7 +52,7 @@ There are currently 4 different sizes an image can be displayed at:
 
 ![Full image](//url-to-image.jpeg#full)
 ```
- 
+
 ### There's also a fourth way to display images, and that's using a gallery (or collage)
 That is done in the following manner *(grouping together the images without an empty linebreak)*:
 ```html
@@ -72,4 +72,10 @@ Saga supports lightbox for your images. The example above modified to work with 
 [![Gallery 3](//url-to-image.jpeg)](//url-to-larger-image.jpeg)
 [![Gallery 4](//url-to-image.jpeg)](//url-to-larger-image.jpeg)
 [![Gallery 5](//url-to-image.jpeg)](//url-to-larger-image.jpeg)
+```
+
+### For developers
+Install compass to compile CSS
+```
+gem install compass
 ```
