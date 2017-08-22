@@ -11,4 +11,4 @@ An [overview of issues can be seen using Zenhub](https://zenhub.io).
 
 ## Need support or just want to say something?
 
-Hop in to [our chatroom](https://discord.gg/0hxZF1kYaZ4M65fL) and ask the developer directly.
+Hop in to [our chatroom](https://discord.gg/aY34ACs) and ask the developer directly.
