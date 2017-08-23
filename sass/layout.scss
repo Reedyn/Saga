@@ -111,7 +111,7 @@ body {
     }
 }
 
-.home-template, .archive-template {
+.home-template, .paged {
     #header {
         height: 60px;
         position: relative;
@@ -414,7 +414,7 @@ body {
             background-position: center;
         }
     }
-    .home-template, .archive-template {
+    .home-template, .paged {
         #header {
             .blog-content {
                 .blog-description {
