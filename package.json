@@ -1,21 +1,22 @@
 {
-    "name": "Saga",
-    "version": "2.0.0-RC1",
-    "description": "Tell your story! A Ghost theme designed for photoblogging",
-    "author": "Gustav Lindqvist",
-    "repository": "https://github.com/Reedyn/Saga",
-    "license": "MIT",
-    "devDependencies": {
-        "browser-sync": "^2.12.8",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^3.1.0",
-        "gulp-clean-css": "^2.0.7",
-        "gulp-csscomb": "^3.0.7",
-        "gulp-plumber": "^1.1.0",
-        "gulp-rename": "^1.2.2",
-        "gulp-sass": "^2.3.1",
-        "gulp-sass-glob": "^1.0.8",
-        "gulp-sourcemaps": "^1.6.0",
-        "gulp-zip": "^4.0.0"
-    }
+  "name": "Saga",
+  "version": "2.0.0-RC1",
+  "description": "Tell your story! A Ghost theme designed for photoblogging",
+  "author": "Gustav Lindqvist",
+  "repository": "https://github.com/Reedyn/Saga",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "csscomb": "^4.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.7",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.1",
+    "gulp-sass-glob": "^1.0.8",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-zip": "^4.0.0"
+  }
 }

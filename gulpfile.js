@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     zip = require('gulp-zip'),
     sassGlob = require('gulp-sass-glob'),
+    csscomb = require('gulp-csscomb'),
     plumber = require('gulp-plumber');
 
 gulp.task('styles', function() {
@@ -22,9 +23,12 @@ gulp.task('styles', function() {
         .pipe(sassGlob())
         .pipe(sass())
         .pipe(autoprefixer())
-        .pipe(gulp.dest('assets/css/'))
+        .pipe(csscomb())
+        .pipe(sourcemaps.init())
         .pipe(sourcemaps.write())
+        .pipe(gulp.dest('assets/css/'))
         .pipe(minifycss())
+        .pipe(sourcemaps.write())
         .pipe(rename({
             extname: '.min.css'
         }))
