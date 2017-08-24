@@ -8,6 +8,7 @@ var gulp = require('gulp'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
+    zip = require('gulp-zip'),
     plumber = require('gulp-plumber');
 
 gulp.task('styles', function() {
@@ -35,6 +36,15 @@ gulp.task('serve', ['styles'], function() {
     gulp.watch('**/**/*.hbs').on('change', reload);
     gulp.watch('assets/**/*.js').on('change', reload);
     
+});
+
+gulp.task('create-package', ['styles'], function(){
+    var pjson = require('./package.json'),
+        version = pjson.version;
+    gulp.src(['assets/**/*', '**/*.hbs', 'package.json', 'LICENSE'])
+        .pipe(zip('Saga-v'+version+'.zip'))
+        .pipe(gulp.dest('./')
+    );
 });
           
 gulp.task('default', ['serve']);
