@@ -9,21 +9,27 @@ var gulp = require('gulp'),
     minifycss = require('gulp-clean-css'),
     rename = require('gulp-rename'),
     zip = require('gulp-zip'),
+    sassGlob = require('gulp-sass-glob'),
     plumber = require('gulp-plumber');
 
 gulp.task('styles', function() {
     gulp.src(['sass/main.scss'])
-    .pipe(plumber())
-    .pipe(sourcemaps.init())
-    .pipe(rename({
-        basename: 'style'
-    }))
-    .pipe(sass())
-    .pipe(autoprefixer())
-    .pipe(minifycss())
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('assets/css/'))
-    .pipe(reload({stream: true}));
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(rename({
+            basename: 'style'
+        }))
+        .pipe(sassGlob())
+        .pipe(sass())
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(sourcemaps.write())
+        .pipe(minifycss())
+        .pipe(rename({
+            extname: '.min.css'
+        }))
+        .pipe(gulp.dest('assets/css/'))
+        .pipe(reload({stream: true}));
 });
 
 gulp.task('serve', ['styles'], function() {  
@@ -33,7 +39,7 @@ gulp.task('serve', ['styles'], function() {
     });
     
     gulp.watch('sass/**/*.scss', ['styles']);
-    gulp.watch('**/**/*.hbs').on('change', reload);
+    gulp.watch(['./*.hbs','./partials/*.hbs']).on('change', reload);
     gulp.watch('assets/**/*.js').on('change', reload);
     
 });
