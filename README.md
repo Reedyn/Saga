@@ -1,4 +1,4 @@
-Saga [![](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest) [![Total downloads](https://img.shields.io/github/downloads/Reedyn/Saga/total.svg?style=flat-square)](http://github.com/Reedyn/Saga/releases/latest)
+Saga [![](https://img.shields.io/github/release/Reedyn/Saga.svg?style=flat-square&label=Current%20release)](http://github.com/Reedyn/Saga/releases/latest) [![Latest downloads](https://img.shields.io/github/downloads/Reedyn/Saga/latest/total.svg?style=flat-square&label=Downloads&colorB=007ec6)](http://github.com/Reedyn/Saga/releases/latest) [![Total downloads](https://img.shields.io/github/downloads/Reedyn/Saga/total.svg?style=flat-square&label=Downloads)](http://github.com/Reedyn/Saga/releases/latest)
 ====
 
 [![](http://saga.gustavlindqvist.se/content/images/2014/10/Saga-showcase.png)](http://saga.gustavlindqvist.se/2014/09/22/welcome-to-ghost/)
