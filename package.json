@@ -1,8 +1,14 @@
 {
-  "name": "Saga",
+  "name": "saga",
+  "author": {
+    "name": "Gustav Lindqvist",
+    "email": "gustav@lindqvist.io"
+  },
+  "config": {
+    "posts_per_page": 10
+  },
   "version": "2.0.0-RC1",
   "description": "Tell your story! A Ghost theme designed for photoblogging",
-  "author": "Gustav Lindqvist",
   "repository": "https://github.com/Reedyn/Saga",
   "license": "MIT",
   "devDependencies": {
@@ -16,7 +22,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.1",
     "gulp-sass-glob": "^1.0.8",
-    "gulp-sourcemaps": "^1.6.0",
+    "gulp-sourcemaps": "^2.6.3",
     "gulp-zip": "^4.0.0"
   }
 }

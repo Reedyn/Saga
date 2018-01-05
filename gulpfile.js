@@ -1,7 +1,7 @@
 /* jshint node: true */
 
 var gulp = require('gulp'),
-    browsersync = require('browser-sync'),
+    browsersync = require('browser-sync').create(),
     reload = browsersync.reload,
     sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
@@ -16,7 +16,7 @@ var gulp = require('gulp'),
 gulp.task('styles', function() {
     gulp.src(['sass/main.scss'])
         .pipe(plumber())
-        .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init({largeFile: true}))
         .pipe(rename({
             basename: 'style'
         }))
@@ -24,7 +24,6 @@ gulp.task('styles', function() {
         .pipe(sass())
         .pipe(autoprefixer())
         .pipe(csscomb())
-        .pipe(sourcemaps.init())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('assets/css/'))
         .pipe(minifycss())
@@ -37,7 +36,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('serve', ['styles'], function() {  
-    browsersync({
+    browsersync.init({
         logPrefix: "Saga for Ghost",
         port: 3000
     });
@@ -45,7 +44,6 @@ gulp.task('serve', ['styles'], function() {
     gulp.watch('sass/**/*.scss', ['styles']);
     gulp.watch(['./*.hbs','./partials/*.hbs']).on('change', reload);
     gulp.watch('assets/**/*.js').on('change', reload);
-    
 });
 
 gulp.task('create-package', ['styles'], function(){
