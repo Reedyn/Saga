@@ -1,33 +1,18 @@
-.main {
-    position: relative;
-    z-index: 1;
-    box-sizing: border-box;
-    padding: 20px;
-
-    @include respond-to(small){
-    }
-}
-
-.tag-template, .archive-template, .home-template{
-    .main{
-        overflow: hidden;
-        background: #F2F2F2;
-    }
-    .pagination{
-        position: relative;
-        display: none;
-        margin: 20px auto;
-        max-width: 600px;
-        text-align: center;
-        font-size: 13px;
-        font-size: 1.3rem;
-        .newer-posts{
-            position: absolute;
-            left: 0;
-        }
-        .older-posts{
-            position: absolute;
-            right: 0;
+.grid {
+    display: flex;
+    flex-direction: column;
+    @include respond-to(medium){
+        display: grid;
+        grid-gap: $gutter;
+        grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
+        grid-auto-flow: dense;
+        .post {
+            &.featured {
+                grid-column: span 2;
+            }
+            &.tag-hash-tall {
+                grid-row-end: span 2;
+            }
         }
     }
 }

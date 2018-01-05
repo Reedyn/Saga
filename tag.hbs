@@ -1,5 +1,5 @@
 {{!< default}}
-<header id="header" class="header {{#if tag.image}}cover-image {{/if}}animated fadeIn"{{#if tag.image}} style="background-image: url({{tag.image}})"{{/if}}>
+<header id="header" class="header {{#if tag.image_image}}cover-image {{/if}}animated fadeIn"{{#if tag.image_image}} style="background-image: url({{tag.image_image}})"{{/if}}>
     <div class="header-background">
     <section class="blog-content">
         <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
@@ -13,5 +13,5 @@
     </div>
 </header>
 <main id="main" class="main">
-    {{> loop}}
+    {{> feed}}
 </main>
