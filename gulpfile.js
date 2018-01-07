@@ -22,7 +22,7 @@ gulp.task('styles', function() {
         }))
         .pipe(sassGlob())
         .pipe(sass())
-        .pipe(autoprefixer())
+        .pipe(autoprefixer({ grid: true }))
         .pipe(csscomb())
         .pipe(sourcemaps.write())
         .pipe(gulp.dest('assets/css/'))
@@ -49,7 +49,7 @@ gulp.task('serve', ['styles'], function() {
 gulp.task('create-package', ['styles'], function(){
     var pjson = require('./package.json'),
         version = pjson.version;
-    gulp.src(['assets/**/*', '**/*.hbs', 'package.json', 'LICENSE'])
+    gulp.src(['assets', '*.hbs', 'partials/*.hbs', 'package.json', 'LICENSE'])
         .pipe(zip('Saga-v'+version+'.zip'))
         .pipe(gulp.dest('./')
     );

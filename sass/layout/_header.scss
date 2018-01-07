@@ -1,134 +1,103 @@
-.header{
+.header {
     overflow: hidden;
-    max-height: 100vh;
-    background-color: #333333;
+    max-height: 90vh; // Always show a little bit of the post
+    background-color: black;
     background-position: center;
     background-size: cover;
-    .header-background{
-        display: flex;
-        width: 100%;
-        height: 100%;
-        background: rgba(0,0,0,.7);
-    }
-    a{
-        border: 0;
-        color: $grey;
-        &:hover{
-            color: $black;
-        }
-    }
 
-    .header-content{
-        margin: auto;
-        padding: 60px 20px 20px 20px;
-        width: $wrapper-width;
-        color: $white;
-        h1{
-            margin: {
-                right: 0;
-                bottom: 20px;
-                left: 0;
-            };
-            font-weight: 400;
-            cursor: default;
-            animation-delay: .5s;
-        }
-    }
-    .blog-content{
-        .blog-title{
+    .blog-header--navigation {
+        overflow: hidden;
+        padding: 0 20px;
+        height: 60px;
+        line-height: 60px;
+        .blog-title {
             float: left;
-            margin: 0;
-            border: 0;
-            color: $white;
-            color: $grey;
-            letter-spacing: 0;
+            height: 100%;
+            font-size: 15px;
+            font-size: 1.5rem;
             font-weight: 700;
-            font-size: 14px;
-            font-size: 1.4rem;
-            line-height: 60px;
-            &:hover{
-                color: $black;
-            }
-        }
-        .blog-description{
-            display: none;
-            float: left;
-            margin-left: 10px;
-            color: darken($white, 20%);
-            font-size: 14px;
-            font-size: 1.4rem;
-            line-height: 60px;
-            cursor: default;
-
-            @include respond-to(small){
-                display: block;
-            }
-        }
-        nav.links{
-            float: right;
-            line-height: 60px;
-            cursor: default;
-            ul{
+            &.blog-logo img {
                 margin: 0;
+                padding: 13px;
+                padding-left: 0;
+                width: auto;
+                height: 100%;
+            }
+        }
+        .blog-menu {
+            float: right;
+            ul.nav {
                 list-style: none;
-                cursor: default;
-                li{
+                font-size:12px;
+                font-size: 1.2rem;
+                text-transform: uppercase;
+                margin: 0;
+                li {
                     display: inline-block;
-                    cursor: default;
+                    margin-right: 15px;
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+                    a {
+                        border-bottom: 1px solid transparent;
+                        &:hover {
+                            border-color: black;
+                        }
+                    }
                 }
             }
         }
     }
-}
 
-.header.cover-image{
-    position: relative;
+    .blog-header--content {
+        position: relative;
+        z-index: 20;
+    }
 
-    @include respond-to(tiny){
-        height: 500px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(small){
-        height: 600px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(huge){
-        height: 700px;
-        background-position: center;
-        background-size: cover;
-    }
-    .blog-content{
-        position: absolute;
-        box-sizing: border-box;
-        padding: 0 20px;
-        width: 100%;
-        .blog-title{
-            margin: 0;
-            color: $white;
-            color: white;
-            letter-spacing: 0;
-            font-size: 14px;
-            font-size: 1.4rem;
-            &:hover{
-                color: white;
-            }
+    // Cover image specific code
+    &.cover-image {
+        position: relative;
+        height: 200px;
+
+        @include respond-to(tiny) {
+            height: 300px;
+            background-position: center;
+            background-size: cover;
         }
-        .links a{
-            color: white;
-            &:hover{
-                color: white;
-            }
+        @include respond-to(small) {
+            height: 400px;
+            background-position: center;
+            background-size: cover;
         }
-        .blog-description{
-            display: none;
+        @include respond-to(medium) {
+            height: 500px;
+            background-position: center;
+            background-size: cover;
         }
-    }
-    a{
-        color: $grey;
-        &:hover{
-            color: white;
+        @include respond-to(huge) {
+            height: 600px;
+            background-position: center;
+            background-size: cover;
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.7);
+            z-index: 10;
+        }
+
+        // Position header navigation at the very top
+        .blog-header--navigation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 20;
         }
     }
 }
