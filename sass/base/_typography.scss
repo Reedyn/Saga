@@ -3,7 +3,7 @@ h1, h2, h3, h4{
         top: 30px;
         bottom: 10px;
     }
-    font-weight: bold;
+    font-weight: 500;
     font-family: $font-heading;
     line-height: 1.2;
 
@@ -37,13 +37,25 @@ h1{
     }
 }
 h2{
-    font-size: 35px;
-    font-size: 3.5rem;
+        font-size: 25px;
+        font-size: 2.5rem;
+    @include respond-to(small){
+        font-size: 30px;
+        font-size: 3rem;
+    }
+    @include respond-to(medium){
+        font-size: 35px;
+        font-size: 3.5rem;
+    }
 }
 
 h3{
-    font-size: 25px;
-    font-size: 2.5rem;
+    font-size: 20px;
+    font-size: 2rem;
+    @include respond-to(medium){
+        font-size: 25px;
+        font-size: 2.5rem;
+    }
 }
 h4{
     font-weight: 700;
@@ -51,8 +63,9 @@ h4{
     font-size: 1.5rem;
 }
 
+//TODO: Move this to post content only
 a{
-    border-bottom: 1px solid rgba(0,0,0,.3);
+    //border-bottom: 1px solid rgba(0,0,0,.3);
     color: $black;
     text-decoration: none;
     transition: all .2s;

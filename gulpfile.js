@@ -13,8 +13,7 @@ let gulp = require('gulp'),
     csscomb = require('gulp-csscomb'),
     plumber = require('gulp-plumber');
 
-gulp.task('styles', function () {
-    //noinspection JSCheckFunctionSignatures
+gulp.task('styles', function() {
     gulp.src(['sass/main.scss'])
         .pipe(plumber())
         .pipe(sourcemaps.init({largeFile: true}))
@@ -36,27 +35,24 @@ gulp.task('styles', function () {
         .pipe(reload({stream: true}));
 });
 
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles'], function() {  
     browsersync.init({
         logPrefix: "Saga for Ghost",
         port: 3000
     });
-
-    //noinspection JSCheckFunctionSignatures
+    
     gulp.watch('sass/**/*.scss', ['styles']);
-    //noinspection JSCheckFunctionSignatures
-    gulp.watch(['./*.hbs', './partials/*.hbs']).on('change', reload);
-    //noinspection JSCheckFunctionSignatures
+    gulp.watch(['./*.hbs','./partials/*.hbs']).on('change', reload);
     gulp.watch('assets/**/*.js').on('change', reload);
 });
 
-gulp.task('create-package', ['styles'], function () {
-    let pjson = require('./package.json'),
+gulp.task('create-package', ['styles'], function(){
+    var pjson = require('./package.json'),
         version = pjson.version;
-    gulp.src(['assets', '*.hbs', 'partials/*.hbs', 'package.json', 'LICENSE'])
-        .pipe(zip('Saga-v' + version + '.zip'))
+    gulp.src(['assets/**/*', '**/*.hbs', 'package.json', 'LICENSE'])
+        .pipe(zip('Saga-v'+version+'.zip'))
         .pipe(gulp.dest('./')
-        );
+    );
 });
-
+          
 gulp.task('default', ['serve']);
