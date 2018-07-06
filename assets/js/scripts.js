@@ -195,7 +195,7 @@
 
         loadMorePosts: function(event){
             var $masonry = this.$masonry;
-
+               var that = this;
             event.preventDefault();
 
             // Are there more posts to load?
@@ -208,21 +208,22 @@
                 $.get(this.nextLink, function(data){ 
                     // Append all posts to #content
                     var posts = $(data).find('.post');
+
                     $.each(posts,function(){
                         $(this).css('opacity', 0);
                     });
                     $masonry.append(posts);
                     // Change nextLink to next page
                     $('#feed').imagesLoaded(function(){
-                        this.pageNum++;
+                        that.pageNum++;
                         // Prevent error on "load more" when there is only one extra page
-                        if ('nextLink' in this){
-                            this.nextLink = this.nextLink.substring(0, this.nextLink.indexOf('page/'));
-                            this.nextLink += 'page/'+(this.pageNum+1);
+                        if ('nextLink' in that){
+                            that.nextLink = that.nextLink.substring(0, that.nextLink.indexOf('page/'));
+                            that.nextLink += 'page/'+(that.pageNum+1);
                         }
 
                         // Remove button if last page else move the button to end of #content
-                        if(this.pageNum < this.max) {
+                        if(that.pageNum < that.max) {
                             $('#loadmore').insertAfter($('#feed .post:last'));
                             $('#loadmore a').html("Load more <i class='fa fa-plus-circle'></i>");
                         } else {
