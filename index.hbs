@@ -1,13 +1,16 @@
 {{!< default}}
 <header id="header" class="header{{#if @blog.cover_image}} cover-image" style="background-image: url({{@blog.cover_image}});{{/if}}">
-    <section class="blog-header--navigation animated fadeIn">
+    <section class="navigation animated fadeIn">
         {{>header-navigation}}
     </section>
-    <section class="blog-header--content">
-        <h1 class="post-title animated fadeInUp {{#if @blog.logo}}blog-logo{{/if}}">{{#if @blog.logo}}<img src="{{@blog.logo}}" alt="Blog Logo" />{{else}}{{@blog.title}}{{/if}}</h1>
-        <span class="blog-data"><span class="description animated fadeInUp">{{@blog.description}}</span></span>
+    {{#if @blog.cover_image}}
+            <section class="hero">
+        <div class="hero-content">
+            <h1 class="post-title animated fadeInUp {{#if @blog.logo}}blog-logo{{/if}}">{{#if @blog.logo}}<img src="{{@blog.logo}}" alt="Blog Logo" />{{else}}{{@blog.title}}{{/if}}</h1>
+            <span class="blog-data"><span class="description animated fadeInUp">{{@blog.description}}</span></span>
+        </div>
     </section>
-    </div>
+        {{/if}}
 </header>
 <main id="main" class="main archive">
     {{>feed}}
