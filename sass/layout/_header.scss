@@ -1,103 +1,113 @@
 .header {
-    overflow: hidden;
-    max-height: 90vh; // Always show a little bit of the post
-    background-color: black;
-    background-position: center;
-    background-size: cover;
-
-    .blog-header--navigation {
-        overflow: hidden;
-        padding: 0 20px;
-        height: 60px;
-        line-height: 60px;
-        .blog-title {
-            float: left;
-            height: 100%;
-            font-size: 15px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            &.blog-logo img {
-                margin: 0;
-                padding: 13px;
-                padding-left: 0;
-                width: auto;
-                height: 100%;
-            }
-        }
-        .blog-menu {
-            float: right;
-            ul.nav {
-                list-style: none;
-                font-size:12px;
-                font-size: 1.2rem;
-                text-transform: uppercase;
-                margin: 0;
-                li {
-                    display: inline-block;
-                    margin-right: 15px;
-                    &:last-of-type {
-                        margin-right: 0;
-                    }
-                    a {
-                        border-bottom: 1px solid transparent;
-                        &:hover {
-                            border-color: black;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .blog-header--content {
-        position: relative;
-        z-index: 20;
-    }
-
-    // Cover image specific code
+    color: white;
+    background: white;
     &.cover-image {
         position: relative;
-        height: 200px;
-
-        @include respond-to(tiny) {
-            height: 300px;
-            background-position: center;
-            background-size: cover;
-        }
-        @include respond-to(small) {
-            height: 400px;
-            background-position: center;
-            background-size: cover;
-        }
-        @include respond-to(medium) {
-            height: 500px;
-            background-position: center;
-            background-size: cover;
-        }
-        @include respond-to(huge) {
-            height: 600px;
-            background-position: center;
-            background-size: cover;
-        }
+        background-position: center;
+        background-size: cover;
         &:after {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
+            z-index: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,.7);
-            z-index: 10;
+            background: rgba(black, 0.7);
+        }
+    }
+
+    .navigation {
+        position: relative;
+        z-index: 10;
+        overflow: hidden;
+        a.blog-title {
+            color: white;
+            float: left;
+            height: 60px;
+            padding-left: 20px;
+            img.blog-logo {
+                margin: 15px 0;
+                padding: 0;
+                width: auto;
+                height: 30px;
+            }
+            line-height: 60px;
+            font-size: 14px;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
-        // Position header navigation at the very top
-        .blog-header--navigation {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 20;
+        nav.blog-menu {
+            float: right;
+            ul.nav {
+                margin: 0;
+                li {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+
+    .hero {
+        position: relative;
+        z-index: 10;
+        display: flex;
+        flex-direction: column;
+        max-height: calc(100vh - 60px);
+        height: 500px;
+        @include respond-to(small){
+            height: 600px;
+        }
+
+        @include respond-to(medium){
+            height: 700px;
+        }
+        @include respond-to(large){
+            height: 700px;
+        }
+
+        .hero-content {
+            margin: auto;
+            max-width: $wrapper-width;
+            width: calc(100% - 40px);
+            color: rgba(white,0.7);
+            .post-title {
+                color: white;
+                margin-top: 0;
+            }
+            a {
+                color: rgba(white,0.7);
+                text-decoration: dotted;
+                &:hover {
+                    color: white;
+                }
+            }
+
+            .post--tags {
+                display: block;
+                overflow: auto;
+                margin-bottom: 15px;
+                width: 100%;
+                font-size: 12px;
+                font-size: 1.2rem;
+                a {
+                    display: inline-block;
+                    float: left;
+                    margin-right: 3px;
+                    margin-bottom: 3px;
+                    padding: 6px;
+                    border: 1px solid rgba(255,255,255,.6);
+                    background: transparent;
+                    color: rgba(255,255,255,.6);
+                    text-transform: uppercase;
+                    line-height: 1;
+                    &:hover {
+                        background: white;
+                        color: black !important;
+                    }
+                }
+            }
         }
     }
 }

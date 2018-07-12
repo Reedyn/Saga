@@ -1,23 +1,27 @@
 {{!< default}}
 {{#post ~}}
-<header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
-    <div class="header-background">
-        <section class="blog-header--navigation animated fadeIn">
+    <header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
+        <section class="navigation animated fadeIn">
             {{>header-navigation}}
         </section>
-    <section class="header-content">
-        <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
-        <span class="post-data"><span class="date animated fadeInUp"><i class="fa fa-clock-o"></i> <time class="timesince date" data-timesince="{{date format='X'}}" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='DD MMMM YYYY'}}">{{date published_at timeago='true'}}</time></span>
-            {{#if tags}}<span class="tags animated fadeInUp"><i class="fa fa-tags"></i> {{tags prefix="" separator=", "}}</span>{{/if}}
-            {{#author}}<span class="author animated fadeInUp"><i class="fa fa-user"></i> <a href="{{url}}">{{name}}</a></span>{{/author}}</span>
-    </section>
-    </div>
-</header>
-<main id="main" class="main">
-    <article class="animated fadeIn {{post_class}}">
-        <section class="post-content">
-            {{content}}
+        <section class="hero post-meta">
+            <div class="hero-content">
+                <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
+                <div class="post-data">
+                    <p class="date animated fadeInUp">Posted{{#author}} by <span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} about <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='D MMMM YYYY'}}">{{date published_at timeago='true'}}</time></a></p>
+                    <p class="post--read-time">{{reading_time}}</p>
+                    {{#if tags}}
+                        <p class="post--tags animated fadeInUp"> {{tags class="tag" prefix="" separator=" "}}</p>
+                    {{/if}}
+                </div>
+            </div>
         </section>
-    </article>
-</main>
+    </header>
+    <main id="main" class="main">
+        <article class="animated fadeIn {{post_class}}">
+            <section class="content">
+                {{content}}
+            </section>
+        </article>
+    </main>
 {{~/post}}

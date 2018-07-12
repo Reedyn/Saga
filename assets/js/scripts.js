@@ -1,4 +1,9 @@
-/* global hljs, $, console */
-/* jshint browser: true */
+/* globals hljs, $, console */
+/* eslint-env: jQuery */
+/* exported Saga */
 
-var Saga = {};
+let Saga = (() => {
+    const five = null;
+
+    return five;
+})();
