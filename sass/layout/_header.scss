@@ -1,7 +1,12 @@
 .header {
-    color: white;
+    color: $light-grey;
     background: white;
     &.cover-image {
+        color: rgba(white, 0.7);
+        background: black;
+        a {
+            color: white;
+        }
         position: relative;
         background-position: center;
         background-size: cover;
@@ -15,14 +20,22 @@
             height: 100%;
             background: rgba(black, 0.7);
         }
+        color: white;
     }
 
-    .navigation {
+    .header--top {
         position: relative;
         z-index: 10;
+        max-height: 60px;
         overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        line-height: 60px;
+        font-size: 14px;
+        font-size: 1.4rem;
         a.blog-title {
-            color: white;
             float: left;
             height: 60px;
             padding-left: 20px;
@@ -32,13 +45,18 @@
                 width: auto;
                 height: 30px;
             }
-            line-height: 60px;
-            font-size: 14px;
-            font-size: 1.4rem;
             font-weight: 600;
         }
 
-        nav.blog-menu {
+        .blog-description {
+            margin-left: 5px;
+            display: none;
+            @include respond-to(small){
+                display: inline;
+            }
+        }
+
+        nav.blog-navigation {
             float: right;
             ul.nav {
                 margin: 0;
@@ -72,6 +90,10 @@
             max-width: $wrapper-width;
             width: calc(100% - 40px);
             color: rgba(white,0.7);
+            p {
+                margin-bottom: 1rem;
+                margin-top: 1rem;
+            }
             .post-title {
                 color: white;
                 margin-top: 0;
@@ -87,7 +109,7 @@
             .post--tags {
                 display: block;
                 overflow: auto;
-                margin-bottom: 15px;
+                margin-top: 2rem;
                 width: 100%;
                 font-size: 12px;
                 font-size: 1.2rem;
