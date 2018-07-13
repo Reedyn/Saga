@@ -1,0 +1,71 @@
+.header {
+    .header--top {
+        nav.blog-navigation {
+            float: right;
+            ul {
+                margin: 0;
+                margin-right: 10px;
+                li {
+                    font-size: 14px;
+                    display: inline-block;
+                    line-height: 60px;
+                    margin-right: 10px;
+                    &[class$="icon"] {
+                        .label {
+                            display: none;
+                        }
+                        margin-right: 5px;
+                        a {
+                            &:before {
+                                content: "";
+                                width: 25px;
+                                height: 25px;
+                                display: inline-block;
+                                margin-top: -5px;
+                                background-size: contain;
+                                background-color: $grey;
+                                mask-size: contain;
+                                vertical-align: middle;
+                            }
+
+                            &:hover:before {
+                                background-color: black;
+                            }
+                        }
+                    }
+                    &.nav-githubicon {
+                        a:before {
+                            mask-image: url(../images/github.svg);
+                        }
+                    }
+                    &.nav-twittericon {
+                        a:before {
+                            mask-image: url(../images/twitter.svg);
+                        }
+                    }
+                    &.nav-rssicon {
+                        a:before {
+                            mask-image: url(../images/rss.svg);
+                        }
+                    }
+                    &.nav-facebookicon {
+                        a:before {
+                            mask-image: url(../images/facebook.svg);
+                        }
+                    }
+                    &.nav-downloadicon {
+                        a:before {
+                            mask-image: url(../images/download.svg);
+                        }
+                    }
+                    &:last-of-type {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    &.cover-image .header--top nav.blog-navigation ul li[class$="icon"] a:before {
+        background-color: white;
+    }
+}
