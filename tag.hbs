@@ -1,15 +1,15 @@
 {{!< default}}
-<header id="header" class="header {{#if tag.image_image}}cover-image {{/if}}animated fadeIn"{{#if tag.image_image}} style="background-image: url({{tag.image_image}})"{{/if}}>
-    <div class="header-background">
-        <section class="blog-header--navigation animated fadeIn">
-            {{>header-navigation}}
-        </section>
-    <section class="header-content">
-        <h1 class="tag-title animated fadeInUp">{{tag.name}}</h1>
-        <span class="tag-data"><span class="tag-description animated fadeInUp">{{tag.description}}</span></span>
+<header id="header" class="header {{#if tag.feature_image}}cover-image {{/if}}animated fadeIn"{{#if tag.feature_image}} style="background-image: url({{tag.feature_image}})"{{/if}}>
+    <section class="header--top ">
+        {{>header-navigation}}
     </section>
-    </div>
+    <section class="hero post-meta">
+        <div class="hero-content">
+            <h1 class="tag-title animated fadeInUp delay-1">{{tag.name}}</h1>
+            <p class="tag-data animated fadeInUp delay-2"><span class="tag-description">{{tag.description}}</span></p>
+        </div>
+    </section>
 </header>
-<main id="main" class="main">
+<main id="main" class="main animated fadeIn delay-3">
     {{> feed}}
 </main>

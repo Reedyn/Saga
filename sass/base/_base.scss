@@ -15,7 +15,14 @@ body {
     font-family: $font;
     line-height: 1.8;
 
-    @include respond-to(tiny) {
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex: 1;
+    }
+
+    @include respond-to(tiny){
         font-size: 18px;
         font-size: 1.8rem;
     }

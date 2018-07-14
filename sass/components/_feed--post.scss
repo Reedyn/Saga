@@ -39,6 +39,10 @@
             z-index: 20;
             max-width: $medium;
         }
+
+        .post--top-content {
+            margin-bottom: 60px;
+        }
         .post--tags {
             display: block;
             overflow: auto;
@@ -50,6 +54,7 @@
                 display: inline-block;
                 float: left;
                 margin-right: 3px;
+                margin-bottom: 3px;
                 padding: 6px;
                 border: 1px solid rgba(255,255,255,.6);
                 background: transparent;
@@ -100,23 +105,21 @@
             margin: 15px 0;
             max-width: $small;
             color: rgba(255,255,255,.6);
-            font-size: 13px;
-            font-size: 1.3rem;
+            font-size: 14px;
+            font-size: 1.4rem;
         }
 
         .post--read-time {
-            font-size: 12px;
-            font-size: 1.3rem;
+            font-size: 14px;
+            font-size: 1.4rem;
             color: rgba(255,255,255,.6);
         }
 
         .post--meta {
             display: block;
-            margin-top: 15px;
             color: rgba(255,255,255,.6);
-            font-size: 15px;
-            font-size: 1.5rem;
-            line-height: 1;
+            font-size: 14px;
+            font-size: 1.4rem;
             .author {
                 color: white;
                 a {
@@ -130,8 +133,9 @@
 
         .post--bottom-content {
             position: absolute;
-            bottom: 30px;
             left: 30px;
+            bottom: 30px;
+            right: 30px;
         }
     }
 }

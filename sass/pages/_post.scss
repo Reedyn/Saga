@@ -10,11 +10,10 @@
     .post {
         margin: 0 auto;
         max-width: $wrapper-width;
-        animation-delay: 1.25s;
 
         @include respond-to(small){
         }
-        .post-content{
+        .content{
             > *:first-child{
                 margin-top: 0;
             }

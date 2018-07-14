@@ -1,41 +1,18 @@
-.tag-template .header{
-    position: relative;
-    height: 60px;
-    background: $black;
-    color: $grey;
+.tag-template .main {
+    background: #FFFFFF;
+    .tag {
+        margin: 0 auto;
+        max-width: $wrapper-width;
 
-    @include respond-to(tiny){
-        height: 500px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(small){
-        height: 600px;
-        background-position: center;
-        background-size: cover;
-    }
-    @include respond-to(huge){
-        height: 700px;
-        background-position: center;
-        background-size: cover;
-    }
-    .header-background{
-        background: rgba(0,0,0,.7);
-    }
-    .blog-content{
-        position: absolute;
-        box-sizing: border-box;
-        padding: 0 20px;
-        width: 100%;
-        .blog-title{
-            margin: 0;
-            color: $grey;
-            letter-spacing: 0;
-            font-size: 14px;
-            font-size: 1.4rem;
+        @include respond-to(small){
         }
-        .blog-description{
-            display: none;
+        .tag-content{
+            > *:first-child{
+                margin-top: 0;
+            }
+            > *:last-child{
+                margin-bottom: 0;
+            }
         }
     }
 }
