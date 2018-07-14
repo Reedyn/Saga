@@ -24,4 +24,18 @@
             </section>
         </article>
     </main>
+    {{#if primary_tag}}
+        {{#next_post in="primary_tag"}}
+            <a href="{{url}}" class="read-more hero {{#if feature_image}}cover-image {{/if}}animated fadeIn delay-5"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
+                <div class="hero-content">
+                    <p class="read-more-text">~ {{t "Read next post in {primary_tag}" primary_tag=primary_tag.name}} ~</p>
+                    <span class="post-title">{{{title}}}</span>
+                    <div class="post-data">
+                        <p class="date">{{t "Posted by"}} {{#author}}<span class="author">{{name}}</span>{{/author}} <time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></p>
+                        <p class="post--read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
+                    </div>
+                </div>
+            </a>
+        {{/next_post}}
+    {{/if}}
 {{~/post}}
