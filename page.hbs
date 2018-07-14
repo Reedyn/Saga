@@ -1,18 +1,18 @@
 {{!< default}}
 {{#post ~}}
     <header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
-        <div class="header-background">
-            <section class="blog-header--navigation animated fadeIn">
-                {{>header-navigation}}
-            </section>
-            <section class="header-content">
-                <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
-            </section>
-        </div>
+        <section class="header--top">
+            {{>header-navigation}}
+        </section>
+        <section class="hero post-meta">
+            <div class="hero-content">
+                <h1 class="page-title animated fadeInUp">{{{title}}}</h1>
+            </div>
+        </section>
     </header>
     <main id="main" class="main">
-        <article class="animated fadeIn content post {{post_class}}">
-            <section class="post-content">
+        <article class="animated fadeIn {{post_class}}">
+            <section class="content">
                 {{content}}
             </section>
         </article>

@@ -1,4 +1,4 @@
-<section id="feed" class="feed grid fadeIn animated">
+<section id="feed" class="feed grid">
     {{#foreach posts limit="10"}}
         <article class="{{post_class}}{{#if feature_image}} has-image{{/if}}"{{#if feature_image}} style="background-image: url({{img_url feature_image}}){{/if}}">
             <section class="post--top-content">
@@ -7,11 +7,11 @@
                 {{/if}}
                 <h2 class="post--title"><a href="{{url}}">{{{title}}}</a></h2>
                 <p class="post--excerpt">{{excerpt words=25}}…</p>
-                <p class="post--read-time">{{reading_time}}</p>
+                <p class="post--read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
             </section>
             <section class="post--bottom-content">
                     <span class="post--meta">
-                        <span class="date">Posted{{#author}} by <span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} about <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></span>
+                        {{#author}}<span class="date">{{t "Posted by"}} <span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></span>
                     </span>
                 </section>
         </article>

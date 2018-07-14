@@ -67,9 +67,8 @@ h4 {
 
 //TODO: Move this to post content only
 a {
-    //border-bottom: 1px solid rgba(0,0,0,.3);
-    color: $black;
     text-decoration: none;
+    color: $black;
     transition: all .2s;
     &:hover {
         border-color: $black;
@@ -80,6 +79,8 @@ a {
 p, blockquote, figure, canvas, iframe, form {
     margin:  {
         bottom: 20px;
+        left: 0;
+        right: 0;
     }
 }
 
@@ -116,7 +117,9 @@ q {
     font-style: italic;
     font-size: 125%;
     font-family: "Noto Serif", serif;
-
+    &:before, &:after {
+        display: none;
+    }
     @include respond-to(small) {
         margin-top: 40px;
         margin-bottom: 40px;

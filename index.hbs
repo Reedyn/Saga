@@ -1,17 +1,17 @@
 {{!< default}}
-<header id="header" class="header{{#if @blog.cover_image}} cover-image" style="background-image: url({{@blog.cover_image}});{{/if}}">
-    <section class="header--top animated fadeIn">
+<header id="header" class="animated fadeIn header{{#is "home"}} home{{/is}}{{#if @blog.cover_image}} cover-image" style="background-image: url({{@blog.cover_image}});{{/if}}">
+    <section class="header--top ">
         {{>header-navigation}}
     </section>
     {{#if @blog.cover_image}}
             <section class="hero">
         <div class="hero-content">
-            <h1 class="post-title animated fadeInUp {{#if @blog.logo}}blog-logo{{/if}}">{{#if @blog.logo}}<img src="{{@blog.logo}}" alt="Blog Logo" />{{else}}{{@blog.title}}{{/if}}</h1>
-            <span class="blog-data"><span class="description animated fadeInUp">{{@blog.description}}</span></span>
+            <h1 class="post-title animated fadeInUp delay-1{{#if @blog.logo}}blog-logo{{/if}}">{{#if @blog.logo}}<img src="{{@blog.logo}}" alt="Blog Logo" />{{else}}{{@blog.title}}{{/if}}</h1>
+            <p class="blog-data animated fadeInUp delay-2"><span class="description">{{@blog.description}}</span></p>
         </div>
     </section>
         {{/if}}
 </header>
-<main id="main" class="main archive">
+<main id="main" class="main archive animated fadeIn{{#if @blog.cover_image}} delay-3{{/if}}{{#unless @blog.cover_image}} delay-1{{/unless}}">
     {{>feed}}
 </main>

@@ -1,6 +1,16 @@
 .header {
-    color: $light-grey;
-    background: white;
+    color: rgba(white, 0.7);
+    background: black;
+    a {
+        color: white;
+    }
+    &.home {
+        color: rgba(black, 0.7);
+        background: white;
+        a {
+            color: black;
+        }
+    }
     &.cover-image {
         color: rgba(white, 0.7);
         background: black;
@@ -94,9 +104,13 @@
                 margin-bottom: 1rem;
                 margin-top: 1rem;
             }
-            .post-title {
+            h1 {
                 color: white;
                 margin-top: 0;
+                img {
+                    width: 100%;
+                    max-width: 400px;
+                }
             }
             a {
                 color: rgba(white,0.7);

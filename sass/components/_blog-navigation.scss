@@ -58,6 +58,31 @@
                             mask-image: url(../images/download.svg);
                         }
                     }
+                    &.nav-imageicon {
+                        a:before {
+                            mask-image: url(../images/image.svg);
+                        }
+                    }
+                    &.nav-tumblricon {
+                        a:before {
+                            mask-image: url(../images/tumblr.svg);
+                        }
+                    }
+                    &.nav-steamicon {
+                        a:before {
+                            mask-image: url(../images/steam.svg);
+                        }
+                    }
+                    &.nav-googleplusicon {
+                        a:before {
+                            mask-image: url(../images/google-plus.svg);
+                        }
+                    }
+                    &.nav-cameraicon {
+                        a:before {
+                            mask-image: url(../images/camera.svg);
+                        }
+                    }
                     &:last-of-type {
                         margin-right: 10px;
                     }

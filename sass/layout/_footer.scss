@@ -5,26 +5,43 @@
     font-size: 12px;
     font-size: 1.2rem;
     animation-delay: 1s;
+
+
     .colophon {
-        margin: 0 auto;
         padding: 50px 20px;
-        max-width: 600px;
         section {
-            margin: 10px 0;
+            margin: 0 auto;
+            max-width: $wrapper-width;
             &:first-child {
                 margin-top: 0;
             }
             &:last-child {
                 margin-bottom: 0;
             }
+
+            .ghost-logo {
+                display: inline-block;
+                height: 1.3em;
+                width: 4.2em;
+                background: #989898;
+                mask-image: url(../images/ghost-logo.svg);
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                vertical-align: text-bottom;
+                margin-left: 5px;
+                transition: 0.2s all ease;
+                &:hover {
+                    background-color: white;
+                }
+            }
         }
     }
     .bottom {
         padding: 20px 20px;
         background: rgb(26, 25, 25);
-        .attribution {
+        section {
             margin: 0 auto;
-            max-width: 600px;
+            max-width: $wrapper-width;
             a {
                 color: darken($white, 40%);
                 &:hover {
@@ -42,5 +59,15 @@
         &:hover {
             border-color: $white;
         }
+    }
+    .heart {
+        display: inline-block;
+        height: 1.3em;
+        width: 1.3em;
+        background: #ff4d4c;
+        mask-image: url(../images/heart.svg);
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        vertical-align: text-bottom;
     }
 }

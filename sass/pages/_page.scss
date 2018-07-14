@@ -1,0 +1,25 @@
+.page-template .main {
+    padding: 10px 20px;
+    @include respond-to(medium){
+        padding: 30px 20px;
+    }
+    @include respond-to(large){
+        padding: 40px 20px;
+    }
+    background: #FFFFFF;
+    .page {
+        margin: 0 auto;
+        max-width: $wrapper-width;
+
+        @include respond-to(small){
+        }
+        .content{
+            > *:first-child{
+                margin-top: 0;
+            }
+            > *:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

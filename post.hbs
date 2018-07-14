@@ -1,24 +1,24 @@
 {{!< default}}
 {{#post ~}}
     <header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
-        <section class="header--top animated fadeIn">
+        <section class="header--top">
             {{>header-navigation}}
         </section>
         <section class="hero post-meta">
             <div class="hero-content">
-                <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
+                <h1 class="post-title animated fadeInUp delay-1">{{{title}}}</h1>
                 <div class="post-data">
-                    <p class="date animated fadeInUp">Posted{{#author}} by <span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} about <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></p>
-                    <p class="post--read-time">{{reading_time}}</p>
+                    <p class="date animated fadeInUp delay-2">{{t "Posted by"}} {{#author}}<span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></p>
+                    <p class="post--read-time animated fadeInUp delay-3">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
                     {{#if tags}}
-                        <p class="post--tags animated fadeInUp"> {{tags class="tag" prefix="" separator=" "}}</p>
+                        <p class="post--tags animated fadeInUp delay-4"> {{tags class="tag" prefix="" separator=" "}}</p>
                     {{/if}}
                 </div>
             </div>
         </section>
     </header>
     <main id="main" class="main">
-        <article class="animated fadeIn {{post_class}}">
+        <article class="animated fadeIn delay-5 {{post_class}}">
             <section class="content">
                 {{content}}
             </section>
