@@ -6,26 +6,27 @@
                 margin: 0;
                 margin-right: 10px;
                 li {
-                    font-size: 14px;
                     display: inline-block;
-                    line-height: 60px;
                     margin-right: 10px;
+                    font-size: 14px;
+                    line-height: 60px;
                     &[class$="icon"] {
+                        margin-right: 5px;
                         .label {
                             display: none;
                         }
-                        margin-right: 5px;
                         a {
                             &:before {
                                 content: "";
-                                width: 25px;
-                                height: 25px;
                                 display: inline-block;
                                 margin-top: -5px;
-                                background-size: contain;
+                                width: 25px;
+                                height: 25px;
                                 background-color: $grey;
-                                mask-size: contain;
+                                background-size: contain;
                                 vertical-align: middle;
+
+                                mask-size: contain;
                             }
 
                             &:hover:before {

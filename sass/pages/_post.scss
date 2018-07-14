@@ -1,23 +1,24 @@
-.post-template .main{
+.post-template .main {
     padding: 10px 20px;
-    @include respond-to(medium){
+    background: #FFFFFF;
+
+    @include respond-to(medium) {
         padding: 30px 20px;
     }
-    @include respond-to(large){
+    @include respond-to(large) {
         padding: 40px 20px;
     }
-    background: #FFFFFF;
     .post {
         margin: 0 auto;
         max-width: $wrapper-width;
 
-        @include respond-to(small){
+        @include respond-to(small) {
         }
-        .content{
-            > *:first-child{
+        .content {
+            > *:first-child {
                 margin-top: 0;
             }
-            > *:last-child{
+            > *:last-child {
                 margin-bottom: 0;
             }
         }

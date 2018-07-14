@@ -13,7 +13,6 @@ $dark-grey: #202020;
 $grey: lighten($black, 50%);
 $light-grey: darken($white, 25%);
 
-
 $huge: 1400px;
 $large: 1000px;
 $medium: 800px;
@@ -27,7 +26,5 @@ $breakpoints: (
     "small": (min-width: $small),
     "tiny": (min-width: $tiny),
 );
-
-
 $wrapper-width: 600px;
 $gutter: 20px;

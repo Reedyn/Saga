@@ -37,3 +37,6 @@ Thumbs.db
 .sass-cache
 *.psd
 .DS_Store
+.csscomb
+
+.csscomb.json

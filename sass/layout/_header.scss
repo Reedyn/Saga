@@ -1,25 +1,26 @@
 .header {
-    color: rgba(white, 0.7);
     background: black;
+    color: rgba(white, .7);
     a {
         color: white;
     }
     &.home {
-        color: rgba(black, 0.7);
         background: white;
+        color: rgba(black, .7);
         a {
             color: black;
         }
     }
     &.cover-image {
-        color: rgba(white, 0.7);
+        position: relative;
         background: black;
+        background-position: center;
+        background-size: cover;
+        color: rgba(white, .7);
+        color: white;
         a {
             color: white;
         }
-        position: relative;
-        background-position: center;
-        background-size: cover;
         &:after {
             content: "";
             position: absolute;
@@ -28,40 +29,40 @@
             z-index: 0;
             width: 100%;
             height: 100%;
-            background: rgba(black, 0.7);
+            background: rgba(black, .7);
         }
-        color: white;
     }
 
     .header--top {
         position: relative;
         z-index: 10;
-        max-height: 60px;
-        overflow: hidden;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-
-        line-height: 60px;
+        overflow: hidden;
+        max-height: 60px;
         font-size: 14px;
         font-size: 1.4rem;
+        line-height: 60px;
+
+        justify-content: space-between;
         a.blog-title {
             float: left;
-            height: 60px;
             padding-left: 20px;
+            height: 60px;
+            font-weight: 600;
             img.blog-logo {
                 margin: 15px 0;
                 padding: 0;
                 width: auto;
                 height: 30px;
             }
-            font-weight: 600;
         }
 
         .blog-description {
-            margin-left: 5px;
             display: none;
-            @include respond-to(small){
+            margin-left: 5px;
+
+            @include respond-to(small) {
                 display: inline;
             }
         }
@@ -84,14 +85,14 @@
         flex-direction: column;
         max-height: calc(100vh - 60px);
         height: 500px;
-        @include respond-to(small){
+
+        @include respond-to(small) {
             height: 600px;
         }
-
-        @include respond-to(medium){
+        @include respond-to(medium) {
             height: 700px;
         }
-        @include respond-to(large){
+        @include respond-to(large) {
             height: 700px;
         }
 
@@ -99,21 +100,21 @@
             margin: auto;
             max-width: $wrapper-width;
             width: calc(100% - 40px);
-            color: rgba(white,0.7);
+            color: rgba(white,.7);
             p {
-                margin-bottom: 1rem;
                 margin-top: 1rem;
+                margin-bottom: 1rem;
             }
             h1 {
-                color: white;
                 margin-top: 0;
+                color: white;
                 img {
-                    width: 100%;
                     max-width: 400px;
+                    width: 100%;
                 }
             }
             a {
-                color: rgba(white,0.7);
+                color: rgba(white,.7);
                 text-decoration: dotted;
                 &:hover {
                     color: white;

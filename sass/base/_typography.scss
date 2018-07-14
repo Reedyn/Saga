@@ -67,8 +67,8 @@ h4 {
 
 //TODO: Move this to post content only
 a {
-    text-decoration: none;
     color: $black;
+    text-decoration: none;
     transition: all .2s;
     &:hover {
         border-color: $black;
@@ -78,9 +78,9 @@ a {
 
 p, blockquote, figure, canvas, iframe, form {
     margin:  {
+        right: 0;
         bottom: 20px;
         left: 0;
-        right: 0;
     }
 }
 
@@ -117,9 +117,7 @@ q {
     font-style: italic;
     font-size: 125%;
     font-family: "Noto Serif", serif;
-    &:before, &:after {
-        display: none;
-    }
+
     @include respond-to(small) {
         margin-top: 40px;
         margin-bottom: 40px;
@@ -129,6 +127,9 @@ q {
         max-width: calc(100% + 40px);
         width: 100%;
         width: calc(100% + 40px);
+    }
+    &:before, &:after {
+        display: none;
     }
 }
 
@@ -149,12 +150,12 @@ cite {
     }
 }
 ul, ol {
-    padding: 0;
     margin:  {
         top: 10px;
         bottom: 20px;
         left: 20px;
     }
+    padding: 0;
     li {
         margin: 0;
     }

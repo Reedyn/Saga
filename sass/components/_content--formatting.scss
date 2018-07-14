@@ -1,7 +1,7 @@
 .content {
     a {
-        text-decoration: underline;
         color: $black;
+        text-decoration: underline;
         transition: all .2s;
         &:hover {
             border-color: $black;
