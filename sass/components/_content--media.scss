@@ -12,12 +12,14 @@
         position: relative;
         right: 50%;
         left: 50%;
+        margin-top: 20px;
         margin-right: -50vw;
         margin-bottom: 20px;
         margin-left: -50vw;
         width: 100vw;
 
         @include respond-to(small) {
+            margin-top: 40px;
             margin-bottom: 40px;
         }
         img.kg-image {
