@@ -1,17 +1,17 @@
 /* eslint-env: node */
 
-let gulp = require('gulp'),
-    browsersync = require('browser-sync').create(),
-    reload = browsersync.reload,
-    sass = require('gulp-sass'),
-    sourcemaps = require('gulp-sourcemaps'),
-    autoprefixer = require('gulp-autoprefixer'),
-    minifycss = require('gulp-clean-css'),
-    rename = require('gulp-rename'),
-    zip = require('gulp-zip'),
-    sassGlob = require('gulp-sass-glob'),
-    csscomb = require('gulp-csscomb'),
-    plumber = require('gulp-plumber');
+let gulp = require('gulp');
+let browsersync = require('browser-sync').create();
+let reload = browsersync.reload;
+let sass = require('gulp-sass');
+let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('gulp-autoprefixer');
+let minifycss = require('gulp-clean-css');
+let rename = require('gulp-rename');
+let zip = require('gulp-zip');
+let sassGlob = require('gulp-sass-glob');
+let csscomb = require('gulp-csscomb');
+let plumber = require('gulp-plumber');
 
 gulp.task('styles', function () {
     //noinspection JSCheckFunctionSignatures
@@ -38,7 +38,7 @@ gulp.task('styles', function () {
 
 gulp.task('serve', ['styles'], function () {
     browsersync.init({
-        logPrefix: "Saga for Ghost",
+        logPrefix: 'Saga for Ghost',
         port: 3000
     });
 
@@ -51,8 +51,10 @@ gulp.task('serve', ['styles'], function () {
 });
 
 gulp.task('create-package', ['styles'], function () {
-    let pjson = require('./package.json'),
-        version = pjson.version;
+    let pjson = require('./package.json');
+
+        
+    let version = pjson.version;
     gulp.src(['assets', '*.hbs', 'partials/*.hbs', 'package.json', 'LICENSE'])
         .pipe(zip('Saga-v' + version + '.zip'))
         .pipe(gulp.dest('./')
