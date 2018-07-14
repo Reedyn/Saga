@@ -21,15 +21,15 @@
 
             .ghost-logo {
                 display: inline-block;
-                height: 1.3em;
+                margin-left: 5px;
                 width: 4.2em;
+                height: 1.3em;
                 background: #989898;
+                vertical-align: text-bottom;
+                transition: .2s all ease;
                 mask-image: url(../images/ghost-logo.svg);
                 mask-size: contain;
                 mask-repeat: no-repeat;
-                vertical-align: text-bottom;
-                margin-left: 5px;
-                transition: 0.2s all ease;
                 &:hover {
                     background-color: white;
                 }
@@ -62,12 +62,12 @@
     }
     .heart {
         display: inline-block;
-        height: 1.3em;
         width: 1.3em;
-        background: #ff4d4c;
+        height: 1.3em;
+        background: #FF4D4C;
+        vertical-align: text-bottom;
         mask-image: url(../images/heart.svg);
         mask-size: contain;
         mask-repeat: no-repeat;
-        vertical-align: text-bottom;
     }
 }

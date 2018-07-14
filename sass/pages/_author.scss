@@ -1,4 +1,4 @@
-.post-template .main {
+.author-template .main {
     padding: 10px 20px;
     background: #FFFFFF;
 
@@ -8,7 +8,7 @@
     @include respond-to(large) {
         padding: 40px 20px;
     }
-    .post {
+    .author {
         margin: 0 auto;
         max-width: $wrapper-width;
 

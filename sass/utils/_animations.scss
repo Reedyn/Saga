@@ -4,13 +4,13 @@
 }
 
 .delay-1 {
-    animation-delay: 0.25s;
+    animation-delay: .25s;
 }
 .delay-2 {
-    animation-delay: 0.5s;
+    animation-delay: .5s;
 }
 .delay-3 {
-    animation-delay: 0.75s;
+    animation-delay: .75s;
 }
 .delay-4 {
     animation-delay: 1s;
@@ -33,12 +33,12 @@
 
 @keyframes fadeInUp {
     0% {
-        transform: translate3d(0,100%,0);
         opacity: 0;
+        transform: translate3d(0,100%,0);
     }
     100% {
-        transform: none;
         opacity: 1;
+        transform: none;
     }
 }
 .fadeInUp {

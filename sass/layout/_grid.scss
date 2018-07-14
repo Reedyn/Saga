@@ -1,9 +1,9 @@
 .feed.grid {
     display: flex;
     flex-direction: column;
-    @include respond-to(medium){
 
-        @supports(display: grid){
+    @include respond-to(medium) {
+        @supports(display: grid) {
             display: grid;
             grid-gap: $gutter;
             grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
@@ -24,14 +24,14 @@
         @supports not (display: grid) {
             display: flex;
             flex-direction: row;
+
             flex-wrap: wrap;
             .post {
                 width: calc(50% - 10px);
-                &:nth-of-type(2n){
+                &:nth-of-type(2n) {
                     margin-left: $gutter;
                 }
             }
         }
-
     }
 }

@@ -1,33 +1,36 @@
 .content {
     img {
         display: block;
+        margin-left: auto;
+        margin-left: calc(0% - 20px);
         width: 100%;
         width: calc(100% + 40px);
         height: auto;
-        margin-left: auto;
-        margin-left: calc(0% - 20px);
     }
 
     figure.kg-image-card {
-        width: 100vw;
         position: relative;
-        left: 50%;
         right: 50%;
-        margin-left: -50vw;
+        left: 50%;
         margin-right: -50vw;
         margin-bottom: 20px;
-        @include respond-to(small){
+        margin-left: -50vw;
+        width: 100vw;
+
+        @include respond-to(small) {
             margin-bottom: 40px;
         }
         img.kg-image {
-            width: initial;
             margin: 0 auto;
             max-width: calc(100vw - 40px);
-            @include respond-to(small){
+            width: initial;
+
+            @include respond-to(small) {
                 max-width: $wrapper-width+80px;
             }
             &.kg-image-wide {
                 max-width: 100vw;
+
                 @include respond-to(medium) {
                     max-width: $wrapper-width+200px;
                 }
