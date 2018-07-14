@@ -3,7 +3,7 @@
         position: relative;
         overflow: hidden;
         margin-bottom: $gutter;
-        padding: 30px;
+        padding: 20px;
         min-height: 25vh;
         background-color: #585858;
         background-position: center;
@@ -13,6 +13,7 @@
         @include respond-to(tiny) {
         }
         @include respond-to(small) {
+            padding: 30px;
         }
         @include respond-to(medium) {
         }
@@ -129,9 +130,15 @@
 
         .post--bottom-content {
             position: absolute;
-            right: 30px;
-            bottom: 30px;
-            left: 30px;
+            right: 20px;
+            bottom: 16px;
+            left: 20px;
+
+            @include respond-to(small) {
+                right: 30px;
+                bottom: 24px;
+                left: 30px;
+            }
         }
     }
 }
