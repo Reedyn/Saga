@@ -196,23 +196,6 @@ code {
     font-family: $font-monospace;
 }
 
-pre {
-    margin:  {
-        top: 30px;
-        right: 20px;
-        bottom: 10px;
-        left: 20px;
-    }
-    word-wrap: break-word;
-    code {
-        padding: 0;
-        background: none;
-        font-size: 15px;
-        font-size: 1.5rem;
-        font-family: $font-monospace;
-    }
-}
-
 hr {
     height: 4px;
     border: 0;

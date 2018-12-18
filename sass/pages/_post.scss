@@ -1,26 +1,31 @@
 .post-template .main {
-    padding: 10px 20px;
     background: #FFFFFF;
+    margin: 0 auto;
+    width: 100%;
 
-    @include respond-to(medium) {
-        padding: 30px 20px;
-    }
-    @include respond-to(large) {
-        padding: 40px 20px;
-    }
-    .post {
-        margin: 0 auto;
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         max-width: $wrapper-width;
+        padding: 20px;
+        margin: auto;
 
-        @include respond-to(small) {
+        @include respond-to(medium) {
+            padding: 30px 20px;
         }
-        .content {
-            > *:first-child {
-                margin-top: 0;
-            }
-            > *:last-child {
-                margin-bottom: 0;
-            }
+        @include respond-to(large) {
+            padding: 40px 20px;
+        }
+        > * {
+            min-width: 100%;
+        }
+
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
         }
     }
 }

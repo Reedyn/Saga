@@ -1,16 +1,16 @@
 {{!< default}}
-<header id="header" class="header {{#if author.cover_image}}cover-image {{/if}}animated fadeIn"{{#if author.cover_image}} style="background-image: url({{author.cover_image}})"{{/if}}>
+<header id="header" class="header {{#if primary_author.cover_image}}cover-image {{/if}}animated fadeIn"{{#if primary_author.cover_image}} style="background-image: url({{primary_author.cover_image}})"{{/if}}>
     <section class="header--top ">
         {{>header-navigation}}
     </section>
     <section class="hero post-meta">
         <div class="hero-content flex-row">
-            {{#if author.profile_image}}<img class="author-image animated fadeInUp delay-1" src="{{author.profile_image}}" alt="{{author.name}}">{{/if}}
-            <h1 class="author-title animated fadeInUp delay-2">{{author.name}}</h1>
+            {{#if primary_author.profile_image}}<img class="author-image animated fadeInUp delay-1" src="{{primary_author.profile_image}}" alt="{{primary_author.name}}">{{/if}}
+            <h1 class="author-title animated fadeInUp delay-2">{{primary_author.name}}</h1>
             <p class="author-data animated fadeInUp delay-3">
-                {{#if author.location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i>{{author.location}}</span>{{/if}}
-                {{#if author.website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{author.website}}">{{author.website}}</a></span>{{/if}}
-                {{#if author.bio}}<span class="bio animated fadeInUp">{{author.bio}}</span>{{/if}}</p>
+                {{#if primary_author.location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i>{{primary_author.location}}</span>{{/if}}
+                {{#if primary_author.website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{primary_author.website}}">{{primary_author.website}}</a></span>{{/if}}
+                {{#if primary_author.bio}}<span class="bio animated fadeInUp">{{primary_author.bio}}</span>{{/if}}</p>
         </div>
 
     </section>

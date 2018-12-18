@@ -7,7 +7,7 @@
   "config": {
     "posts_per_page": 10
   },
-  "version": "2.0.0-beta",
+  "version": "2.0.0-RC1",
   "description": "Tell your story! A Ghost theme designed for photoblogging",
   "repository": "https://github.com/Reedyn/Saga",
   "license": "MIT",

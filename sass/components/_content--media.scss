@@ -1,57 +1,6 @@
 .content {
     img {
-        display: block;
-        margin-left: auto;
-        margin-left: calc(0% - 20px);
         width: 100%;
-        width: calc(100% + 40px);
         height: auto;
-    }
-
-    figure.kg-image-card {
-        position: relative;
-        right: 50%;
-        left: 50%;
-        margin-top: 20px;
-        margin-right: -50vw;
-        margin-bottom: 20px;
-        margin-left: -50vw;
-        width: 100vw;
-
-        @include respond-to(small) {
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
-        img.kg-image {
-            margin: 0 auto;
-            max-width: calc(100vw - 40px);
-            width: initial;
-
-            @include respond-to(small) {
-                max-width: $wrapper-width+80px;
-            }
-            &.kg-image-wide {
-                max-width: 100vw;
-
-                @include respond-to(medium) {
-                    max-width: $wrapper-width+200px;
-                }
-                @include respond-to(large) {
-                    max-width: $wrapper-width+400px;
-                }
-                @include respond-to(huge) {
-                    max-width: $wrapper-width+600px;
-                }
-            }
-            &.kg-image-full {
-                max-width: 100vw;
-                width: 100vw;
-            }
-        }
-        figcaption {
-            text-align: center;
-            font-size: 14px;
-            line-height: 50px;
-        }
     }
 }
