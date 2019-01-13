@@ -1,5 +1,5 @@
 {{!< default}}
-<header id="header" class="animated fadeIn header{{#is "home"}} home{{/is}}{{#if @blog.cover_image}} cover-image" style="background-image: url({{@blog.cover_image}});{{/if}}">
+<header id="header" class="animated fadeIn header {{#if @blog.cover_image}} cover-image" style="background-image: url({{@blog.cover_image}});{{/if}}">
     <section class="header--top ">
         {{>header-navigation}}
     </section>

@@ -1,20 +1,22 @@
 {{!< default}}
-<header id="header" class="header {{#if primary_author.cover_image}}cover-image {{/if}}animated fadeIn"{{#if primary_author.cover_image}} style="background-image: url({{primary_author.cover_image}})"{{/if}}>
+{{#author}}
+<header id="header" class="header {{#if cover_image}}cover-image {{/if}}animated fadeIn"{{#if cover_image}} style="background-image: url({{cover_image}})"{{/if}}>
     <section class="header--top ">
         {{>header-navigation}}
     </section>
     <section class="hero post-meta">
         <div class="hero-content flex-row">
-            {{#if primary_author.profile_image}}<img class="author-image animated fadeInUp delay-1" src="{{primary_author.profile_image}}" alt="{{primary_author.name}}">{{/if}}
-            <h1 class="author-title animated fadeInUp delay-2">{{primary_author.name}}</h1>
+            {{#if profile_image}}<img class="author-image animated fadeInUp delay-1" src="{{profile_image}}" alt="{{name}}">{{/if}}
+            <h1 class="author-title animated fadeInUp delay-2">{{name}}</h1>
             <p class="author-data animated fadeInUp delay-3">
-                {{#if primary_author.location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i>{{primary_author.location}}</span>{{/if}}
-                {{#if primary_author.website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{primary_author.website}}">{{primary_author.website}}</a></span>{{/if}}
-                {{#if primary_author.bio}}<span class="bio animated fadeInUp">{{primary_author.bio}}</span>{{/if}}</p>
+                {{#if location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i>{{location}}</span>{{/if}}
+                {{#if website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{website}}">{{website}}</a></span>{{/if}}
+                {{#if bio}}<span class="bio animated fadeInUp">{{bio}}</span>{{/if}}</p>
         </div>
 
     </section>
 </header>
+{{/author}}
 <main id="main" class="main animated fadeIn delay-4">
     {{> feed}}
 </main>

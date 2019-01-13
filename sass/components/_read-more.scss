@@ -1,6 +1,4 @@
 .read-more {
-    display: flex;
-    flex-direction: column;
     padding: 50px 0;
     @include respond-to(small){
         padding: 75px 0;

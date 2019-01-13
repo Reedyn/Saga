@@ -1,35 +1,28 @@
-h1, h2, h3, h4 {
-    margin:  {
-        top: 30px;
-        bottom: 10px;
-    }
+h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
     font-family: $font-heading;
     line-height: 1.2;
-
-    @include respond-to(tiny) {
-        margin:  {
-            top: 40px;
-            bottom: 10px;
-        }
-    }
     a {
         border: 0;
     }
 }
 
 h1 {
-    letter-spacing: -2px;
-    font-size: 35px;
-    font-size: 3.5rem;
 
+    margin:  {
+        top: 40px;
+        bottom: 0;
+    }
+    letter-spacing: -2px;
+    font-size: 40px;
+    font-size: 4rem;
     @include respond-to(tiny) {
-        font-size: 40px;
-        font-size: 4rem;
+        font-size: 42px;
+        font-size: 4.2rem;
     }
     @include respond-to(small) {
-        font-size: 45px;
-        font-size: 4.5rem;
+        font-size: 47px;
+        font-size: 4.7rem;
     }
     @include respond-to(medium) {
         font-size: 50px;
@@ -37,12 +30,17 @@ h1 {
     }
 }
 h2 {
-    font-size: 25px;
-    font-size: 2.5rem;
+
+    margin:  {
+        top: 30px;
+        bottom: 0;
+    }
+    font-size: 30px;
+    font-size: 3rem;
 
     @include respond-to(small) {
-        font-size: 30px;
-        font-size: 3rem;
+        font-size: 32px;
+        font-size: 3.2rem;
     }
     @include respond-to(medium) {
         font-size: 35px;
@@ -51,8 +49,12 @@ h2 {
 }
 
 h3 {
-    font-size: 20px;
-    font-size: 2rem;
+    margin:  {
+        top: 25px;
+        bottom: 0;
+    }
+    font-size: 25px;
+    font-size: 2.5rem;
 
     @include respond-to(medium) {
         font-size: 25px;
@@ -60,9 +62,31 @@ h3 {
     }
 }
 h4 {
+    margin:  {
+        top: 25px;
+        bottom: 0;
+    }
+    font-weight: 700;
+    font-size: 18px;
+    font-size: 1.8rem;
+}
+h5 {
+    margin:  {
+        top: 25px;
+        bottom: 0;
+    }
     font-weight: 700;
     font-size: 15px;
     font-size: 1.5rem;
+}
+h6 {
+    margin:  {
+        top: 25px;
+        bottom: 0;
+    }
+    font-weight: 700;
+    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 //TODO: Move this to post content only
@@ -76,10 +100,11 @@ a {
     }
 }
 
-p, blockquote, figure, canvas, iframe, form {
+p, blockquote, figure, canvas, form {
     margin:  {
+        top: 20px;
         right: 0;
-        bottom: 20px;
+        bottom: 0px;
         left: 0;
     }
 }
@@ -120,7 +145,7 @@ q {
 
     @include respond-to(small) {
         margin-top: 40px;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
         margin-left: auto;
         margin-left: calc(0% - 20px);
         max-width: 100%;
@@ -149,33 +174,28 @@ cite {
         content: "\2014 \2009";
     }
 }
-ul, ol {
-    margin:  {
-        top: 10px;
-        bottom: 20px;
-        left: 20px;
-    }
+
+ul {
     padding: 0;
+    list-style: square inside;
     li {
         margin: 0;
     }
-}
-
-ul {
-    list-style: square;
     ul, ol {
         margin-top: 0;
         margin-bottom: 0;
-        margin-left: 20px;
     }
 }
 
 ol {
-    list-style: decimal;
+    padding: 0;
+    li {
+        margin: 0;
+    }
+    list-style: decimal inside;
     ul, ol {
         margin-top: 0;
         margin-bottom: 0;
-        margin-left: 20px;
     }
 }
 
@@ -185,6 +205,10 @@ em {
 
 strong {
     font-weight: bold;
+}
+
+pre {
+    margin-top: 20px;
 }
 
 code {
@@ -200,4 +224,5 @@ hr {
     height: 4px;
     border: 0;
     background: darken($white, 10%);
+    margin: 20px 0 0;
 }

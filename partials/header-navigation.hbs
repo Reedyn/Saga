@@ -6,7 +6,7 @@
             {{@blog.title}}
         {{/if}}
     </a>
-    {{#is "home"}}{{#unless @blog.cover_image}}
+    {{#is "index"}}{{#unless @blog.cover_image}}
         <span class="blog-description">{{@blog.description}}</span>
     {{/unless}}{{/is}}
 </div>

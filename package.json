@@ -1,28 +1,47 @@
 {
-  "name": "saga",
-  "author": {
-    "name": "Gustav Lindqvist",
-    "email": "gustav@lindqvist.io"
-  },
-  "config": {
-    "posts_per_page": 10
-  },
-  "version": "2.0.0-RC1",
-  "description": "Tell your story! A Ghost theme designed for photoblogging",
-  "repository": "https://github.com/Reedyn/Saga",
-  "license": "MIT",
-  "devDependencies": {
-    "browser-sync": "^2.12.8",
-    "csscomb": "^4.2.0",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-clean-css": "^2.0.7",
-    "gulp-csscomb": "^3.0.8",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.1",
-    "gulp-sass-glob": "^1.0.8",
-    "gulp-sourcemaps": "^2.6.3",
-    "gulp-zip": "^4.0.0"
-  }
+    "name": "saga",
+    "author": {
+        "name": "Gustav Lindqvist",
+        "email": "gustav@lindqvist.io"
+    },
+    "version": "2.0.0-RC4",
+    "description": "Tell your story! A Ghost theme designed for photoblogging",
+    "repository": "https://github.com/Reedyn/Saga",
+    "license": "MIT",
+    "keywords": [
+        "ghost-theme",
+        "ghost",
+        "theme"
+    ],
+    "devDependencies": {
+        "browser-sync": "^2.12.8",
+        "csscomb": "^4.2.0",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.0",
+        "gulp-clean-css": "^2.0.7",
+        "gulp-csscomb": "^3.0.8",
+        "gulp-plumber": "^1.1.0",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.1",
+        "gulp-sass-glob": "^1.0.8",
+        "gulp-sourcemaps": "^2.6.3",
+        "gulp-zip": "^4.0.0"
+    },
+    "config": {
+        "posts_per_page": 10,
+        "image_sizes": {
+            "small": {
+                "width": 300
+            },
+            "medium": {
+                "width": 750
+            },
+            "large": {
+                "width": 1500
+            },
+            "huge": {
+                "width": 2000
+            }
+        }
+    }
 }

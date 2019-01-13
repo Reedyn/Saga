@@ -1,13 +1,13 @@
 pre {
     width: 100vw;
     max-width: 100%;
-    padding: 15px;
+    padding: 5px 15px;
     background: darken($white, 3%);
     overflow-x: scroll;
     margin:  {
-        top: 0;
+        top: 20px;
         right: 0;
-        bottom: 10px;
+        bottom: 0;
         left: 0;
     }
     word-wrap: break-word;

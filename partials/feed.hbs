@@ -1,6 +1,7 @@
 <section id="feed" class="feed grid">
     {{#foreach posts limit="10"}}
-        <article class="{{post_class}}{{#if feature_image}} has-image{{/if}}"{{#if feature_image}} style="background-image: url({{img_url feature_image}}){{/if}}">
+        <article class="{{post_class}}{{#if feature_image}} has-image{{/if}}"{{#if feature_image}} style="background-image: url({{#if featured}}{{img_url feature_image size="large"}}{{else}}{{img_url feature_image size="medium"}}{{/if}}
+                ){{/if}}">
             <section class="post--top-content">
                 {{#if tags}}
                     <span class="post--tags"> {{tags class="tag" prefix="" separator=" "}}</span>
@@ -11,7 +12,7 @@
             </section>
             <section class="post--bottom-content">
                     <span class="post--meta">
-                        {{#author}}<span class="date">{{t "Posted by"}} <span class="author"><a href="{{url}}">{{name}}</a></span>{{/author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></span>
+                        {{#primary_author}}<span class="date">{{t "Posted by"}} <span class="author"><a href="{{url}}">{{name}}</a></span>{{/primary_author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></span>
                     </span>
                 </section>
         </article>
