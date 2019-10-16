@@ -84,6 +84,16 @@
                             mask-image: url(../images/camera.svg);
                         }
                     }
+                    &.nav-email-icon {
+                        a:before {
+                            mask-image: url(../images/email.svg);
+                        }
+                    }
+                    &.nav-telegram-icon {
+                        a:before {
+                            mask-image: url(../images/telegram.svg);
+                        }
+                    }
                     &:last-of-type {
                         margin-right: 10px;
                     }
