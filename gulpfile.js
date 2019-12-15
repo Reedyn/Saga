@@ -1,5 +1,4 @@
 /* eslint-env node */
-
 const { src, dest, parallel, watch } = require('gulp');
 const browsersync = require('browser-sync').create();
 const reload = browsersync.reload;
