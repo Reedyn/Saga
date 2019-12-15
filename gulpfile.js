@@ -1,21 +1,20 @@
-/* eslint-env: node */
+/* eslint-env node */
 
-let gulp = require('gulp');
-let browsersync = require('browser-sync').create();
-let reload = browsersync.reload;
-let sass = require('gulp-sass');
-let sourcemaps = require('gulp-sourcemaps');
-let autoprefixer = require('gulp-autoprefixer');
-let minifycss = require('gulp-clean-css');
-let rename = require('gulp-rename');
-let zip = require('gulp-zip');
-let sassGlob = require('gulp-sass-glob');
-let csscomb = require('gulp-csscomb');
-let plumber = require('gulp-plumber');
+const { src, dest, parallel, watch } = require('gulp');
+const browsersync = require('browser-sync').create();
+const reload = browsersync.reload;
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
+const minifycss = require('gulp-clean-css');
+const rename = require('gulp-rename');
+const sassGlob = require('gulp-sass-glob');
+const csscomb = require('gulp-csscomb');
+const plumber = require('gulp-plumber');
 
-gulp.task('styles', function () {
-    //noinspection JSCheckFunctionSignatures
-    gulp.src(['sass/main.scss'])
+function css() {
+    'use strict';
+    return src('sass/main.scss')
         .pipe(plumber())
         .pipe(sourcemaps.init({largeFile: true}))
         .pipe(rename({
@@ -26,27 +25,32 @@ gulp.task('styles', function () {
         .pipe(autoprefixer({ grid: true }))
         .pipe(csscomb())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('assets/css/'))
+        .pipe(dest('assets/css/'))
         .pipe(minifycss())
         .pipe(sourcemaps.write())
         .pipe(rename({
             extname: '.min.css'
         }))
-        .pipe(gulp.dest('assets/css/'))
+        .pipe(dest('assets/css/'))
         .pipe(reload({stream: true}));
-});
+}
 
-gulp.task('serve', ['styles'], function () {
+function serve() {
+    'use strict';
     browsersync.init({
         logPrefix: 'Saga for Ghost',
         port: 3000
     });
-    //noinspection JSCheckFunctionSignatures
-    gulp.watch('sass/**/*.scss', ['styles']);
-    //noinspection JSCheckFunctionSignatures
-    gulp.watch(['./*.hbs', './partials/*.hbs']).on('change', reload);
-    //noinspection JSCheckFunctionSignatures
-    gulp.watch('assets/**/*.js').on('change', reload);
-});
 
-gulp.task('default', ['serve']);
+    watch('sass/**/*.scss', css);
+    watch(['./*.hbs', './partials/*.hbs'], () => {
+        reload();
+    });
+    watch('assets/**/*.js', () => {
+        reload();
+    });
+}
+
+exports.css = css;
+exports.server = serve;
+exports.default = parallel(css, serve);
