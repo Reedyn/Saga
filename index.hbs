@@ -1,13 +1,17 @@
 {{!< default}}
-<header id="header">
-    <div class="header-background">
-    <section class="blog-content animated fadeIn">
-        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span class="blog-description">{{@blog.description}}</span>
-        {{> links}}
+<header id="header" class="animated fadeIn header {{#if @site.cover_image}} cover-image" style="background-image: url({{img_url @site.cover_image size="xl"}});{{/if}}">
+    <section class="header--top ">
+        {{>header-navigation}}
     </section>
-    </div>
+    {{#if @site.cover_image}}
+            <section class="hero">
+        <div class="hero-content">
+            <h1 class="post-title animated fadeInUp delay-1{{#if @site.logo}}blog-logo{{/if}}">{{#if @site.logo}}<img src="{{@site.logo}}" alt="Blog Logo" />{{else}}{{@site.title}}{{/if}}</h1>
+            <p class="blog-data animated fadeInUp delay-2"><span class="description">{{@site.description}}</span></p>
+        </div>
+    </section>
+        {{/if}}
 </header>
-<main id="main" class="archive">
-    {{>loop}}
+<main id="main" class="main archive animated fadeIn{{#if @site.cover_image}} delay-3{{/if}}{{#unless @site.cover_image}} delay-1{{/unless}}">
+    {{>feed}}
 </main>

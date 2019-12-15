@@ -1,0 +1,37 @@
+.feed.grid {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(medium) {
+        @supports(display: grid) {
+            display: grid;
+            grid-gap: $gutter;
+            grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
+            grid-auto-flow: dense;
+            .post {
+                margin-bottom: 0;
+                &.tag-hash-tall {
+                    min-height: 50vh;
+                }
+                &.featured {
+                    grid-column: span 2;
+                }
+                &.tag-hash-tall {
+                    grid-row-end: span 2;
+                }
+            }
+        }
+        @supports not (display: grid) {
+            display: flex;
+            flex-direction: row;
+
+            flex-wrap: wrap;
+            .post {
+                width: calc(50% - 10px);
+                &:nth-of-type(2n) {
+                    margin-left: $gutter;
+                }
+            }
+        }
+    }
+}

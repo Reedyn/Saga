@@ -1,0 +1,21 @@
+/* Deprecated fix for the old way of handling images, just so they don't look terrible */
+.content {
+    img[src$="#large"], img[src$="#full"] {
+        margin-left: -20px;
+        width: calc(100% + 40px);
+        @include respond-to(large){
+            width: 150%;
+            margin-left: -25%;
+        }
+        @include respond-to(huge){
+            width: 200%;
+            margin-left: -50%;
+        }
+    }
+}
+
+/* Fix for 100vw and horizontal scrollbar */
+
+body {
+    overflow-x: hidden;
+}

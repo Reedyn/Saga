@@ -1,0 +1,32 @@
+.post-template .main {
+    background: #FFFFFF;
+    margin: 0 auto;
+    width: 100%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $wrapper-width + 40px;
+        padding: 20px;
+        margin: auto;
+
+        @include respond-to(medium) {
+            padding: 30px;
+            max-width: $wrapper-width + 60px;
+        }
+        @include respond-to(large) {
+            padding: 40px 30px;
+        }
+        > * {
+            min-width: 100%;
+        }
+
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

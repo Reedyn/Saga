@@ -1,0 +1,11 @@
+.content {
+    a {
+        color: $black;
+        text-decoration: underline;
+        transition: all .2s;
+        &:hover {
+            border-color: $black;
+            color: $black;
+        }
+    }
+}

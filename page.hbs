@@ -1,22 +1,20 @@
 {{!< default}}
 {{#post ~}}
-<header id="header" class="animated fadeIn"{{#if feature_image}} style="background-image: url({{feature_image}})"{{/if}}>
-    <div class="header-background">
-    <section class="blog-content">
-        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span class="blog-description">{{@blog.description}}</span>
-        {{> links}}
-    </section>
-    <section class="header-content">
-        <h1 class="post-title animated fadeInUp">{{{title}}}</h1>
-    </section>
-    </div>
-</header>
-<main id="main" class="content">
-    <article class="animated fadeIn content post {{post_class}}">
-        <section class="post-content">
-            {{content}}
+    <header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="xl"}})"{{/if}}>
+        <section class="header--top">
+            {{>header-navigation}}
         </section>
-    </article>
-</main>
+        <section class="hero post-meta">
+            <div class="hero-content">
+                <h1 class="page-title animated fadeInUp">{{{title}}}</h1>
+            </div>
+        </section>
+    </header>
+    <main id="main" class="main">
+        <article class="animated fadeIn {{post_class}}">
+            <section class="content">
+                {{content}}
+            </section>
+        </article>
+    </main>
 {{~/post}}

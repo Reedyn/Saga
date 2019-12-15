@@ -1,17 +1,22 @@
 {{!< default}}
-<header id="header" class="animated fadeIn"{{#if author.cover_image}} style="background-image: url({{author.cover_image}})"{{/if}}>
-    <div class="header-background">
-    <section class="blog-content">
-        <a id="site-url" class="blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-        <span class="blog-description">{{@blog.description}}</span>
-        {{> links}}
+{{#author}}
+<header id="header" class="header {{#if cover_image}}cover-image {{/if}}animated fadeIn"{{#if cover_image}} style="background-image: url({{img_url cover_image size="huge"}})"{{/if}}>
+    <section class="header--top ">
+        {{>header-navigation}}
     </section>
-    <section class="header-content">
-        <h1 class="post-title animated fadeInUp">{{author.name}}</h1>
-        <span class="post-data animated fadeInUp">{{author.bio}}</span>
+    <section class="hero post-meta">
+        <div class="hero-content flex-row">
+            {{#if profile_image}}<img class="author-image animated fadeInUp delay-1" src="{{profile_image}}" alt="{{name}}">{{/if}}
+            <h1 class="author-title animated fadeInUp delay-2">{{name}}</h1>
+            <p class="author-data animated fadeInUp delay-3">
+                {{#if location}}<span class="location animated fadeInUp"><i class="fa fa-map-marker"></i>{{location}}</span>{{/if}}
+                {{#if website}}<span class="website animated fadeInUp"><i class="fa fa-link"></i> <a href="{{website}}">{{website}}</a></span>{{/if}}
+                {{#if bio}}<span class="bio animated fadeInUp">{{bio}}</span>{{/if}}</p>
+        </div>
+
     </section>
-    </div>
 </header>
-<main id="main" class="archive">
-    {{> loop}}
+{{/author}}
+<main id="main" class="main animated fadeIn delay-4">
+    {{> feed}}
 </main>

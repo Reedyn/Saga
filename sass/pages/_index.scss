@@ -1,0 +1,10 @@
+.index {
+    background: darken(white, 5%);
+    .header:not(.cover-image) {
+        background: white;
+        color: rgba(black, .7);
+        a {
+            color: black;
+        }
+    }
+}
