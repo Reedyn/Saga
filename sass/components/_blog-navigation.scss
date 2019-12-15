@@ -94,6 +94,11 @@
                             mask-image: url(../images/telegram.svg);
                         }
                     }
+                    &.nav-camera-icon {
+                        a:before {
+                            mask-image: url(../images/camera.svg);
+                        }
+                    }
                     &:last-of-type {
                         margin-right: 10px;
                     }

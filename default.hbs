@@ -12,6 +12,7 @@
     <link href="{{asset 'css/style.min.css'}}" rel="stylesheet" type="text/css">
     <link href="{{asset 'favicon.ico'}}" rel="shortcut icon">
     {{ghost_head}}
+    <meta name="theme" content="Saga v2.0.0-RC6">
 </head>
 <body class="{{#is "index"}}index {{/is}}{{body_class}}">
     {{{body}}}
@@ -21,8 +22,5 @@
     </footer>
     {{ghost_foot}}
     <script type="text/javascript" src="{{asset 'js/Saga.js'}}"></script>
-    <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.24.5'><\/script>".replace("HOST", location.hostname));
-    //]]></script>
 </body>
 </html>

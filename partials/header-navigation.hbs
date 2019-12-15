@@ -1,13 +1,13 @@
 <div>
-    <a class="blog-title " href="{{@blog.url}}">
-        {{#if @blog.logo}}
-            <img class="blog-logo" src="{{@blog.logo}}" alt="Blog Logo" />
+    <a class="blog-title " href="{{@site.url}}">
+        {{#if @site.logo}}
+            <img class="blog-logo" src="{{img_url @site.logo}}" alt="Blog Logo" />
         {{else}}
-            {{@blog.title}}
+            {{@site.title}}
         {{/if}}
     </a>
-    {{#is "index"}}{{#unless @blog.cover_image}}
-        <span class="blog-description">{{@blog.description}}</span>
+    {{#is "index"}}{{#unless @site.cover_image}}
+        <span class="blog-description">{{@site.description}}</span>
     {{/unless}}{{/is}}
 </div>
 {{navigation}}
