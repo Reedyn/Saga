@@ -1,0 +1,16 @@
+name: Create Theme Package
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build Ghost Theme
+      uses: foolscapcon/action-build-ghost-theme@v1.0.9
