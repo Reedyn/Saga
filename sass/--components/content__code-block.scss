@@ -1,24 +1,24 @@
 pre {
-    width: 100vw;
-    max-width: 100%;
-    padding: .5rem 1.5rem;
-    background: darken(white, 3%);
-    overflow-x: scroll;
+    overflow-y: hidden;
     margin:  {
         top: $margin--medium;
         right: 0;
         bottom: 0;
         left: 0;
     }
+    padding: .8rem 1.2rem;
+    width: 100vw;
+    max-width: 100%;
+    background: $color--very-dark-grey;
+    color: $color--light-grey;
     word-wrap: break-word;
+    line-height: 2rem;
     code {
+        display: block;
         padding: 0;
         background: none;
-        font-size: 1.2rem;
+        color: $color--light-grey;
+        font-size: 1.6rem;
         font-family: $font--monospace;
-
-        @include respond-to(medium) {
-            font-size: 1.5rem;
-        }
     }
 }
