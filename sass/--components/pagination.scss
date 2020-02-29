@@ -1,0 +1,12 @@
+nav.pagination {
+    text-align: center;
+    line-height: 12rem;
+    .newer-posts, .older-posts {
+        color: black;
+    }
+
+    .page-number {
+        margin: 0 $margin--medium;
+        color: $color--grey;
+    }
+}

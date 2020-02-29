@@ -1,0 +1,71 @@
+.read-more {
+    padding: $padding--large 0;
+    @include respond-to(small){
+        padding: $padding--large*1.5 0;
+    }
+    @include respond-to(large){
+        padding: $padding--large*2 0;
+    }
+    max-height: 100vh;
+    background: black;
+    color: rgba(white, .7);
+    &.home {
+        background: white;
+        color: rgba(black, .7);
+        a {
+            color: black;
+        }
+    }
+    &.cover-image {
+        position: relative;
+        background: black;
+        background-position: center;
+        background-size: cover;
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(black, .7);
+        }
+    }
+
+    &:hover {
+        color: white;
+        a {
+            color: white;
+        }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 10;
+        margin: auto;
+        max-width: $wrapper-width;
+        width: calc(100% - #{$margin--large});
+        .post-title {
+            display: block;
+            letter-spacing: -.2rem;
+            font-size: calc(#{$font-size--heading-2*1.5} + #{$scaling--heading-2*1.5}); // Slightly larger than H2
+            line-height: 1.2;
+        }
+        p {
+            margin-top: $margin--small;
+            margin-bottom: $margin--small;
+        }
+
+        p.read-more-text {
+            text-align: center;
+            color: rgba(white, 0.7);
+            font-weight: 700;
+            margin-bottom: $margin--large;
+            font-size: $font-size--small;
+            text-transform: uppercase;
+        }
+    }
+
+
+}

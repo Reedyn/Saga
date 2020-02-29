@@ -4,17 +4,17 @@
 
 @include respond-to(large) {
     .alignleft, .alignright {
-        margin-bottom: 1em;
+        margin-bottom: $margin--medium;
         padding-bottom: 0;
-        width: 300px;
+        width: 30rem;
         img {
             margin: 0;
         }
     }
     .alignleft {
         float: left;
-        margin-right: 2em;
-        margin-left: -160px;
+        margin-right: $margin--medium;
+        margin-left: -16rem;
         q {
             margin: 0;
             width: initial;
@@ -23,9 +23,9 @@
     }
 
     blockquote.alignleft {
-        padding-right: 20px;
+        padding-right: $padding--medium;
         padding-left: 0;
-        border-right: 4px solid darken($white, 10%);
+        border-right: .4rem solid $color--light-grey;
         border-left: 0;
         text-align: right;
     }
@@ -37,8 +37,8 @@
 
     .alignright {
         float: right;
-        margin-right: -160px;
-        margin-left: 2em;
+        margin-right: -16rem;
+        margin-left: $margin--medium;
         q, &q {
             margin: 0;
             width: initial;

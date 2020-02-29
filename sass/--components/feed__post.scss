@@ -1,0 +1,142 @@
+.feed {
+    .post {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        margin-bottom: $gutter;
+        padding: $padding--medium;
+        background-color: $color--medium-grey;
+        background-position: center;
+        background-size: cover;
+        color: white;
+
+        @include respond-to(tiny) {
+        }
+        @include respond-to(small) {
+            padding: $padding--medium;
+            min-height: 25vh;
+        }
+        @include respond-to(medium) {
+        }
+        a {
+            color: inherit;
+        }
+
+        // Black overlay
+        &.has-image:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.8);
+
+            @include respond-to(small) {
+                background: rgba(0,0,0,.7);
+            }
+        }
+
+        .post--top-content {
+            position: relative;
+            z-index: 20;
+            max-width: $medium;
+            flex: 1;
+        }
+        .post--bottom-content {
+            position: relative;
+            z-index: 20;
+            max-width: $medium;
+            height: auto;
+        }
+
+        .post--tags {
+            display: block;
+            overflow: auto;
+            margin-bottom: $margin--small;
+            width: 100%;
+            font-size: 1.2rem;
+            a {
+                display: inline-block;
+                float: left;
+                margin-right: .3rem;
+                margin-bottom: .3rem;
+                padding: .6rem;
+                border: .1rem solid rgba(255,255,255,.6);
+                background: transparent;
+                color: rgba(255,255,255,.6);
+                text-transform: uppercase;
+                line-height: 1;
+
+                @include respond-to(large) {
+                    &:not(:nth-of-type(1)) {
+                        opacity: 0;
+                    }
+                }
+                &:hover {
+                    background: white;
+                    color: $color--dark-grey !important;
+                }
+            }
+            &:hover {
+                a {
+                    border-color: white;
+                    color: white;
+                }
+                a:not(:nth-of-type(1)) {
+                    display: inline-block;
+                }
+            }
+        }
+        &:hover .post--tags a {
+            &:not(:nth-of-type(1)) {
+                opacity: 1;
+            }
+        }
+
+        .post--title {
+            margin: 0;
+
+            @include respond-to(tiny) {
+            }
+            @include respond-to(small) {
+            }
+            @include respond-to(medium) {
+            }
+            a {
+                font-size: inherit;
+            }
+        }
+
+        .post--excerpt {
+            margin: $margin--small 0;
+            max-width: $small;
+            color: rgba(255,255,255,.6);
+            font-size: $font-size--small;
+        }
+
+        .post--read-time {
+            margin-bottom: $margin--small;
+            color: rgba(255,255,255,.6);
+            font-size: $font-size--small;
+        }
+
+        .post--meta {
+            display: block;
+            color: rgba(255,255,255,.6);
+            font-size: $font-size--small;
+            line-height: 1.5;
+            .author {
+                color: white;
+                a {
+                    border-color: transparent;
+                    &:hover {
+                        border-color: white;
+                    }
+                }
+            }
+        }
+    }
+}

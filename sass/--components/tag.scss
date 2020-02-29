@@ -1,0 +1,18 @@
+.tag-template .main {
+    background: white;
+    .tag {
+        margin: 0 auto;
+        max-width: $wrapper-width;
+
+        @include respond-to(small) {
+        }
+        .tag-content {
+            > *:first-child {
+                margin-top: 0;
+            }
+            > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

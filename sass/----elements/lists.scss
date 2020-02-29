@@ -1,0 +1,35 @@
+ul, ol {
+    margin-top: $margin--medium;
+    margin-bottom: 0;
+
+    @include respond-to(medium) {
+        margin-top: $margin--large;
+        margin-bottom: $margin--medium;
+    }
+}
+
+ul {
+    margin-left: 4rem;
+    padding: 0;
+    list-style: square;
+    li {
+        margin: 0 0 $margin--small/2;
+    }
+    ul, ol {
+        margin-top: 0;
+        margin-bottom: $margin--small/2;
+    }
+}
+
+ol {
+    margin-left: 4rem;
+    padding: 0;
+    list-style: decimal;
+    li {
+        margin: 0 0 $margin--small/2;
+    }
+    ul, ol {
+        margin-top: 0;
+        margin-bottom: $margin--small/2;
+    }
+}

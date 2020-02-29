@@ -1,0 +1,106 @@
+a {
+    color: black;
+    text-decoration: none;
+    transition: all .2s;
+    &:hover {
+        border-color: black;
+        color: black;
+    }
+}
+
+p, blockquote, figure, canvas, form {
+    margin:  {
+        top: $margin--medium;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.note {
+    padding: $margin--small;
+    background: $color--very-light-grey;
+}
+
+mark {
+    padding: .2rem;
+    background-color: $color--marker-yellow;
+    box-shadow: $color--marker-yellow 0 0 5px;
+}
+
+sup {
+    vertical-align: super;
+    font-size: $font-size * .85;
+}
+
+blockquote {
+    padding-left: $margin--medium;
+    border-left: 4px solid $color--light-grey;
+    font-family: $font--serif;
+    img {
+        margin: $margin--medium 0;
+        width: 100%;
+    }
+}
+
+q {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-size: $font-size * 1.25;
+    font-family: $font--serif;
+
+    @include respond-to(small) {
+        margin-top: $margin--large;
+        margin-bottom: $margin--medium;
+        margin-left: calc(0% - #{$margin--medium});
+        width: calc(100% + #{$margin--large});
+        max-width: calc(100% + #{$margin--large});
+    }
+    &:before, &:after {
+        display: none;
+    }
+}
+
+cite {
+    display: block;
+    color: $color--light-grey;
+    text-transform: capitalize;
+    font-style: normal;
+    font-size: $font-size * .8;
+    font-family: $font--sans-serif;
+    a {
+        border: none;
+        color: inherit;
+    }
+    &:before {
+        content: "\2014 \2009";
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+pre {
+    margin-top: $margin--medium;
+}
+
+code {
+    padding: .3rem .6rem;
+    background: $color--very-light-grey;
+    color: black;
+    font-size: $font-size * .8;
+    font-family: $font--monospace;
+}
+
+hr {
+    margin: $margin--medium 0 0;
+    height: .4rem;
+    border: 0;
+    background: $color--light-grey;
+}

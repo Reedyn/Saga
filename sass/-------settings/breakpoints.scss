@@ -1,0 +1,18 @@
+/* Breakpoints
+-------------------
+Breakpoints for various screen sizes
+------------------- */
+
+$huge: 140rem;
+$large: 100rem;
+$medium: 80rem;
+$small: 55rem;
+$tiny: 40rem;
+
+$breakpoints: (
+        "huge": (min-width: $huge),
+        "large": (min-width: $large),
+        "medium": (min-width: $medium),
+        "small": (min-width: $small),
+        "tiny": (min-width: $tiny),
+);

@@ -1,0 +1,8 @@
+.kg-card {
+    margin-top: $margin--medium;
+    margin-bottom: 0;
+    @include respond-to(medium) {
+        margin-top: $margin--large;
+        margin-bottom: $margin--medium;
+    }
+}

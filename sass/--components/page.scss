@@ -1,0 +1,29 @@
+.page-template .main {
+    background: white;
+    margin: 0 auto;
+    width: 100%;
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: $wrapper-width;
+        padding: $padding--medium;
+        margin: auto;
+
+        @include respond-to(medium) {
+            padding: $padding--large;
+            max-width: $wrapper-width + 6rem;
+        }
+        > * {
+            min-width: 100%;
+        }
+
+        > *:first-child {
+            margin-top: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
