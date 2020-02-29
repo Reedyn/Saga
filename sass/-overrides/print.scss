@@ -1,0 +1,62 @@
+@media print {
+
+    .hidden\@print {
+        display: none !important;
+    }
+
+    .kg-bookmark-thumbnail {
+        display: none !important;
+    }
+
+    a, p, span, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+        color: black !important;
+    }
+
+    .header {
+        background: white !important;
+        color: black !important;
+
+        &:after {
+            display: none !important;
+        }
+
+        .header--top {
+            display: none !important;
+        }
+        .hero {
+            height: auto !important;
+        }
+        .hero-content {
+            max-width: 100% !important;
+            width: 100% !important;
+        }
+
+        .post--read-time, .post--tags {
+            display: none !important;
+        }
+    }
+
+    .content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        padding-top: $margin--medium;
+    }
+
+    .content > * {
+        color: black !important;
+        background: white !important;
+        margin-top: $margin--medium;
+        margin-bottom: $margin--small;
+    }
+
+    .content pre {
+        background: $color--very-light-grey !important;
+        color: black !important;
+        code {
+            color: black !important;
+        }
+    }
+}
+
+

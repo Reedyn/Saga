@@ -50,10 +50,10 @@
 
     .kg-bookmark-icon {
         display: inline-block;
-        width: 1rem;
-        height: 1rem;
+        width: 1.3em;
+        height: 1.3em;
         vertical-align: text-bottom;
-        margin-right: .5rem;
+        margin-right: 1rem;
         margin-bottom: .05rem;
     }
 
@@ -77,7 +77,7 @@
     }
 
     .kg-bookmark-publisher::before {
-        content: "•";
-        margin: 0 $margin--small;
+        content: "–";
+        margin: 0 .4em;
     }
 }

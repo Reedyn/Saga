@@ -26,7 +26,7 @@
     </main>
     {{#if primary_tag}}
         {{#next_post in="primary_tag"}}
-            <a href="{{url}}" class="read-more hero {{#if feature_image}}cover-image {{/if}}animated fadeIn delay-5"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
+            <a href="{{url}}" class="read-more hero {{#if feature_image}}cover-image {{/if}}animated fadeIn delay-5 hidden@print"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
                 <div class="hero-content">
                     <p class="read-more-text">~ {{t "Read next post in {primary_tag}" primary_tag=primary_tag.name}} ~</p>
                     <span class="post-title">{{{title}}}</span>
