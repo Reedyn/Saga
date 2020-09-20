@@ -9,7 +9,6 @@ const autoprefixer = require('gulp-autoprefixer');
 const minifycss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const sassGlob = require('gulp-sass-glob');
-const csscomb = require('gulp-csscomb');
 const plumber = require('gulp-plumber');
 const zip = require('gulp-zip')
 
@@ -24,7 +23,6 @@ function compileCSS() {
         .pipe(sassGlob())
         .pipe(sass())
         .pipe(autoprefixer({ grid: true }))
-        .pipe(csscomb())
         .pipe(sourcemaps.write())
         .pipe(dest('assets/css/'))
         .pipe(minifycss())
@@ -43,7 +41,7 @@ function serve() {
         port: 3000
     });
 
-    watch('sass/**/*.scss', css);
+    watch('sass/**/*.scss', compileCSS);
     watch(['./*.hbs', './partials/*.hbs'], () => {
         reload();
     });
