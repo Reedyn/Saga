@@ -1,5 +1,6 @@
 /* eslint-env node */
-const { src, dest, parallel, watch } = require('gulp');
+const project = require('./package.json');
+const { src, dest, series, watch } = require('gulp');
 const browsersync = require('browser-sync').create();
 const reload = browsersync.reload;
 const sass = require('gulp-sass');
@@ -10,8 +11,9 @@ const rename = require('gulp-rename');
 const sassGlob = require('gulp-sass-glob');
 const csscomb = require('gulp-csscomb');
 const plumber = require('gulp-plumber');
+const zip = require('gulp-zip')
 
-function css() {
+function compileCSS() {
     'use strict';
     return src('sass/main.scss')
         .pipe(plumber())
@@ -50,6 +52,19 @@ function serve() {
     });
 }
 
-exports.css = css;
-exports.server = serve;
-exports.default = parallel(css, serve);
+function createPackage() {
+    return src([
+        './**',
+        '!node_modules/**',
+        '!.git/**',
+        '!.DS_Store',
+        '!.gitignore'
+    ], { dot: true })
+        .pipe(zip('Saga-' + project.version + '.zip'))
+        .pipe(dest('./'));
+}
+
+exports.default = series(compileCSS, serve);
+exports.compileCSS = compileCSS;
+exports.serve = serve;
+exports.createPackage = createPackage
