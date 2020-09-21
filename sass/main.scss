@@ -3,15 +3,10 @@
 Import all relevant files
 --------------- */
 
-@import "utils/_variables";
-@import "utils/_mixins";
-@import "utils/_animations";
-@import "utils/_helpers";
-
-@import "vendors/*";
-@import "base/*";
-@import "layout/*";
-@import "pages/*";
-@import "components/*";
-
-@import "shame";
+@import "1.settings/*";
+@import "2.tools/*";
+@import "3.generic/*";
+@import "4.elements/*";
+@import "5.objects/*";
+@import "6.components/*";
+@import "7.overrides/*";
