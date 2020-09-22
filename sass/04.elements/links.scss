@@ -1,0 +1,9 @@
+a {
+    color: $color--link;
+    text-decoration: none;
+    transition: all .2s;
+    &:hover {
+        text-decoration: underline;
+        color: $color--link--visited;
+    }
+}

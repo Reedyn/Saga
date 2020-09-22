@@ -11,12 +11,9 @@
         padding: $padding--medium;
         margin: auto;
 
-        @include respond-to(small) {
+        @include respond-to(medium) {
             padding: $padding--large;
             max-width: $wrapper-width + 6rem;
-        }
-        > * {
-            min-width: 100%;
         }
 
         > *:first-child {

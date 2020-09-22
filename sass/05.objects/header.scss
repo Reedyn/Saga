@@ -11,10 +11,6 @@ $header-height: 6rem;
         background: black;
         background-position: center;
         background-size: cover;
-        color: rgba(white, .7);
-        a {
-            color: white;
-        }
         &:after {
             content: "";
             position: absolute;
@@ -24,6 +20,25 @@ $header-height: 6rem;
             width: 100%;
             height: 100%;
             background: rgba(black, .7);
+        }
+    }
+
+    &.-dark {
+        color: rgba(white, .7);
+        a {
+            color: white;
+        }
+    }
+
+    &.-light {
+        color: rgba(black, .7);
+        a {
+            color: black;
+        }
+
+        // Invert the logotype when background is light
+        .header--top a.blog-title img.blog-logo {
+            filter: invert(1);
         }
     }
 
@@ -52,7 +67,7 @@ $header-height: 6rem;
 
         .blog-description {
             display: none;
-            margin-left: 1rem;
+            margin-left: $margin--small;
 
             @include respond-to(small) {
                 display: inline;
@@ -145,3 +160,7 @@ $header-height: 6rem;
         }
     }
 }
+
+// Light header
+
+// Dark header

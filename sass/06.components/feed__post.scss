@@ -9,7 +9,7 @@
         background-color: $color--medium-grey;
         background-position: center;
         background-size: cover;
-        color: white;
+        color: $color--text--light;
 
         @include respond-to(tiny) {
         }

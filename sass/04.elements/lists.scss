@@ -9,7 +9,7 @@ ul, ol {
 }
 
 ul {
-    margin-left: 4rem;
+    margin-left: $margin--medium;
     padding: 0;
     list-style: square;
     li {
@@ -22,7 +22,7 @@ ul {
 }
 
 ol {
-    margin-left: 4rem;
+    margin-left: $margin--medium;
     padding: 0;
     list-style: decimal;
     li {

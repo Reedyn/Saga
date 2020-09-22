@@ -4,7 +4,7 @@
         "name": "Gustav Lindqvist",
         "email": "gustav@lindqvist.io"
     },
-    "version": "2.0.0",
+    "version": "2.1.0-beta",
     "engines": {
         "ghost-api": "v3"
     },
@@ -22,13 +22,12 @@
         "gulp": "^4.0.2",
         "gulp-autoprefixer": "^7.0.1",
         "gulp-clean-css": "^4.2.0",
-        "gulp-csscomb": "^3.1.0",
-        "gulp-dart-sass": "^0.9.1",
         "gulp-plumber": "^1.2.1",
         "gulp-rename": "^2.0.0",
         "gulp-sass": "^4.0.2",
         "gulp-sass-glob": "^1.1.0",
-        "gulp-sourcemaps": "^2.6.5"
+        "gulp-sourcemaps": "^2.6.5",
+        "gulp-zip": "^5.0.2"
     },
     "config": {
         "posts_per_page": 10,

@@ -7,16 +7,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        max-width: $wrapper-width;
+        max-width: $wrapper-width + 4rem;
         padding: $padding--medium;
         margin: auto;
 
         @include respond-to(medium) {
             padding: $padding--large;
             max-width: $wrapper-width + 6rem;
-        }
-        > * {
-            min-width: 100%;
         }
 
         > *:first-child {

@@ -1,5 +1,5 @@
 {{!< default}}
-<header id="header" class="animated fadeIn header {{#if @site.cover_image}} cover-image" style="background-image: url({{img_url @site.cover_image size="xl"}});{{/if}}">
+<header id="header" class="animated fadeIn header {{#if @site.cover_image}} --dark cover-image" style="background-image: url({{img_url @site.cover_image size="xl"}});{{else}}-light{{/if}}">
     <section class="header--top ">
         {{>header-navigation}}
     </section>
