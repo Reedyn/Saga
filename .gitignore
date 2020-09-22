@@ -43,4 +43,4 @@ Thumbs.db
 .csscomb
 
 .csscomb.json
-!/package-lock.json
+package-lock.json

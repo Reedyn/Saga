@@ -1,15 +1,14 @@
 ul, ol {
-    margin-top: $margin--medium;
+    margin-top: $margin--small;
     margin-bottom: 0;
 
     @include respond-to(medium) {
-        margin-top: $margin--large;
-        margin-bottom: $margin--medium;
+        margin-top: $margin--medium;
     }
 }
 
 ul {
-    margin-left: $margin--medium;
+    margin-left: $margin--large;
     padding: 0;
     list-style: square;
     li {
@@ -22,7 +21,7 @@ ul {
 }
 
 ol {
-    margin-left: $margin--medium;
+    margin-left: $margin--large;
     padding: 0;
     list-style: decimal;
     li {
