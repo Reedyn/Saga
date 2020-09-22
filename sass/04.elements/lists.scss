@@ -1,34 +1,26 @@
 ul, ol {
     margin-top: $margin--small;
     margin-bottom: 0;
+    padding: 0;
+    padding-left: 1.5rem;
 
     @include respond-to(medium) {
         margin-top: $margin--medium;
     }
+
+    li {
+        margin: 0 0 $margin--small/2;
+    }
+    ul, ol {
+        margin-top: 0;
+        margin-bottom: $margin--small/2;
+    }
 }
 
 ul {
-    margin-left: $margin--large;
-    padding: 0;
     list-style: square;
-    li {
-        margin: 0 0 $margin--small/2;
-    }
-    ul, ol {
-        margin-top: 0;
-        margin-bottom: $margin--small/2;
-    }
 }
 
 ol {
-    margin-left: $margin--large;
-    padding: 0;
     list-style: decimal;
-    li {
-        margin: 0 0 $margin--small/2;
-    }
-    ul, ol {
-        margin-top: 0;
-        margin-bottom: $margin--small/2;
-    }
 }

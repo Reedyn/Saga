@@ -5,4 +5,35 @@
         margin: 0 auto;
         display: block;
     }
+
+    img {
+        text-align: center;
+        line-height: 2;
+        width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        &:before {
+            content: " ";
+            display: block;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            height: calc(100% + 3rem);
+            width: 100%;
+            background-color: $color--very-light-grey;
+            border: 2px dotted $color--grey;
+        }
+
+        &:after {
+            content: "Broken image of " attr(alt);
+            display: block;
+            color: $color--dark-grey;
+            position: absolute;
+            top: .5rem;
+            left: 0;
+            width: 100%;
+            text-align: center;
+        }
+    }
 }
