@@ -1,15 +1,14 @@
 .footer {
+    animation-delay: 1s;
     background: $color--dark-grey;
     color: darken(white, 40%);
     text-transform: uppercase;
-    animation-delay: 1s;
-
 
     .colophon {
         padding: $padding--large $padding--medium;
         section {
-            margin: 0 auto;
             max-width: $wrapper-width;
+            margin: 0 auto;
             &:first-child {
                 margin-top: 0;
             }
@@ -19,15 +18,15 @@
 
             .ghost-logo {
                 display: inline-block;
-                margin-left: .4rem;
                 width: 4.2em;
                 height: 1.3em;
+                margin-left: .4rem;
                 background: $color--grey;
-                vertical-align: text-bottom;
-                transition: .2s all ease;
                 mask-image: url(../images/ghost-logo.svg);
-                mask-size: contain;
                 mask-repeat: no-repeat;
+                mask-size: contain;
+                transition: .2s all ease;
+                vertical-align: text-bottom;
                 &:hover {
                     background-color: white;
                 }
@@ -38,8 +37,8 @@
         padding: $padding--medium;
         background: $color--very-dark-grey;
         section {
-            margin: 0 auto;
             max-width: $wrapper-width;
+            margin: 0 auto;
             a {
                 color: $color--grey;
                 &:hover {
@@ -62,10 +61,10 @@
         display: inline-block;
         width: 1.3em;
         height: 1.3em;
-        background: #FF4D4C;
-        vertical-align: text-bottom;
+        background: #ff4d4c;
         mask-image: url(../images/heart.svg);
-        mask-size: contain;
         mask-repeat: no-repeat;
+        mask-size: contain;
+        vertical-align: text-bottom;
     }
 }

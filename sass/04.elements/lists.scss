@@ -1,8 +1,9 @@
-ul, ol {
+ul,
+ol {
+    padding: 0;
+    padding-left: 1.2em;
     margin-top: $margin--small;
     margin-bottom: 0;
-    padding: 0;
-    padding-left: 1.5rem;
 
     @include respond-to(medium) {
         margin-top: $margin--medium;
@@ -11,7 +12,8 @@ ul, ol {
     li {
         margin: 0 0 $margin--small/2;
     }
-    ul, ol {
+    ul,
+    ol {
         margin-top: 0;
         margin-bottom: $margin--small/2;
     }

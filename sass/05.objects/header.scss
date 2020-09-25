@@ -12,14 +12,14 @@ $header-height: 6rem;
         background-position: center;
         background-size: cover;
         &:after {
-            content: "";
             position: absolute;
+            z-index: 0;
             top: 0;
             left: 0;
-            z-index: 0;
             width: 100%;
             height: 100%;
             background: rgba(black, .7);
+            content: "";
         }
     }
 
@@ -46,22 +46,21 @@ $header-height: 6rem;
         position: relative;
         z-index: 10;
         display: flex;
-        flex-direction: row;
         overflow: hidden;
         max-height: $header-height;
-        line-height: $header-height;
-
+        flex-direction: row;
         justify-content: space-between;
+        line-height: $header-height;
         a.blog-title {
-            float: left;
-            padding-left: $padding--medium;
             height: $header-height;
+            padding-left: $padding--medium;
+            float: left;
             font-weight: 600;
             img.blog-logo {
-                margin: $header-height/4 0;
-                padding: 0;
                 width: auto;
                 height: $header-height/2;
+                padding: 0;
+                margin: $header-height/4 0;
             }
         }
 
@@ -89,28 +88,31 @@ $header-height: 6rem;
         position: relative;
         z-index: 10;
         display: flex;
-        flex-direction: column;
-        max-height: calc(100vh - #{$header-height});
         height: 40rem;
+        max-height: calc(100vh - #{$header-height});
+        flex-direction: column;
 
         @include respond-to(tiny) {
             height: 50rem;
         }
+
         @include respond-to(small) {
             height: 60rem;
         }
+
         @include respond-to(medium) {
             height: 70rem;
         }
+
         @include respond-to(large) {
             height: 70rem;
         }
 
         .hero-content {
-            margin: auto;
-            max-width: $wrapper-width;
             width: calc(100% - 4rem);
-            color: rgba(white,.7);
+            max-width: $wrapper-width;
+            margin: auto;
+            color: rgba(white, .7);
 
             @include respond-to(medium) {
                 width: calc(100% - #{$header-height});
@@ -123,12 +125,12 @@ $header-height: 6rem;
                 margin-top: 0;
                 color: white;
                 img {
-                    max-width: 400px;
                     width: 100%;
+                    max-width: 400px;
                 }
             }
             a {
-                color: rgba(white,.7);
+                color: rgba(white, .7);
                 text-decoration: dotted;
                 &:hover {
                     color: white;
@@ -138,19 +140,20 @@ $header-height: 6rem;
             .post--tags {
                 display: block;
                 overflow: auto;
-                margin-top: $margin--medium;
                 width: 100%;
+                margin-top: $margin--medium;
                 a {
                     display: inline-block;
-                    float: left;
+                    padding: .6rem;
+                    border: 1px solid rgba(255, 255, 255, .6);
                     margin-right: .3rem;
                     margin-bottom: .3rem;
-                    padding: .6rem;
-                    border: 1px solid rgba(255,255,255,.6);
                     background: transparent;
-                    color: rgba(255,255,255,.6);
-                    text-transform: uppercase;
+                    color: rgba(255, 255, 255, .6);
+                    float: left;
+                    font-size: $font-size--small;
                     line-height: 1;
+                    text-transform: uppercase;
                     &:hover {
                         background: white;
                         color: black !important;

@@ -27,7 +27,11 @@
         "gulp-sass": "^4.0.2",
         "gulp-sass-glob": "^1.1.0",
         "gulp-sourcemaps": "^2.6.5",
-        "gulp-zip": "^5.0.2"
+        "gulp-zip": "^5.0.2",
+        "stylelint": "^13.7.1",
+        "stylelint-config-idiomatic-order": "*",
+        "stylelint-config-standard": "*",
+        "stylelint-scss": "*"
     },
     "config": {
         "posts_per_page": 10,

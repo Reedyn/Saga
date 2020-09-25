@@ -3,21 +3,22 @@
 }
 
 @include respond-to(large) {
-    .alignleft, .alignright {
-        margin-bottom: $margin--medium;
-        padding-bottom: 0;
+    .alignleft,
+    .alignright {
         width: 30rem;
+        padding-bottom: 0;
+        margin-bottom: $margin--medium;
         img {
             margin: 0;
         }
     }
     .alignleft {
-        float: left;
         margin-right: $margin--medium;
         margin-left: -16rem;
+        float: left;
         q {
-            margin: 0;
             width: initial;
+            margin: 0;
             text-align: right;
         }
     }
@@ -36,12 +37,13 @@
     }
 
     .alignright {
-        float: right;
         margin-right: -16rem;
         margin-left: $margin--medium;
-        q, &q {
-            margin: 0;
+        float: right;
+        q,
+        &q {
             width: initial;
+            margin: 0;
             text-align: left;
         }
     }

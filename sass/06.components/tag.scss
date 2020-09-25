@@ -1,8 +1,8 @@
 .tag-template .main {
     background: white;
     .tag {
-        margin: 0 auto;
         max-width: $wrapper-width;
+        margin: 0 auto;
 
         @include respond-to(small) {
         }

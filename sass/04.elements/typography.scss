@@ -1,8 +1,13 @@
 body {
-    line-height: 1.5;
+    line-height: $font-height;
 }
-p, blockquote, figure, canvas, form {
-    margin:  {
+
+p,
+blockquote,
+figure,
+canvas,
+form {
+    margin: {
         top: $margin--medium;
         right: 0;
         bottom: 0;
@@ -11,7 +16,7 @@ p, blockquote, figure, canvas, form {
 }
 
 .note {
-    padding: $margin--small;
+    padding: $padding--small;
     background: $color--very-light-grey;
 }
 
@@ -22,35 +27,36 @@ mark {
 }
 
 sup {
-    vertical-align: super;
     font-size: $font-size * .85;
+    vertical-align: super;
 }
 
 blockquote {
-    padding-left: $margin--medium;
-    border-left: 4px solid $color--light-grey;
+    padding-left: $padding--small;
+    border-left: .4rem solid $color--light-grey;
     font-family: $font--serif;
     img {
-        margin: $margin--medium 0;
         width: 100%;
+        margin: $margin--medium 0;
     }
 }
 
 q {
     display: block;
-    text-align: center;
-    font-style: italic;
-    font-size: $font-size * 1.25;
     font-family: $font--serif;
+    font-size: $font-size * 1.25;
+    font-style: italic;
+    text-align: center;
 
     @include respond-to(small) {
+        width: calc(100% + #{$margin--large});
+        max-width: calc(100% + #{$margin--large});
         margin-top: $margin--large;
         margin-bottom: $margin--medium;
         margin-left: calc(0% - #{$margin--medium});
-        width: calc(100% + #{$margin--large});
-        max-width: calc(100% + #{$margin--large});
     }
-    &:before, &:after {
+    &:before,
+    &:after {
         display: none;
     }
 }
@@ -58,10 +64,10 @@ q {
 cite {
     display: block;
     color: $color--light-grey;
-    text-transform: capitalize;
-    font-style: normal;
-    font-size: $font-size * .8;
     font-family: $font--sans-serif;
+    font-size: $font-size * .8;
+    font-style: normal;
+    text-transform: capitalize;
     a {
         border: none;
         color: inherit;
@@ -76,7 +82,7 @@ em {
 }
 
 strong {
-    font-weight: bold;
+    font-weight: 700;
 }
 
 pre {
@@ -87,13 +93,13 @@ code {
     padding: $padding--inline-block;
     background: $color--very-light-grey;
     color: black;
-    font-size: $font-size * .8;
     font-family: $font--monospace;
+    font-size: $font-size * .8;
 }
 
 hr {
-    margin: $margin--medium 0 0;
     height: .4rem;
     border: 0;
+    margin: $margin--medium 0 0;
     background: $color--light-grey;
 }

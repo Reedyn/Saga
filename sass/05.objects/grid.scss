@@ -2,12 +2,12 @@
     display: flex;
     flex-direction: column;
 
-    @include respond-to(medium) {
-        @supports(display: grid) {
+    @include respond-to(small) {
+        @supports (display: grid) {
             display: grid;
-            grid-gap: $gutter;
-            grid-template-columns: repeat(auto-fit, minmax(50rem,1fr));
             grid-auto-flow: dense;
+            grid-gap: $gutter;
+            grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
             .post {
                 margin-bottom: 0;
                 &.tag-hash-tall {
@@ -21,10 +21,10 @@
                 }
             }
         }
+
         @supports not (display: grid) {
             display: flex;
             flex-direction: row;
-
             flex-wrap: wrap;
             .post {
                 width: calc(50% - 1rem);

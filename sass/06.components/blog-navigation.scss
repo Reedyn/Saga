@@ -3,11 +3,24 @@
         nav.blog-navigation {
             float: right;
             ul {
+                display: flex;
                 margin: 0 $margin--small 0 0;
+                list-style: none;
                 li {
-                    display: inline-block;
-                    margin-right: $margin--small;
-                    font-size: $font-size*.75;
+                    margin: 0;
+                    font-size: $font-size * .75;
+
+                    a {
+                        display: block;
+                        padding: 0 $padding--small * .5;
+                        &:hover,
+                        &:focus {
+                            background: $color--very-dark-grey;
+                            color: $color--text--light;
+                            text-decoration: none;
+                        }
+                    }
+
                     &[class$="icon"] {
                         margin-right: .4rem;
                         .label {
@@ -15,16 +28,15 @@
                         }
                         a {
                             &:before {
-                                content: "";
                                 display: inline-block;
-                                margin-top: -.5rem;
                                 width: 2.5rem;
                                 height: 2.5rem;
+                                margin-top: -.5rem;
                                 background-color: $color--grey;
                                 background-size: contain;
-                                vertical-align: middle;
-
+                                content: "";
                                 mask-size: contain;
+                                vertical-align: middle;
                             }
 
                             &:hover:before {

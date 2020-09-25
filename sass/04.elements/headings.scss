@@ -1,10 +1,16 @@
-h1, h2, h3, h4, h5, h6 {
-    margin:  {
-        top: $margin--large;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: {
+        top: 1em;
         bottom: 0;
     }
-    font-weight: 500;
+
     font-family: $font-heading;
+    font-weight: 500;
     line-height: $font-height--heading;
     a {
         border: 0;
@@ -12,31 +18,31 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    margin:  {
-        top: $margin--large;
-        bottom: 0;
-    }
-    letter-spacing: -2px;
     font-size: calc(#{$font-size--heading-1} + #{$scaling--heading-1});
+    letter-spacing: -2px;
 }
+
 h2 {
-    font-weight: 500;
     font-size: calc(#{$font-size--heading-2} + #{$scaling--heading-2});
+    font-weight: 500;
 }
 
 h3 {
-    font-weight: 500;
     font-size: calc(#{$font-size--heading-3} + #{$scaling--heading-3});
+    font-weight: 500;
 }
+
 h4 {
-    font-weight: 600;
     font-size: calc(#{$font-size--heading-4} + #{$scaling--heading-4});
+    font-weight: 500;
 }
+
 h5 {
-    font-weight: 600;
     font-size: calc(#{$font-size--heading-5} + #{$scaling--heading-5});
+    font-weight: 500;
 }
+
 h6 {
-    font-weight: 700;
     font-size: calc(#{$font-size--heading-6} + #{$scaling--heading-6});
+    font-weight: 700;
 }

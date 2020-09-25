@@ -7,12 +7,14 @@
         @media #{inspect(map-get($breakpoints, $breakpoint))} {
             @content;
         }
-    } @else {
-        @error 'No value found for `#{$breakpoint}`. '
-             + 'Please make sure it is defined in `$breakpoints` map.';
+    }
+
+    @else {
+        @error "No value found for `#{$breakpoint}`. "
+            + "Please make sure it is defined in `$breakpoints` map.";
     }
 }
 
-@mixin calc($property, $expression){
+@mixin calc($property, $expression) {
     #{$property}: calc(#{$expression});
 }

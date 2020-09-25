@@ -1,8 +1,9 @@
 .kg-card.kg-image-card {
     width: 100%;
+
     figcaption {
-        text-align: center;
-        font-size: $font-size--small;
         margin-top: $margin--small;
+        font-family: $font--serif;
+        text-align: center;
     }
 }

@@ -1,6 +1,6 @@
 .kg-card.kg-bookmark-card {
-    width: 100%;
     position: relative;
+    width: 100%;
 
     .kg-bookmark-container {
         display: flex;
@@ -8,6 +8,7 @@
         color: $color--dark-grey;
         font-family: inherit;
         text-decoration: none;
+
         @include respond-to(small) {
             flex-direction: row-reverse;
         }
@@ -20,8 +21,8 @@
     .kg-bookmark-content {
         flex-basis: 0;
         flex-grow: 999;
-        padding: $padding--medium;
         order: 1;
+        padding: $padding--medium;
         background: $color--very-light-grey;
     }
 
@@ -35,26 +36,26 @@
     }
 
     .kg-bookmark-metadata {
-        align-items: center;
-        white-space: nowrap;
         overflow: hidden;
+        align-items: center;
         text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
     .kg-bookmark-description {
         display: -webkit-box;
+        overflow: hidden;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
-        overflow: hidden;
     }
 
     .kg-bookmark-icon {
         display: inline-block;
         width: 1.3em;
         height: 1.3em;
-        vertical-align: text-bottom;
         margin-right: 1rem;
         margin-bottom: .05rem;
+        vertical-align: text-bottom;
     }
 
     .kg-bookmark-thumbnail {
@@ -66,18 +67,18 @@
     .kg-bookmark-thumbnail img {
         max-width: 100%;
         height: auto;
-        vertical-align: bottom;
         object-fit: cover;
+        vertical-align: bottom;
     }
 
     .kg-bookmark-author {
-        white-space: nowrap;
-        text-overflow: ellipsis;
         overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-    .kg-bookmark-publisher::before {
-        content: "–";
+    .kg-bookmark-publisher:before {
         margin: 0 .4em;
+        content: "–";
     }
 }

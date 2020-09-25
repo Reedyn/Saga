@@ -4,12 +4,12 @@
         margin-bottom: $margin--small;
     }
     img {
-        max-width: none;
-        width: 100vw;
         position: relative;
-        left: 50%;
         right: 50%;
-        margin-left: -50vw;
+        left: 50%;
+        width: 100vw;
+        max-width: none;
         margin-right: -50vw;
+        margin-left: -50vw;
     }
 }

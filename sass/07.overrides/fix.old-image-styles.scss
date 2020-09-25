@@ -1,14 +1,17 @@
 /* Deprecated fix for the old way of handling images, just so they don't look terrible */
 
 .content {
-    img[src$="#large"], img[src$="#full"] {
-        margin-left: -$margin--medium;
+    img[src$="#large"],
+    img[src$="#full"] {
         width: calc(100% + #{$margin--large});
-        @include respond-to(large){
+        margin-left: -$margin--medium;
+
+        @include respond-to(large) {
             width: 150%;
             margin-left: -25%;
         }
-        @include respond-to(huge){
+
+        @include respond-to(huge) {
             width: 200%;
             margin-left: -50%;
         }
