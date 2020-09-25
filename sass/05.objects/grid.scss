@@ -12,12 +12,10 @@
                 margin-bottom: 0;
                 &.tag-hash-tall {
                     min-height: 50vh;
+                    grid-row-end: span 2;
                 }
                 &.featured {
                     grid-column: span 2;
-                }
-                &.tag-hash-tall {
-                    grid-row-end: span 2;
                 }
             }
         }

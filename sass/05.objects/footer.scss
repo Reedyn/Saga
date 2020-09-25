@@ -27,7 +27,8 @@
                 mask-size: contain;
                 transition: .2s all ease;
                 vertical-align: text-bottom;
-                &:hover {
+                &:hover,
+                &:focus {
                     background-color: white;
                 }
             }
@@ -41,7 +42,8 @@
             margin: 0 auto;
             a {
                 color: $color--grey;
-                &:hover {
+                &:hover
+                &:focus {
                     color: white;
                 }
                 i.fa.fa-heart {
@@ -53,7 +55,8 @@
     a {
         border-color: white;
         color: white;
-        &:hover {
+        &:hover
+        &:focus {
             border-color: white;
         }
     }

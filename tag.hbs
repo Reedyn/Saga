@@ -1,11 +1,11 @@
 {{!< default}}
 <header id="header" class="header {{#if tag.feature_image}}cover-image {{/if}}animated fadeIn"{{#if tag.feature_image}} style="background-image: url({{img_url tag.feature_image size="huge"}})"{{/if}}>
-    <section class="header--top ">
+    <section id="top-navigation" class="header--top ">
         {{>header-navigation}}
     </section>
-    <section class="hero post-meta">
+    <section id="hero" class="hero post-meta">
         <div class="hero-content">
-            <h1 class="tag-title animated fadeInUp delay-1">{{tag.name}}</h1>
+            <h1 id="{{id}}-title" class="tag-title animated fadeInUp delay-1">{{tag.name}}</h1>
             <p class="tag-data animated fadeInUp delay-2"><span class="tag-description">{{tag.description}}</span></p>
         </div>
     </section>

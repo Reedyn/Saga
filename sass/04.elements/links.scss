@@ -2,8 +2,12 @@ a {
     color: $color--link;
     text-decoration: none;
     transition: all .2s;
-    &:hover {
-        color: $color--link--visited;
+    &:hover,
+    &:focus {
         text-decoration: underline;
+    }
+
+    &:visited {
+        color: $color--link--visited;
     }
 }

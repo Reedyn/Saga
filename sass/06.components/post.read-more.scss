@@ -2,7 +2,11 @@
     max-height: 100vh;
     padding: $padding--large 0;
     background: black;
-    color: rgba(white, .7);
+    color: $color--text--light;
+
+    &:visited {
+        color: $color--text--light;
+    }
 
     @include respond-to(small) {
         padding: $padding--large*1.5 0;
@@ -11,13 +15,7 @@
     @include respond-to(large) {
         padding: $padding--large*2 0;
     }
-    &.home {
-        background: white;
-        color: rgba(black, .7);
-        a {
-            color: black;
-        }
-    }
+
     &.cover-image {
         position: relative;
         background: black;
@@ -35,24 +33,22 @@
         }
     }
 
-    &:hover {
-        color: white;
-        a {
-            color: white;
-        }
-    }
-
     .hero-content {
         position: relative;
         z-index: 10;
         width: calc(100% - #{$margin--large});
         max-width: $wrapper-width;
         margin: auto;
+
         .post-title {
             display: block;
+            color: $color--text--light;
             font-size: calc(#{$font-size--heading-2*1.5} + #{$scaling--heading-2*1.5}); // Slightly larger than H2
             letter-spacing: -.2rem;
             line-height: 1.2;
+            &:visited {
+                color: $color--text--light;
+            }
         }
         p {
             margin-top: $margin--small;
@@ -61,7 +57,6 @@
 
         p.read-more-text {
             margin-bottom: $margin--large;
-            color: rgba(white, .7);
             font-size: $font-size--small;
             font-weight: 700;
             text-align: center;

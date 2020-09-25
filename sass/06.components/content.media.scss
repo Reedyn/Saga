@@ -2,9 +2,9 @@
     img {
         position: relative;
         display: block;
+        width: 100%;
         max-width: 100%;
         height: auto;
-        min-height: 5rem;
         margin: 0 auto;
         line-height: 2;
         text-align: center;
@@ -23,14 +23,15 @@
 
         &:after {
             position: absolute;
-            top: 0;
+            top: 50%;
             left: 0;
             display: block;
             width: 100%;
             color: $color--dark-grey;
             content: "Broken image of " attr(alt);
-            line-height: 5rem;
+            line-height: 1.2;
             text-align: center;
+            transform: translateY(-50%);
         }
     }
 }

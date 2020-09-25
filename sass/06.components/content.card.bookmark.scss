@@ -14,7 +14,8 @@
         }
     }
 
-    .kg-bookmark-container:hover {
+    .kg-bookmark-container:hover,
+    .kg-bookmark-container:focus {
         text-decoration: none;
     }
 
@@ -54,8 +55,14 @@
         width: 1.3em;
         height: 1.3em;
         margin-right: 1rem;
-        margin-bottom: .05rem;
+        margin-bottom: .3rem;
         vertical-align: text-bottom;
+    }
+
+    span.kg-bookmark-publisher {
+        &:before {
+            content: none;
+        }
     }
 
     .kg-bookmark-thumbnail {
@@ -72,9 +79,7 @@
     }
 
     .kg-bookmark-author {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        display: none;
     }
 
     .kg-bookmark-publisher:before {

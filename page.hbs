@@ -1,17 +1,17 @@
 {{!< default}}
 {{#post ~}}
-    <header id="header" class="header -dark {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="huge"}})"{{/if}}>
-        <section class="header--top">
+    <header role="banner" id="header" class="header -dark {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="huge"}})"{{/if}}>
+        <section id="top-navigation" class="header--top">
             {{>header-navigation}}
         </section>
-        <section class="hero post-meta">
+        <section id="hero" class="hero post-meta">
             <div class="hero-content">
-                <h1 class="page-title animated fadeInUp">{{{title}}}</h1>
+                <h1 id="{{id}}-title" class="page-title animated fadeInUp">{{{title}}}</h1>
             </div>
         </section>
     </header>
     <main id="main" class="main">
-        <article class="animated fadeIn {{post_class}}">
+        <article class="animated fadeIn delay-5 {{post_class}}" aria-labelledby="{{id}}-title">
             <section class="content">
                 {{content}}
             </section>
