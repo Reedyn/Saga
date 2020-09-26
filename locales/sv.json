@@ -23,6 +23,6 @@
     "Please enter a valid email address!":  "Skriv in en giltig e-postadress",
     "youremail@example.com": "dinepostadress@exempel.se",
     "Your e-mail address": "Din e-postadress",
-    "Subscribe":  "Prenumerera"
-
+    "Subscribe":  "Prenumerera",
+    "This content is restricted to subscribers.": "Detta innehåll är begränsat till prenumeranter."
 }

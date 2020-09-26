@@ -24,7 +24,11 @@
     <main id="main" class="main">
         <article class="animated fadeIn delay-5 {{post_class}}" aria-labelledby="{{id}}-title">
             <div class="content">
-                {{content}}
+                {{#if access}}
+                    {{content}}
+                {{else}}
+                    <p>{{t "This content is restricted to subscribers."}}</p>
+                {{/if}}
             </div>
         </article>
     </main>
