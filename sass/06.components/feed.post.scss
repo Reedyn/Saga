@@ -11,15 +11,9 @@
         background-size: cover;
         color: $color--text--light;
 
-        @include respond-to(tiny) {
-        }
-
         @include respond-to(small) {
             min-height: 25vh;
             padding: $padding--medium;
-        }
-
-        @include respond-to(medium) {
         }
         a {
             color: inherit;
@@ -97,7 +91,7 @@
             }
         }
         &:hover .post--tags a,
-        &:focus .post--tags a{
+        &:focus .post--tags a {
             &:not(:nth-of-type(1)) {
                 opacity: 1;
             }
@@ -106,14 +100,6 @@
         .post--title {
             margin: 0;
 
-            @include respond-to(tiny) {
-            }
-
-            @include respond-to(small) {
-            }
-
-            @include respond-to(medium) {
-            }
             a {
                 font-size: inherit;
             }

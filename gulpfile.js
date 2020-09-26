@@ -9,7 +9,7 @@ const minifycss = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const sassGlob = require('gulp-sass-glob');
 const plumber = require('gulp-plumber');
-const zip = require('gulp-zip')
+const zip = require('gulp-zip');
 
 function reloadBrowsers(done) {
     browsersync.reload();

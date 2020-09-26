@@ -10,12 +10,13 @@
         <p class="subscribe-description">{{t "Get the latest posts delivered right to your inbox"}}</p>
         <form class="subscribe-form" data-members-form="subscribe">
             <div class="subscribe-form__group">
-                <input class="subscribe-form__input -email" data-members-email placeholder="{{t "youremail@example.com"}}"
+                <!--suppress HtmlFormInputWithoutLabel -->
+                <input class="subscribe-form__input -email" data-members-email placeholder="{{t "youremail@example.com"}} aria-label="{{t "Your e-mail address"}}"
                        autocomplete="false"/>
                 <button class="subscribe-form__input -submit" type="submit">
                     <span class="button-content">{{t "Subscribe"}}</span>
                     <span class="button-loader">
-                    <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg"
+                    <svg id="loader-1" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
                          y="0px" width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40"
                          xml:space="preserve">
@@ -43,5 +44,5 @@
 </aside>
 <div class="subscribe-success-message">
     {{t "You've successfully subscribed to {blog}!" blog=@blog.title}}
-    <a class="subscribe-close-button" href="javascript:;"></a>
+    <a class="subscribe-close-button" href="javascript:"></a>
 </div>

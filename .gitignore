@@ -42,5 +42,4 @@ Thumbs.db
 .DS_Store
 .csscomb
 
-.csscomb.json
 package-lock.json

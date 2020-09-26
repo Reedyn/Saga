@@ -22,6 +22,7 @@
     "You've successfully subscribed to {blog}!": "Nu prenumererar du på {blog}!",
     "Please enter a valid email address!":  "Skriv in en giltig e-postadress",
     "youremail@example.com": "dinepostadress@exempel.se",
+    "Your e-mail address": "Din e-postadress",
     "Subscribe":  "Prenumerera"
 
 }

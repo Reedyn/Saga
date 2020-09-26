@@ -4,8 +4,6 @@
         max-width: $wrapper-width;
         margin: 0 auto;
 
-        @include respond-to(small) {
-        }
         .tag-content {
             > *:first-child {
                 margin-top: 0;
