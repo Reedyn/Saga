@@ -13,11 +13,15 @@
     <meta name="theme" content="Saga v2.1.0-beta">
 </head>
 <body class="{{#is "index"}}index {{/is}}{{body_class}}">
+    <a href="#main" class="skip-link">{{t "Skip to main content"}}</a>
     {{{body}}}
 
     <footer role="contentinfo" class="footer animated hidden@print fadeIn" id="footer">
         {{> footer}}
     </footer>
+    {{#if @labs.members}}
+    {{>subscriber-form}}
+    {{/if}}
     <script type="text/javascript" src="{{asset 'js/Saga.js'}}"></script>
     {{ghost_foot}}
 </body>

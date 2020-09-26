@@ -1,13 +1,26 @@
 {
+    "Skip to main content": "Skip to main content",
     "Posted by": "Posted by",
     "1 min read": "1 min read",
     "% min read": "% min read",
+    "Feed with blog posts": "Feed with blog posts",
+    "Primary menu": "Primary menu",
+    "Pagination": "Pagination",
     "Blog feed": "Blog feed",
     "Page {page} of {pages}": "Page {page} of {pages}",
     "page": "page",
     "Older posts": "Older posts",
     "Newer posts": "Newer posts",
+    "Author page": "Author page",
+    "Tag page": "Tag page",
     "Published with {ghost}": "Published with {ghost}",
     "Built with {heart} and Free & Open-Source Software": "Built with {heart} and Free & Open-Source Software",
-    "Read next post in {primary_tag}": "Read next post in {primary_tag}"
+    "Read next post in {primary_tag}": "Read next post in {primary_tag}",
+    "Subscribe to": "Subscribe to",
+    "Get the latest posts delivered right to your inbox": "Get the latest posts delivered right to your inbox",
+    "<strong>Great!</strong> Check your inbox and click the link to confirm your subscription.": "<strong>Great!</strong> Check your inbox and click the link to confirm your subscription.",
+    "You've successfully subscribed to {blog}!": "You've successfully subscribed to {blog}!",
+    "Please enter a valid email address!":  "Please enter a valid email address!",
+    "youremail@example.com": "youremail@example.com",
+    "Subscribe":  "Subscribe"
 }

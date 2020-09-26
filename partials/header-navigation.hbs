@@ -1,7 +1,7 @@
-<section>
-    <a class="blog-title" href="{{@site.url}}">
+<section aria-labelledby="blog-title">
+    <a id="blog-title" class="blog-title" href="{{@site.url}}">
         {{#if @site.logo}}
-            <img class="blog-logo" src="{{img_url @site.logo}}" alt="Blog Logo" />
+            <img class="blog-logo" src="{{img_url @site.logo}}" alt="{{@site.title}}" />
         {{else}}
             {{@site.title}}
         {{/if}}
@@ -10,4 +10,4 @@
         <span class="blog-description">{{@site.description}}</span>
     {{/unless}}{{/is}}
 </section>
-{{navigation}}
+<nav class="primary-menu" aria-label="{{t "Primary menu"}}">{{navigation}}</nav>

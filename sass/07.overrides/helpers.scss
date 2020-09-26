@@ -2,15 +2,6 @@
     display: none;
 }
 
-.sr-only {
-    position: absolute;
-    top: auto;
-    left: -10000px;
-    overflow: hidden;
-    width: 1px;
-    height: 1px;
-}
-
 @include respond-to(large) {
     .alignleft,
     .alignright {

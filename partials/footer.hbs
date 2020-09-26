@@ -1,8 +1,7 @@
-<div class="colophon">
-    <div class="poweredby">{{{t "Published with {ghost}" ghost="<a href=\"http://ghost.org\" title=\"Ghost\"><i class=\"ghost-logo\"></i></a>"}}}</div>
+<div class="footer-navigation">
+    {{#if navigation type="secondary"}}<nav class="secondary-menu" aria-label="{{t "Primary menu"}}">{{navigation type="secondary"}}</nav>{{/if}}
+    {{#if @labs.members}}
+        <a id="button--subscribe" class="button -subscribe" href="#subscribe">{{t "Subscribe"}} </a>
+    {{/if}}
 </div>
-<div class="bottom">
-    <div class="attribution">
-        <a href="http://github.com/Reedyn/Saga">{{{t "Built with {heart} and Free & Open-Source Software" heart="<i class=\"heart\"></i>"}}}</a>.
-    </div>
-</div>
+<div class="colophon">{{{t "Published with {ghost}" ghost="<a href=\"http://ghost.org\" title=\"Ghost\"><i class=\"ghost-logo\"></i></a>"}}}</div>

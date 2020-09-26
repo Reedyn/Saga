@@ -11,6 +11,10 @@
         padding: $padding--medium;
         margin: auto;
 
+        @include respond-to(small) {
+            padding: $padding--large $padding--medium;
+        }
+
         @include respond-to(medium) {
             max-width: $wrapper-width + 6rem;
             padding: $padding--large;

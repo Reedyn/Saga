@@ -1,21 +1,29 @@
-<section id="feed" class="feed grid">
+<section id="feed" class="feed grid" aria-label="{{t "Feed with blog posts"}}">
     {{#foreach posts limit="10"}}
-        <article id="{{id}}" aria-labelledby="{{id}}-title" class="{{post_class}}{{#if feature_image}} has-image{{/if}}"{{#if feature_image}} style="background-image: url({{#if featured}}{{img_url feature_image size="large"}}{{else}}{{img_url feature_image size="medium"}}{{/if}}
-                ){{/if}}">
-            <section class="post--top-content">
-                {{#if tags}}
-                    <span class="post--tags"> {{tags class="tag" prefix="" separator=" "}}</span>
-                {{/if}}
-                <h2 class="post--title"><a id="{{id}}-title" href="{{url}}">{{{title}}}</a></h2>
-                <p class="post--excerpt">{{excerpt words=25}}…</p>
-                <p class="post--read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
-            </section>
-            <section class="post--bottom-content">
-                    <span class="post--meta">
-                        {{#primary_author}}<span class="date">{{t "Posted by"}} <span class="author">{{name}}</span>{{/primary_author}} <time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></span>
-                    </span>
-                </section>
-        </article>
+    <article id="{{id}}" aria-labelledby="{{id}}-title"
+             class="{{post_class}}{{#if feature_image}} has-image{{/if}}"{{#if
+            feature_image}} style="background-image: url({{#if featured}}{{img_url feature_image
+                                                                                   size="large"}}{{else}}{{img_url
+            feature_image size="medium"}}{{/if}}
+            ){{/if}}">
+        <div class="post--top-content">
+            {{#if tags}}
+            <span class="post--tags"> {{tags class="tag" prefix="" separator=" "}}</span>
+            {{/if}}
+            <h2 class="post--title"><a id="{{id}}-title" href="{{url}}">{{{title}}}</a></h2>
+            <p class="post--excerpt">{{excerpt words=25}}…</p>
+            <p class="post--read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
+        </div>
+        <div class="post--bottom-content">
+                <span class="post--meta">
+                    {{#primary_author}}
+                    <span class="date">{{t "Posted by"}} <span class="author">{{name}}</span>{{/primary_author}}
+                    <time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}"
+                          title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time>
+                </span>
+                </span>
+        </div>
+    </article>
     {{~/foreach}}
 </section>
 {{pagination}}

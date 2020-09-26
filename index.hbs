@@ -1,7 +1,7 @@
 {{!< default}}
 <header role="banner" id="header" class="animated fadeIn header {{#if
         @site.cover_image}} --dark cover-image" style="background-image: url({{img_url @site.cover_image size="xl"}});{{else}}-light{{/if}}">
-    <section class="top-navigation" class="header--top ">
+    <section id="top-navigation" class="header--top"  aria-label="{{t "Top navigation"}}">
         {{>header-navigation}}
     </section>
     {{#if @site.cover_image}}

@@ -5,14 +5,19 @@
 
     .content {
         display: flex;
-        max-width: $wrapper-width + 4rem;
+        max-width: $wrapper-width;
         flex-direction: column;
         align-items: center;
         padding: $padding--medium;
         margin: auto;
 
+        @include respond-to(small) {
+            max-width: $wrapper-width + ($padding--medium * 2);
+            padding: $padding--large $padding--medium;
+        }
+
         @include respond-to(medium) {
-            max-width: $wrapper-width + 6rem;
+            max-width: $wrapper-width + ($padding--large * 2);
             padding: $padding--large;
         }
 

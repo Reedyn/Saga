@@ -65,7 +65,7 @@
 
             &:hover,
             &:focus {
-                background: black;
+                background: $color--very-dark-grey;
                 color: white;
                 text-decoration: none;
             }
@@ -79,7 +79,7 @@
             }
         }
 
-        nav.blog-navigation {
+        .primary-menu {
             float: right;
             ul.nav {
                 margin: 0;
@@ -150,9 +150,14 @@
                 display: block;
                 overflow: auto;
                 width: 100%;
+                padding: 0;
                 margin-top: $margin--small;
-                a {
+                list-style: none;
+                li {
                     display: inline-block;
+                }
+                a {
+                    display: block;
                     padding: .6rem;
                     border: 1px solid rgba(255, 255, 255, .6);
                     margin-right: .3rem;

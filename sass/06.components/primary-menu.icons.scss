@@ -1,0 +1,94 @@
+li {
+    &[class$="icon"] {
+        margin-right: .4rem;
+        .label { // Code duplicated from .sr-only helper from  07.overrides/a11y.scss
+            position: absolute;
+            top: auto;
+            left: -10000px;
+            overflow: hidden;
+            width: 1px;
+            height: 1px;
+        }
+        a {
+            &:before {
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                margin-top: -.5rem;
+                background-color: $color--text--dark;
+                background-size: contain;
+                content: "";
+                mask-size: contain;
+                vertical-align: middle;
+            }
+
+            &:hover:before,
+            &:focus:before {
+                background-color: white;
+            }
+        }
+    }
+    &.nav-github-icon {
+        a:before {
+            mask-image: url(../images/github.svg);
+        }
+    }
+    &.nav-twitter-icon {
+        a:before {
+            mask-image: url(../images/twitter.svg);
+        }
+    }
+    &.nav-rss-icon {
+        a:before {
+            mask-image: url(../images/rss.svg);
+        }
+    }
+    &.nav-facebook-icon {
+        a:before {
+            mask-image: url(../images/facebook.svg);
+        }
+    }
+    &.nav-download-icon {
+        a:before {
+            mask-image: url(../images/download.svg);
+        }
+    }
+    &.nav-image-icon {
+        a:before {
+            mask-image: url(../images/image.svg);
+        }
+    }
+    &.nav-tumblr-icon {
+        a:before {
+            mask-image: url(../images/tumblr.svg);
+        }
+    }
+    &.nav-steam-icon {
+        a:before {
+            mask-image: url(../images/steam.svg);
+        }
+    }
+    &.nav-googleplus-icon {
+        a:before {
+            mask-image: url(../images/google-plus.svg);
+        }
+    }
+    &.nav-camera-icon {
+        a:before {
+            mask-image: url(../images/camera.svg);
+        }
+    }
+    &.nav-email-icon {
+        a:before {
+            mask-image: url(../images/email.svg);
+        }
+    }
+    &.nav-telegram-icon {
+        a:before {
+            mask-image: url(../images/telegram.svg);
+        }
+    }
+    &:last-of-type {
+        margin-right: $margin--small;
+    }
+}

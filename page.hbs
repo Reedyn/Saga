@@ -1,7 +1,7 @@
 {{!< default}}
 {{#post ~}}
     <header role="banner" id="header" class="header -dark {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="huge"}})"{{/if}}>
-        <section id="top-navigation" class="header--top">
+        <section id="top-navigation" class="header--top"  aria-label="{{t "Top navigation"}}">
             {{>header-navigation}}
         </section>
         <section id="hero" class="hero post-meta">

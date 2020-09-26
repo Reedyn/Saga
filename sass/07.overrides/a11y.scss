@@ -1,0 +1,25 @@
+.skip-link {
+    position: absolute;
+    z-index: 100;
+    top: -99999rem;
+    left: 0;
+    padding: $padding--block;
+    background: $color--text--light;
+
+    a {
+        color: $color--text--dark;
+    }
+
+    &:focus {
+        top: 0;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    top: auto;
+    left: -10000px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+}
