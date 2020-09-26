@@ -13,7 +13,7 @@
     }
 
     @include respond-to(huge) {
-        max-width: $wrapper-width + 50rem;
+        max-width: $wrapper-width + 40rem;
     }
 
     img {

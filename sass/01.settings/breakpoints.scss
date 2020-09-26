@@ -3,13 +3,13 @@
 Breakpoints for various screen sizes
 ------------------- */
 
-$huge: 140rem;
-$large: 100rem;
-$medium: 80rem;
-$small: 55rem;
-$tiny: 40rem;
-$mini: 30rem;
-$micro: 20rem;
+$huge: 87.5em; //1400px
+$large: 62.5em; //1000px
+$medium: 50em; //800px
+$small: 35em; //560px
+$tiny: 25em; //400px
+$mini: 18.75em; //300px
+$micro: 12.5em; //200px
 
 $breakpoints: (
     "huge": (min-width: $huge),
