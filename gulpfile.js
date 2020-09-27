@@ -54,10 +54,8 @@ function createPackage() {
     return src([
         './**',
         '!node_modules/**',
-        '!.git/**',
-        '!.DS_Store',
-        '!.gitignore'
-    ], { dot: true })
+        '!./**.zip'
+    ])
         .pipe(zip('Saga-' + project.version + '.zip'))
         .pipe(dest('./'));
 }

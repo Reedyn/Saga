@@ -6,4 +6,10 @@
         margin-top: $margin--large;
         margin-bottom: $margin--medium;
     }
+
+    figcaption {
+        margin-top: $margin--small;
+        font-family: $font--serif;
+        text-align: center;
+    }
 }

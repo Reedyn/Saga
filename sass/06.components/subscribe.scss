@@ -12,6 +12,7 @@
     &__content {
         position: relative;
         z-index: 100;
+        max-width: 100%;
         align-self: center;
         padding: $padding--medium;
         margin: auto;
@@ -173,7 +174,7 @@
     text-decoration: underline;
 }
 
-.success .subscribe-form__message.success {
+.success .subscribe-form__message.-success {
     display: block;
 }
 

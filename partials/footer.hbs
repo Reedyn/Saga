@@ -1,7 +1,6 @@
+{{#if navigation type="secondary"}}
 <div class="footer-navigation">
-    {{#if navigation type="secondary"}}<nav class="secondary-menu" aria-label="{{t "Primary menu"}}">{{navigation type="secondary"}}</nav>{{/if}}
-    {{#if @labs.members}}
-        <a id="button--subscribe" class="button -subscribe" href="#subscribe">{{t "Subscribe"}} </a>
-    {{/if}}
+    <nav class="secondary-menu" aria-label="{{t "Primary menu"}}">{{navigation type="secondary"}}</nav>
 </div>
+{{/if}}
 <div class="colophon">{{{t "Published with {ghost}" ghost="<a href=\"http://ghost.org\" title=\"Ghost\"><i class=\"ghost-logo\"></i></a>"}}}</div>
