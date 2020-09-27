@@ -116,8 +116,8 @@
         }
 
         .hero-content {
-            width: calc(100% - 4rem);
-            max-width: $wrapper-width;
+            width: calc(100% - 2rem);
+            max-width: $wrapper-width - 2rem;
             margin: auto;
             color: $color--light-grey;
 
