@@ -1,0 +1,30 @@
+.header {
+    .header--top {
+        .primary-menu {
+            float: right;
+            ul {
+                display: flex;
+                margin: 0 $margin--small 0 0;
+                list-style: none;
+                li {
+                    margin: 0;
+                    font-size: $font-size--small;
+
+                    a {
+                        display: block;
+                        padding: 0 $padding--small * .5;
+                        &:hover,
+                        &:focus {
+                            background: $color--very-dark-grey;
+                            color: $color--text--light;
+                            text-decoration: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.-dark .header--top .primary-menu ul li[class$="icon"] a:before {
+        background-color: white;
+    }
+}

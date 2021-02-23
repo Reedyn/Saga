@@ -1,0 +1,10 @@
+.index {
+    background: $color--very-light-grey;
+    .header:not(.cover-image) {
+        background: white;
+        color: rgba(black, .7);
+        a {
+            color: black;
+        }
+    }
+}

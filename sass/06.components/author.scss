@@ -1,0 +1,26 @@
+.author-template {
+    .hero {
+        text-align: center;
+        .author-image {
+            width: 10rem;
+            height: auto;
+            margin-bottom: $margin--medium;
+            border-radius: 50%;
+
+            @include respond-to(tiny) {
+                width: 15rem;
+            }
+
+            @include respond-to(small) {
+                width: 17.5rem;
+            }
+        }
+
+        .author-data {
+            span {
+                display: block;
+                margin-bottom: $margin--small;
+            }
+        }
+    }
+}

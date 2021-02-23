@@ -1,0 +1,22 @@
+.kg-card.kg-width-wide {
+    width: 100vw;
+    max-width: 100%;
+
+    @include respond-to(medium) {
+        max-width: $wrapper-width;
+        margin-top: $margin--large;
+        margin-bottom: $margin--small;
+    }
+
+    @include respond-to(large) {
+        max-width: $wrapper-width + 10rem;
+    }
+
+    @include respond-to(huge) {
+        max-width: $wrapper-width + 40rem;
+    }
+
+    img {
+        width: 100%;
+    }
+}

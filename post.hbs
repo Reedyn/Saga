@@ -1,41 +1,49 @@
 {{!< default}}
 {{#post ~}}
-    <header id="header" class="header {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="huge"}})"{{/if}}>
-        <section class="header--top">
+    <header role="banner" id="header" class="header -dark {{#if feature_image}}cover-image {{/if}}animated fadeIn"{{#if feature_image}} style="background-image: url({{img_url feature_image size="huge"}})"{{/if}}>
+        <section id="top-navigation" class="header--top"  aria-label="{{t "Top navigation"}}">
             {{>header-navigation}}
         </section>
-        <section class="hero post-meta">
+        <section id="hero" class="hero post-meta">
             <div class="hero-content">
-                <h1 class="post-title animated fadeInUp delay-1">{{{title}}}</h1>
+                <h1 id="{{id}}-title" class="post-title animated fadeInUp delay-1">{{{title}}}</h1>
                 <div class="post-data">
-                    <p class="date animated fadeInUp delay-2">{{t "Posted by"}} {{#primary_author}}<span class="author"><a href="{{url}}">{{name}}</a></span>{{/primary_author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></p>
+                    <p class="date animated fadeInUp delay-2">{{t "Posted by"}} {{#primary_author}}<span class="author"><a href="{{url}}" title="{{t "Author page"}}">{{name}}</a></span>{{/primary_author}} <a href="{{url}}"><time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></a></p>
                     <p class="post--read-time animated fadeInUp delay-3">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
                     {{#if tags}}
-                        <p class="post--tags animated fadeInUp delay-4"> {{tags class="tag" prefix="" separator=" "}}</p>
+                        <ul class="post--tags animated fadeInUp delay-4">
+                        {{#foreach tags}}
+                            <li><a href="{{url}}" title="{{t "Tag page"}}" class="tag tag-{{id}} {{slug}}">{{name}}</a></li>
+                        {{/foreach}}
+                        </ul>
                     {{/if}}
                 </div>
             </div>
         </section>
     </header>
     <main id="main" class="main">
-        <article class="animated fadeIn delay-5 {{post_class}}">
-            <section class="content">
-                {{content}}
-            </section>
+        <article class="animated fadeIn delay-5 {{post_class}}" aria-labelledby="{{id}}-title">
+            <div class="content">
+                {{#if access}}
+                    {{content}}
+                {{else}}
+                    <p>{{t "This content is restricted to subscribers."}}</p>
+                {{/if}}
+            </div>
         </article>
     </main>
     {{#if primary_tag}}
         {{#next_post in="primary_tag"}}
-            <a href="{{url}}" class="read-more hero {{#if feature_image}}cover-image {{/if}}animated fadeIn delay-5"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
+            <article role="complementary" id="read-more" aria-labelledby="{{id}}-title" class="read-more hero {{#if feature_image}}cover-image {{/if}}animated fadeIn delay-5 hidden@print"{{#if feature_image}} style="background-image: url({{img_url feature_image}})"{{/if}}>
                 <div class="hero-content">
-                    <p class="read-more-text">~ {{t "Read next post in {primary_tag}" primary_tag=primary_tag.name}} ~</p>
-                    <span class="post-title">{{{title}}}</span>
+                    <p id="read-more--text" class="read-more-text">~ {{t "Read next post in {primary_tag}" primary_tag=primary_tag.name}} ~</p>
+                    <a id="{{id}}-title" class="post-title" href="{{url}}" >{{{title}}}</a>
                     <div class="post-data">
                         <p class="date">{{t "Posted by"}} {{#primary_author}}<span class="author">{{name}}</span>{{/primary_author}} <time class="timesince" datetime="{{date format='YYYY-MM-DDTHH:mm'}}" title="{{date format='YYYY-MM-DD HH:mm'}}">{{date published_at timeago='true'}}</time></p>
                         <p class="post--read-time">{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</p>
                     </div>
                 </div>
-            </a>
+            </article>
         {{/next_post}}
     {{/if}}
 {{~/post}}

@@ -1,0 +1,36 @@
+.content {
+    img {
+        position: relative;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto;
+        line-height: 2;
+        text-align: center;
+
+        &:before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 2px dotted $color--grey;
+            background-color: $color--very-light-grey;
+            content: " ";
+        }
+
+        &:after {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: block;
+            width: 100%;
+            color: $color--dark-grey;
+            content: "Broken image of " attr(alt);
+            line-height: 1.2;
+            text-align: center;
+            transform: translateY(-50%);
+        }
+    }
+}

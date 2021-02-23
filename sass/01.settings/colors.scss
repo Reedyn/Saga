@@ -1,0 +1,35 @@
+/* Colors
+-------------------
+All defined colors used throughout the theme
+------------------- */
+
+$color--transparent-black: rgba(0, 0, 0, .8);
+$color--transparent-white: rgba(255, 255, 255, .95);
+$color--very-light-grey: #f7f7f7;
+$color--light-grey: #c9c9c9;
+$color--grey: #848484;
+$color--medium-grey: #585858;
+$color--dark-grey: #252525;
+$color--very-dark-grey: #1d1d1d;
+
+$color--marker-yellow: #fdffb6;
+$color--hearty-red: #d85151;
+$color--blue: #33f;
+$color--purple: #90c;
+$color--green: #050;
+$color--red: #c00;
+
+/* Color variables
+-------------------
+Actual variables used
+------------------- */
+
+$color--background--dark: black;
+$color--background--light: white;
+$color--background--modal: rgba(0, 0, 0, .95);
+$color--text--dark: $color--transparent-black;
+$color--text--light: white;
+$color--link: $color--blue;
+$color--link--visited: $color--purple;
+$color--success: $color--green;
+$color--error: $color--red;

@@ -1,0 +1,54 @@
+.hidden {
+    display: none;
+}
+
+@include respond-to(large) {
+    .alignleft,
+    .alignright {
+        width: 30rem;
+        padding-bottom: 0;
+        margin-bottom: $margin--medium;
+        img {
+            margin: 0;
+        }
+    }
+    .alignleft {
+        margin-right: $margin--medium;
+        margin-left: -16rem;
+        float: left;
+        q {
+            width: initial;
+            margin: 0;
+            text-align: right;
+        }
+    }
+
+    blockquote.alignleft {
+        padding-right: $padding--medium;
+        padding-left: 0;
+        border-right: .4rem solid $color--light-grey;
+        border-left: 0;
+        text-align: right;
+    }
+
+    q.alignleft {
+        margin-top: 0;
+        text-align: right;
+    }
+
+    .alignright {
+        margin-right: -16rem;
+        margin-left: $margin--medium;
+        float: right;
+        q,
+        &q {
+            width: initial;
+            margin: 0;
+            text-align: left;
+        }
+    }
+    q.alignright {
+        margin: 0;
+        text-align: left;
+    }
+}

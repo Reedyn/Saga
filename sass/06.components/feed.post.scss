@@ -1,0 +1,122 @@
+.feed {
+    .post {
+        position: relative;
+        display: flex;
+        overflow: hidden;
+        min-height: 35vh;
+        flex-direction: column;
+        padding: $padding--medium;
+        margin-bottom: $gutter;
+        background-color: $color--medium-grey;
+        background-position: center;
+        background-size: cover;
+        color: $color--text--light;
+
+        @include respond-to(small) {
+            padding: $padding--medium;
+        }
+
+        &.tag-hash-tall {
+            min-height: 70vh;
+            grid-row-end: span 2;
+        }
+        &.featured {
+            grid-column: span 2;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        // Black overlay
+        &.has-image:after {
+            position: absolute;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, .4);
+            content: "";
+        }
+
+        .post--top-content {
+            position: relative;
+            z-index: 20;
+            max-width: $medium;
+            flex: 1;
+        }
+        .post--bottom-content {
+            position: relative;
+            z-index: 20;
+            max-width: $medium;
+            height: auto;
+        }
+
+        .post--tags {
+            display: block;
+            overflow: auto;
+            width: 100%;
+            margin-bottom: $margin--small;
+            font-size: 1.2rem;
+            a {
+                display: inline-block;
+                padding: .6rem;
+                border: .1rem solid rgb(255, 255, 255);
+                margin-right: .3rem;
+                margin-bottom: .3rem;
+                color: rgb(255, 255, 255);
+                float: left;
+                font-size: $font-size--small;
+                line-height: 1;
+                text-transform: uppercase;
+
+                @include respond-to(large) {
+                    &:not(:nth-of-type(1)) {
+                        opacity: 0;
+                    }
+                }
+                &:hover,
+                &:focus {
+                    background: white;
+                    color: $color--dark-grey !important;
+                    text-decoration: none;
+                }
+            }
+            &:hover,
+            &:focus {
+                a:not(:nth-of-type(1)) {
+                    display: inline-block;
+                }
+            }
+        }
+        &:hover .post--tags a,
+        &:focus .post--tags a {
+            &:not(:nth-of-type(1)) {
+                opacity: 1;
+            }
+        }
+
+        .post--title {
+            margin: 0;
+            a {
+                font-size: inherit;
+            }
+        }
+
+        .post--meta {
+            display: block;
+            font-size: $font-size--small;
+            line-height: 1.5;
+            .author {
+                a {
+                    border-color: transparent;
+                    &:hover,
+                    &:focus {
+                        border-color: white;
+                    }
+                }
+            }
+        }
+    }
+}

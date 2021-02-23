@@ -1,0 +1,23 @@
+pre {
+    width: 100vw;
+    max-width: 100%;
+    padding: $padding--block;
+    background: $color--very-dark-grey;
+    color: $color--light-grey;
+    line-height: $font-size * 1.25;
+    overflow-y: hidden;
+    word-wrap: break-word;
+    margin: {
+        top: $margin--medium;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    code {
+        display: block;
+        padding: 0;
+        background: none;
+        color: $color--light-grey;
+        font-family: $font--monospace;
+    }
+}

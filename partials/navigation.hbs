@@ -1,9 +1,5 @@
-<nav class="blog-navigation">
-    <ul>
-        <!-- Loop through the navigation items -->
-        {{#foreach navigation}}
-            <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}"><span class="label">{{label}}</span></a></li>
-        {{/foreach}}
-        <!-- End the loop -->
-    </ul>
-</nav>
+<ul>
+    {{#foreach navigation}}
+    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}"><a href="{{url absolute="true"}}"><span class="label">{{label}}</span></a></li>
+    {{/foreach}}
+</ul>

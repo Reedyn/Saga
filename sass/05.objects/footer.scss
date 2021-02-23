@@ -1,0 +1,83 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $padding--large $padding--medium;
+    animation-delay: 1s;
+    background: $color--dark-grey;
+    color: $color--light-grey;
+    text-transform: uppercase;
+
+    a {
+        border-bottom: 1px dotted $color--light-grey;
+        color: $color--light-grey;
+        text-decoration: none;
+
+        &:visited {
+            color: $color--light-grey;
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom: 1px solid $color--text--light;
+            color: $color--text--light;
+        }
+    }
+
+    .button {
+        display: inline-block;
+        padding: $padding--block;
+        border: 0;
+        background: $color--grey;
+        border-radius: $border-radius--button;
+        color: $color--text--dark;
+
+        &:hover,
+        &:focus {
+            border: 0;
+            background: $color--text--light;
+            color: $color--text--dark;
+        }
+    }
+
+    > :not(:last-child) {
+        margin-bottom: $margin--large;
+    }
+
+    .footer-navigation {
+        width: 100%;
+        max-width: $wrapper-width;
+    }
+
+    .colophon {
+        width: 100%;
+        max-width: $wrapper-width;
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .ghost-logo {
+            display: inline-block;
+            width: 4.2em;
+            height: 1.3em;
+            margin-top: .1rem;
+            margin-left: .4rem;
+            background: $color--light-grey;
+            mask-image: url(../images/ghost-logo.svg);
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            transition: .2s all ease;
+            vertical-align: text-top;
+
+            &:hover,
+            &:focus {
+                background-color: white;
+            }
+        }
+    }
+}

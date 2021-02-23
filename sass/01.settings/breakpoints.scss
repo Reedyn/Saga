@@ -1,0 +1,20 @@
+/* Breakpoints
+-------------------
+Breakpoints for various screen sizes
+------------------- */
+
+$huge: 87.5em; //1400px
+$large: 62.5em; //1000px
+$medium: 50em; //800px
+$small: 35em; //560px
+$tiny: 25em; //400px
+$mini: 18.75em; //300px
+$micro: 12.5em; //200px
+
+$breakpoints: (
+    "huge": (min-width: $huge),
+    "large": (min-width: $large),
+    "medium": (min-width: $medium),
+    "small": (min-width: $small),
+    "tiny": (min-width: $tiny),
+);

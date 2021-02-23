@@ -1,0 +1,89 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-idiomatic-order"
+    ],
+    "fix": true,
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "ignoreFiles": [
+        "**/*.html"
+    ],
+    "rules": {
+        "at-rule-no-unknown": null,
+        "scss/at-rule-no-unknown": true,
+        "indentation": 4,
+        "string-quotes": [
+            "double",
+            {
+                "severity": "warning"
+            }
+        ],
+        "no-duplicate-selectors": true,
+        "color-hex-case": [
+            "lower",
+            {
+                "severity": "warning"
+            }
+        ],
+        "color-hex-length": "short",
+        "color-named": [
+            "always-where-possible",
+            {
+                "severity": "warning"
+            }
+        ],
+        "selector-combinator-space-after": "always",
+        "selector-attribute-quotes": "always",
+        "selector-attribute-operator-space-before": "never",
+        "selector-attribute-operator-space-after": "never",
+        "selector-attribute-brackets-space-inside": "never",
+        "declaration-block-trailing-semicolon": "always",
+        "declaration-colon-space-before": "never",
+        "declaration-colon-space-after": "always",
+        "number-leading-zero": "never",
+        "function-url-quotes": "never",
+        "font-weight-notation": "numeric",
+        "font-family-name-quotes": "always-where-recommended",
+        "comment-whitespace-inside": "always",
+        "comment-empty-line-before": "always",
+        "rule-empty-line-before": [
+            "always",
+            {
+                "ignore": [
+                    "after-comment",
+                    "first-nested",
+                    "inside-block"
+                ]
+            }
+        ],
+        "selector-pseudo-element-colon-notation": "single",
+        "selector-pseudo-class-parentheses-space-inside": "never",
+        "media-feature-range-operator-space-before": "never",
+        "media-feature-range-operator-space-after": "always",
+        "media-feature-parentheses-space-inside": "never",
+        "media-feature-colon-space-before": "never",
+        "media-feature-colon-space-after": "always",
+        "no-descending-specificity": null,
+        "no-eol-whitespace": [
+            true,
+            {
+                "severity": "warning",
+                "ignore": [
+                    "empty-lines"
+                ]
+            }
+        ],
+        "block-no-empty": [
+            true,
+            {
+                "severity": "warning",
+                "ignore": [
+                    "comments"
+                ]
+            }
+        ]
+    },
+    "syntax": "scss"
+}

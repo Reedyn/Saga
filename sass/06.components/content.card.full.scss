@@ -1,0 +1,15 @@
+.kg-card.kg-width-full {
+    @include respond-to(medium) {
+        margin-top: $margin--large;
+        margin-bottom: $margin--small;
+    }
+    img {
+        position: relative;
+        right: 50%;
+        left: 50%;
+        width: 100vw;
+        max-width: none;
+        margin-right: -50vw;
+        margin-left: -50vw;
+    }
+}

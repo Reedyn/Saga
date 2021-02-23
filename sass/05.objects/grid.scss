@@ -1,0 +1,28 @@
+.feed.grid {
+    display: flex;
+    flex-direction: column;
+
+    @include respond-to(medium) {
+        @supports (display: grid) {
+            display: grid;
+            grid-auto-flow: dense;
+            grid-gap: $gutter;
+            grid-template-columns: repeat(auto-fit, minmax($medium, 1fr));
+            .post {
+                margin-bottom: 0;
+            }
+        }
+
+        @supports not (display: grid) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .post {
+                width: calc(50% - 1rem);
+                &:nth-of-type(2n) {
+                    margin-left: $gutter;
+                }
+            }
+        }
+    }
+}

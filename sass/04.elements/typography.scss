@@ -1,0 +1,105 @@
+body {
+    line-height: $font-height;
+}
+
+p,
+blockquote,
+figure,
+canvas,
+form {
+    margin: {
+        top: $margin--medium;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.note {
+    padding: $padding--small;
+    background: $color--very-light-grey;
+}
+
+mark {
+    padding: $padding--small/5;
+    background-color: $color--marker-yellow;
+    box-shadow: $color--marker-yellow 0 0 5px;
+}
+
+sup {
+    font-size: $font-size * .85;
+    vertical-align: super;
+}
+
+blockquote {
+    padding-left: $padding--small;
+    border-left: .4rem solid $color--light-grey;
+    font-family: $font--serif;
+    img {
+        width: 100%;
+        margin: $margin--medium 0;
+    }
+}
+
+q {
+    display: block;
+    font-family: $font--serif;
+    font-size: $font-size * 1.25;
+    font-style: italic;
+    text-align: center;
+
+    @include respond-to(small) {
+        width: calc(100% + #{$margin--large});
+        max-width: calc(100% + #{$margin--large});
+        margin-top: $margin--large;
+        margin-bottom: $margin--medium;
+        margin-left: calc(0% - #{$margin--medium});
+    }
+    &:before,
+    &:after {
+        display: none;
+    }
+}
+
+cite {
+    display: block;
+    color: $color--light-grey;
+    font-family: $font--sans-serif;
+    font-size: $font-size * .8;
+    font-style: normal;
+    text-transform: capitalize;
+    a {
+        border: none;
+        color: inherit;
+    }
+    &:before {
+        content: "\2014 \2009";
+    }
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: 700;
+}
+
+pre {
+    margin-top: $margin--medium;
+}
+
+code {
+    padding: $padding--inline-block;
+    background: $color--very-light-grey;
+    color: black;
+    font-family: $font--monospace;
+    font-size: $font-size * .8;
+}
+
+hr {
+    height: .4rem;
+    border: 0;
+    margin: $margin--medium 0 0;
+    background: $color--light-grey;
+}

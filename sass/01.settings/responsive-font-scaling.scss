@@ -1,0 +1,24 @@
+/* Custom responsive scaling for headings */
+
+$scale-multiplier-1: 2;
+$scale-multiplier-2: 1.25;
+$scale-multiplier-3: 1;
+$scale-multiplier-4: .8;
+$scale-multiplier-5: .64;
+$scale-multiplier-6: .5;
+
+$font-size--heading-1: $font-size * $scale-multiplier-1;
+$font-size--heading-2: $font-size * $scale-multiplier-2;
+$font-size--heading-3: $font-size * $scale-multiplier-3;
+$font-size--heading-4: $font-size * $scale-multiplier-4;
+$font-size--heading-5: $font-size * $scale-multiplier-5;
+$font-size--heading-6: $font-size * $scale-multiplier-6;
+
+$base-scaling: .75vw;
+
+$scaling--heading-1: $base-scaling * $scale-multiplier-1;
+$scaling--heading-2: $base-scaling * $scale-multiplier-2;
+$scaling--heading-3: $base-scaling * $scale-multiplier-3;
+$scaling--heading-4: $base-scaling * $scale-multiplier-4;
+$scaling--heading-5: $base-scaling * $scale-multiplier-5;
+$scaling--heading-6: $base-scaling * $scale-multiplier-6;
