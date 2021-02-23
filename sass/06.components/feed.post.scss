@@ -3,6 +3,7 @@
         position: relative;
         display: flex;
         overflow: hidden;
+        min-height: 35vh;
         flex-direction: column;
         padding: $padding--medium;
         margin-bottom: $gutter;
@@ -12,9 +13,17 @@
         color: $color--text--light;
 
         @include respond-to(small) {
-            min-height: 25vh;
             padding: $padding--medium;
         }
+
+        &.tag-hash-tall {
+            min-height: 70vh;
+            grid-row-end: span 2;
+        }
+        &.featured {
+            grid-column: span 2;
+        }
+
         a {
             color: inherit;
         }
@@ -27,12 +36,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, .8);
+            background: rgba(0, 0, 0, .4);
             content: "";
-
-            @include respond-to(small) {
-                background: rgba(0, 0, 0, .7);
-            }
         }
 
         .post--top-content {
@@ -57,11 +62,10 @@
             a {
                 display: inline-block;
                 padding: .6rem;
-                border: .1rem solid rgba(255, 255, 255, .6);
+                border: .1rem solid rgb(255, 255, 255);
                 margin-right: .3rem;
                 margin-bottom: .3rem;
-                background: transparent;
-                color: rgba(255, 255, 255, .6);
+                color: rgb(255, 255, 255);
                 float: left;
                 font-size: $font-size--small;
                 line-height: 1;
@@ -81,10 +85,6 @@
             }
             &:hover,
             &:focus {
-                a {
-                    border-color: white;
-                    color: white;
-                }
                 a:not(:nth-of-type(1)) {
                     display: inline-block;
                 }
@@ -99,22 +99,9 @@
 
         .post--title {
             margin: 0;
-
             a {
                 font-size: inherit;
             }
-        }
-
-        .post--excerpt {
-            max-width: $small;
-            margin: $margin--small 0;
-            font-size: $font-size--small;
-        }
-
-        .post--read-time {
-            margin-top: $margin--small;
-            margin-bottom: $margin--small;
-            font-size: $font-size--small;
         }
 
         .post--meta {

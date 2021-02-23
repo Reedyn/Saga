@@ -2,21 +2,14 @@
     display: flex;
     flex-direction: column;
 
-    @include respond-to(small) {
+    @include respond-to(medium) {
         @supports (display: grid) {
             display: grid;
             grid-auto-flow: dense;
             grid-gap: $gutter;
-            grid-template-columns: repeat(auto-fit, minmax(50rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax($medium, 1fr));
             .post {
                 margin-bottom: 0;
-                &.tag-hash-tall {
-                    min-height: 50vh;
-                    grid-row-end: span 2;
-                }
-                &.featured {
-                    grid-column: span 2;
-                }
             }
         }
 

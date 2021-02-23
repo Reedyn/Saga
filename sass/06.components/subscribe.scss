@@ -129,11 +129,11 @@
     text-align: center;
     transform: translateY(-175%);
     transition: all .35s cubic-bezier(.19, 1, .22, 1) .5s;
-    visibility: visible;
+    visibility: hidden;
 
     &.close {
         transform: translateY(-175%);
-        transition: all 1.35s cubic-bezier(.19, 1, .22, 1);
+        transition: transform 1.35s cubic-bezier(.19, 1, .22, 1);
         visibility: hidden;
     }
 
@@ -170,12 +170,12 @@
 }
 
 .error .subscribe-form__message.-error {
-    display: block;
+    display: block !important;
     text-decoration: underline;
 }
 
 .success .subscribe-form__message.-success {
-    display: block;
+    display: block !important;
 }
 
 .subscribe-success .subscribe-success-message:not(.close) {
