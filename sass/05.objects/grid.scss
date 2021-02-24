@@ -7,7 +7,7 @@
             display: grid;
             grid-auto-flow: dense;
             grid-gap: $gutter;
-            grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(35vw, 1fr));
             .post {
                 margin-bottom: 0;
             }
