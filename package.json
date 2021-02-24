@@ -4,7 +4,7 @@
         "name": "Gustav Lindqvist",
         "email": "gustav@lindqvist.io"
     },
-    "version": "2.1.0",
+    "version": "2.1.1",
     "engines": {
         "ghost-api": "v3"
     },
